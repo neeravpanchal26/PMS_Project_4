@@ -1,0 +1,13 @@
+.right {
+    float: right;
+    padding-right: 5px;
+}
+
+.width {
+    width: 98%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}

@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*Navbar styles*/
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+/*Snackbar Theming*/
+.warning{
+    background: orange;
+    color: white;
+    justify-content: center;
+}
+
+.danger {
+    background: red;
+    color: white;
+    justify-content: center;
+}
+
+.success {
+    background: green;
+    color: white;
+    justify-content: center;
+}
+
+/*Default padding for objects*/
+.margin {
+    margin: 15px;
+}

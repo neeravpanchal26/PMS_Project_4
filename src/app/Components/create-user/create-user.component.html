@@ -1,0 +1,122 @@
+<!--Header-->
+<app-header>
+    <!--Create user form-->
+    <mat-card class="mat-elevation-z8 margin">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>person_add</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+        <form (ngSubmit)="createUser(createUserForm)" [formGroup]="createUserForm">
+            <mat-form-field class="width">
+                <input matInput placeholder="First name" type="text" formControlName="name">
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['name'].hasError('required')">First name is required.
+                </mat-error>
+                <mat-error *ngIf="createUserForm.controls['name'].hasError('maxlength')">First name may only
+                    contain 45 characters.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width">
+                <input matInput placeholder="Last name" type="text" formControlName="surname">
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['surname'].hasError('required')">Last name is required.
+                </mat-error>
+                <mat-error *ngIf="createUserForm.controls['surname'].hasError('maxlength')">Last name may only
+                    contain 45 characters.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width">
+                <input matInput [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"
+                       min="1940-01-01" max="{{maxDate | date:'yyyy-MM-dd'}}">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['dob'].hasError('required')">Date of birth is required.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width">
+                <input matInput placeholder="Contact Number" formControlName="contact" type="tel"
+                       pattern="[0-9]{3}[0-9]{3}[0-9]{4}" max="10">
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['contact'].hasError('required')">Contact number is
+                    required.
+                </mat-error>
+                <mat-error
+                        *ngIf="createUserForm.controls['contact'].hasError('maxlength') || createUserForm.controls['contact'].hasError('minlength')">
+                    Contact number may only be 10 characters.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width">
+                <input matInput placeholder="Email address" formControlName="email" type="email">
+                <!--Form Validation-->
+                <mat-error *ngIf="emailCheck">It seems this email exists on our system.</mat-error>
+                <mat-error *ngIf="createUserForm.controls['email'].hasError('required')">Email is required.</mat-error>
+                <mat-error *ngIf="createUserForm.controls['email'].hasError('maxlength')">Email may only be 200 characters.</mat-error>
+                <mat-error *ngIf="createUserForm.controls['email'].hasError('pattern')">Check your email format.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width" [color]="passwordComponent.color">
+                <input matInput type="password" #password placeholder="Password" formControlName="password">
+                <mat-hint align="end" aria-live="polite">
+                    {{password.value.length}} / 20
+                </mat-hint>
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['password'].hasError('required')">Password is required.</mat-error>
+                <mat-error *ngIf="createUserForm.controls['password'].hasError('minlength')">Password should contain 8 characters.</mat-error>
+                <mat-error *ngIf="createUserForm.controls['password'].hasError('maxlength')">Password should not be more than 20 characters.</mat-error>
+            </mat-form-field>
+            <mat-password-strength #passwordComponent (onStrengthChanged)="onStrengthChanged($event)" [password]="password.value"></mat-password-strength>
+            <mat-password-strength-info  [passwordComponent]="passwordComponent" *ngIf="createUserForm.controls['password'].invalid && (createUserForm.controls['password'].dirty || createUserForm.controls['password'].touched)"></mat-password-strength-info>
+
+            <mat-form-field class="width">
+                <mat-label>User types</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let u of userType" [value]="u.UserTypeID">{{u.UserTypeDesc}}</mat-option>
+                </mat-select>
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['type'].hasError('required')">A user type must be selected.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width">
+                <input matInput placeholder="1234 Main St" formControlName="address1">
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['address1'].hasError('required')">Address is required.</mat-error>
+                <mat-error *ngIf="createUserForm.controls['address1'].hasError('maxlength')">Address should not exceed 100 characters.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width">
+                <input matInput placeholder="Apartment, studio, or floor" formControlName="address2">
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['address2'].hasError('required')">Address 2 is required.</mat-error>
+                <mat-error *ngIf="createUserForm.controls['address2'].hasError('maxlength')">Address 2 should not exceed 100 characters.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width">
+                <mat-label>City</mat-label>
+                <mat-select formControlName="city" (selectionChange)="suburbLoad($event.value)">
+                    <mat-option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</mat-option>
+                </mat-select>
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['city'].hasError('required')">A city must be selected.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="width">
+                <mat-label>Suburb</mat-label>
+                <mat-select formControlName="suburb">
+                    <mat-option *ngFor="let s of suburbs" [value]="s.SuburbID">{{s.SuburbName}}</mat-option>
+                </mat-select>
+                <!--Form Validation-->
+                <mat-error *ngIf="createUserForm.controls['suburb'].hasError('required')">A suburb must be selected.</mat-error>
+            </mat-form-field>
+
+            <button mat-button color="primary" type="submit">Save</button>
+            <button mat-stroked-button type="button">Clear</button>
+        </form>
+        </mat-card-content>
+    </mat-card>
+
+</app-header>

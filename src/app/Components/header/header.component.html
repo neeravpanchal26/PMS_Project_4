@@ -1,0 +1,66 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav mat-elevation-z15" fixedInViewport
+                 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                 [opened]="(isHandset$ | async) === false">
+        <mat-toolbar color="primary">
+            <img src="../assets/Logo.png" width="56" alt="PMS Logo">
+            PMS
+        </mat-toolbar>
+        <mat-nav-list>
+            <div *ngIf="userType==1">
+            <!--IT Technician Routes-->
+            <a mat-list-item routerLink="/Dashboard_It_Technician">
+                <mat-icon>dashboard</mat-icon>
+                Dashboard
+            </a>
+
+            <a mat-list-item [mat-menu-trigger-for]="menu1">
+                <mat-icon matPrefix>people</mat-icon>
+                <span>Users</span>
+                <mat-menu #menu1="matMenu" xPosition="before">
+                    <a mat-menu-item routerLink="/Create_User">
+                        <mat-icon matPrefix>person_add</mat-icon>
+                        <span>Create user</span>
+                    </a>
+                    <a mat-menu-item>
+                        <mat-icon matPrefix>people</mat-icon>
+                        <span>Manage users</span>
+                    </a>
+                </mat-menu>
+            </a>
+
+            <a mat-list-item href="#">Link 3</a>
+            </div>
+            <!--IT Technician Routes ends here-->
+
+            <span class="spacer"></span>
+            <div class="footer">
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon matPrefix>account_circle</mat-icon>
+                    <span>{{userName}}</span></button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button
+                    type="button"
+                    aria-label="Toggle sidenav"
+                    mat-icon-button
+                    (click)="drawer.toggle()"
+                    *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            {{route}}
+        </mat-toolbar>
+        <!--Own content dynamic printing-->
+        <ng-content></ng-content>
+        <!--Footer-->
+        <app-footer class="footer"></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>

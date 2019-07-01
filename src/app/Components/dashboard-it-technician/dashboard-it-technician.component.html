@@ -1,0 +1,66 @@
+<!--Header-->
+<app-header>
+    <!--Graph-->
+    <mat-card class="mat-elevation-z8 margin">
+        <mat-card-header class="mat-background-primary">
+            <mat-icon mat-card-avatar>show_chart</mat-icon>
+            <mat-card-title>
+                {{title}}
+                <button mat-stroked-button [mat-menu-trigger-for]="menu1">
+                    <mat-icon matPrefix>filter_list</mat-icon>
+                    <span>Filter</span>
+                    <mat-menu #menu1="matMenu">
+                        <button mat-menu-item (click)="setDays(7)">7 Days</button>
+                        <button mat-menu-item (click)="setDays(14)">14 Days</button>
+                        <button mat-menu-item (click)="setDays(30)">30 Days</button>
+                    </mat-menu>
+                </button>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <canvas id="itTechnicianCanvas" *ngIf="yAxis != false">{{chart}}</canvas>
+        </mat-card-content>
+    </mat-card>
+
+    <!--Table-->
+    <div class="mat-elevation-z8 margin">
+        <!--Search-->
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+
+        <mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="UserID">
+                <mat-header-cell *matHeaderCellDef>User ID</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.UserID}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="FirstName">
+                <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.FirstName}} {{row.Surname}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Surname" style="display: none">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let row"></mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="count">
+                <mat-header-cell *matHeaderCellDef># of Login's</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.count}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="lastAccess">
+                <mat-header-cell *matHeaderCellDef>Latest Access</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.lastAccess}}</mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
+        <!--Paginantion-->
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</app-header>
+
