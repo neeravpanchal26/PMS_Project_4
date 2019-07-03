@@ -16,6 +16,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import {MAT_DATE_LOCALE} from '@angular/material';
+import {MatSlideToggleModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
     imports: [
@@ -36,6 +38,8 @@ import {MAT_DATE_LOCALE} from '@angular/material';
         MatGridListModule,
         MatDatepickerModule,
         MatNativeDateModule,
+        MatSlideToggleModule,
+        MatDialogModule,
         MatFormFieldModule],
     exports: [
         MatButtonModule,
@@ -55,6 +59,8 @@ import {MAT_DATE_LOCALE} from '@angular/material';
         MatGridListModule,
         MatDatepickerModule,
         MatNativeDateModule,
+        MatSlideToggleModule,
+        MatDialogModule,
         MatFormFieldModule],
     providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-ZA'}]
 })

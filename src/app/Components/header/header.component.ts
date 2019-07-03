@@ -40,5 +40,6 @@ export class HeaderComponent {
         this.route = this.router.url;
         const splitter = this.route.split('_');
         this.route = splitter.join(' ').substr(1);
+        this.route = this.route.replace(/[^a-zA-Z ]/g, '');
     }
 }

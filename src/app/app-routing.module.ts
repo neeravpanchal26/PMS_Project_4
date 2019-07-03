@@ -15,15 +15,24 @@ import {HeaderComponent} from './Components/header/header.component';
 import {FooterComponent} from './Components/footer/footer.component';
 import {DashboardItTechnicianComponent} from './Components/dashboard-it-technician/dashboard-it-technician.component';
 import {CreateUserComponent} from './Components/create-user/create-user.component';
+import {ManageUsersComponent} from './Components/manage-users/manage-users.component';
+import {ErrorComponent} from './Components/error/error.component';
+import {ChangePasswordComponent} from './Components/change-password/change-password.component';
+import {ResetPasswordComponent} from './Components/reset-password/reset-password.component';
 
 // Routing Array
 const routes: Routes = [
     // Default component
     {path: '', component: LoginComponent},
-    {path: 'Dashboard_It_Technician', canActivate: [LoginGuard], component: DashboardItTechnicianComponent},
+    {path: 'Change_Password', canActivate: [LoginGuard], component: ChangePasswordComponent},
 
     // IT Technician component
-    {path: 'Create_User', canActivate: [LoginGuard], component: CreateUserComponent}
+    {path: 'Dashboard_It_Technician', canActivate: [LoginGuard], component: DashboardItTechnicianComponent},
+    {path: 'Create_User', canActivate: [LoginGuard], component: CreateUserComponent},
+    {path: 'Manage_Users', canActivate: [LoginGuard], component: ManageUsersComponent},
+    {path: 'Reset_Password/:userID', canActivate: [LoginGuard], component: ResetPasswordComponent},
+
+    {path: '**', component: ErrorComponent}// Always keep this last!!
 ];
 
 @NgModule({
@@ -39,9 +48,13 @@ export class AppRoutingModule {
 
 export const routingComponents = [
     // Default Component
+    ErrorComponent,
     LoginComponent,
     HeaderComponent,
     FooterComponent,
     DashboardItTechnicianComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    ManageUsersComponent,
+    ChangePasswordComponent,
+    ResetPasswordComponent
 ];

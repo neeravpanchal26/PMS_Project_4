@@ -1,0 +1,2 @@
+#n:uspCreateUser_Create
+#i:(varchar(45),varchar(45),date,varchar(10),varchar(200),varchar(60),int(11),varchar(45),varchar(45),int(11))

@@ -9,39 +9,60 @@
         </mat-toolbar>
         <mat-nav-list>
             <div *ngIf="userType==1">
-            <!--IT Technician Routes-->
-            <a mat-list-item routerLink="/Dashboard_It_Technician">
-                <mat-icon>dashboard</mat-icon>
-                Dashboard
-            </a>
+                <!--IT Technician Routes-->
+                <a mat-list-item routerLink="/Dashboard_It_Technician">
+                    <mat-icon>dashboard</mat-icon>
+                    Dashboard
+                </a>
 
-            <a mat-list-item [mat-menu-trigger-for]="menu1">
-                <mat-icon matPrefix>people</mat-icon>
-                <span>Users</span>
-                <mat-menu #menu1="matMenu" xPosition="before">
-                    <a mat-menu-item routerLink="/Create_User">
-                        <mat-icon matPrefix>person_add</mat-icon>
-                        <span>Create user</span>
-                    </a>
-                    <a mat-menu-item>
-                        <mat-icon matPrefix>people</mat-icon>
-                        <span>Manage users</span>
-                    </a>
-                </mat-menu>
-            </a>
+                <a mat-list-item [mat-menu-trigger-for]="menu1">
+                    <mat-icon matPrefix>people</mat-icon>
+                    <span>Users</span>
+                    <mat-menu #menu1="matMenu" xPosition="before">
+                        <a mat-menu-item routerLink="/Create_User">
+                            <mat-icon matPrefix>person_add</mat-icon>
+                            <span>Create user</span>
+                        </a>
+                        <a mat-menu-item routerLink="/Manage_Users">
+                            <mat-icon matPrefix>people</mat-icon>
+                            <span>Manage users</span>
+                        </a>
+                    </mat-menu>
+                </a>
 
-            <a mat-list-item href="#">Link 3</a>
+                <a mat-list-item href="#">
+                    <mat-icon matPrefix>build</mat-icon>
+                    Business Settings
+                </a>
+                <a mat-list-item href="#">
+                    <mat-icon matPrefix>assignment</mat-icon>
+                    Reports
+                </a>
+                <a mat-list-item href="#">
+                    <mat-icon matPrefix>help</mat-icon>
+                    Help
+                </a>
             </div>
             <!--IT Technician Routes ends here-->
 
             <span class="spacer"></span>
             <div class="footer">
-                <button mat-button [matMenuTriggerFor]="menu">
+                <a mat-list-item [matMenuTriggerFor]="menu">
                     <mat-icon matPrefix>account_circle</mat-icon>
-                    <span>{{userName}}</span></button>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item>Item 1</button>
-                    <button mat-menu-item>Item 2</button>
+                    <span>{{userName}}</span></a>
+                <mat-menu #menu="matMenu" xPosition="before">
+                    <a mat-menu-item>
+                        <mat-icon>person</mat-icon>
+                        Personal Info
+                    </a>
+                    <a mat-menu-item routerLink="/Change_Password">
+                        <mat-icon matPrefix>lock</mat-icon>
+                        Change Password
+                    </a>
+                    <a mat-menu-item data-toggle="modal" data-target="#logout">
+                        <mat-icon matPrefix>exit_to_app</mat-icon>
+                        Logout
+                    </a>
                 </mat-menu>
             </div>
         </mat-nav-list>
@@ -58,9 +79,30 @@
             </button>
             {{route}}
         </mat-toolbar>
+
         <!--Own content dynamic printing-->
         <ng-content></ng-content>
-        <!--Footer-->
-        <app-footer class="footer"></app-footer>
+
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+<!-- Confirmation Dialog-->
+<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to logout?
+            </div>
+            <div class="modal-footer">
+                <button routerLink="/" mat-flat-button color="primary" data-dismiss="modal">Yes</button>
+                <button type="button" mat-stroked-button data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

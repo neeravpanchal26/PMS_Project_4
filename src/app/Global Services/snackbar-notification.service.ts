@@ -18,6 +18,15 @@ export class SnackbarNotificationService {
         });
     }
 
+    // Form Error
+    formFailure() {
+        this.snackBar.open('Your form is invalid.', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['danger']
+        });
+    }
+
     // Login component notifications
     loginSuccess(username) {
         this.snackBar.open('Welcome ' + username, '', {
@@ -40,6 +49,49 @@ export class SnackbarNotificationService {
             duration: 10000,
             horizontalPosition: 'end',
             panelClass: ['warning']
+        });
+    }
+
+    // Create User component notification
+    CreateUserSuccess(firstName, surname) {
+        this.snackBar.open(firstName + ' ' + surname + ' has been added to the system. User is currently deactivated.', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
+        });
+    }
+
+    // Manage users component notification
+    UserRoleChangeSuccess(userName) {
+        this.snackBar.open(userName + ' \'s role has been changed!', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
+        });
+    }
+
+    UserStatusActivated(userName) {
+        this.snackBar.open(userName + ' \'s account has been activated!', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
+        });
+    }
+
+    UserStatusDeactivated(userName) {
+        this.snackBar.open(userName + ' \'s account has been deactivated!', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
+        });
+    }
+
+     // Change password component notification
+    ChangePasswordSuccess() {
+        this.snackBar.open('Your password has been updated.', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
         });
     }
 }

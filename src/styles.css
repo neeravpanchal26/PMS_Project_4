@@ -32,3 +32,16 @@ body {
 .margin {
     margin: 15px;
 }
+
+/*Footer Styles*/
+.footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}
+
+/*Form fileds width*/
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}

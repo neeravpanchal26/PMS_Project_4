@@ -30,6 +30,11 @@ export class CreateUserService {
     GetSuburb(cityID): Observable<any> {
         return this.httpClient.get(this.apiUrl + '/api/Business/Create User.php?action=suburb&cityID=' + cityID) as Observable<any>;
     }
+
+    // Create user
+    CreateUser(param: IAddUser): Observable<any> {
+        return this.httpClient.post(this.apiUrl + '/api/Business/Create User.php?action=create', param) as Observable<any>;
+    }
 }
 
 // Wrapper Interface
@@ -44,8 +49,4 @@ export interface IAddUser {
     address1: string;
     address2: string;
     suburb: string;
-}
-
-export interface ISuburb {
-    city: any;
 }
