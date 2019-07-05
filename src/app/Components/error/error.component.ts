@@ -10,19 +10,12 @@ import {SnackbarNotificationService} from '../../Global Services/snackbar-notifi
     styleUrls: ['./error.component.css']
 })
 export class ErrorComponent implements OnInit {
-    // Global variable
-
     // Default constructor
     constructor(private snackBar: SnackbarNotificationService,
-                private location: Location) {
+                public location: Location) {
     }
 
     // Form Load
     ngOnInit() {
-    }
-
-    // Locate back
-    locateBack() {
-        this.location.back();
     }
 }

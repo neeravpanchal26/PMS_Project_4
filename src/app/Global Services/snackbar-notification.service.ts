@@ -86,9 +86,18 @@ export class SnackbarNotificationService {
         });
     }
 
-     // Change password component notification
+    // Change password component notification
     ChangePasswordSuccess() {
         this.snackBar.open('Your password has been updated.', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
+        });
+    }
+
+    // Update personal info component notification
+    UpdatePersonalInfoSuccess(userName) {
+        this.snackBar.open(userName + ' your personal information has been updated.', '', {
             duration: 3000,
             horizontalPosition: 'end',
             panelClass: ['success'],

@@ -2,34 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed02ffb1-ac65-4ea4-9b77-012b178c499c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/nsp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/Business/Change Password.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/Business/Manage Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Business/Update Personal Info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39/storage_v2/_src_/schema/pms_schema.6hu9Fg.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39/storage_v2/_src_/schema/pms_schema.6hu9Fg.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Business/Create User.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Business/Create User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/Data/DbHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Data/DbHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/create-user/create-user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/create-user/create-user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/error/error.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/error/error.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/error/error.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/error/error.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/material.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/material.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/._Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/._Logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -84,17 +71,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,10 +83,8 @@
         <option value="$PROJECT_DIR$/api/Business/Create User.php" />
         <option value="/8ea2cac3/410f318a-f35c-41dc-994d-e5e567f6eb39/schema/pms_schema/routine/uspCreateUser_Create@(varchar(45),varchar(45),date,varchar(10),varchar(200),varchar(60),int(11),varchar(45),varchar(45),int(11)).sql" />
         <option value="$PROJECT_DIR$/src/app/Components/create-user/create-user.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/header/header.component.css" />
         <option value="$PROJECT_DIR$/src/app/Components/footer/footer.component.html" />
-        <option value="$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.css" />
         <option value="$PROJECT_DIR$/src/styles.css" />
         <option value="$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.css" />
         <option value="$PROJECT_DIR$/api/Business/Manage Users.php" />
@@ -119,32 +94,39 @@
         <option value="$PROJECT_DIR$/src/app/material.ts" />
         <option value="$PROJECT_DIR$/angular.json" />
         <option value="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.css" />
-        <option value="$PROJECT_DIR$/src/app/Components/error/error.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/error/error.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/login/login.component.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console.sql" />
-        <option value="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console_1.sql" />
-        <option value="$PROJECT_DIR$/api/Data/DbHandler.php" />
         <option value="$PROJECT_DIR$/api/Business/Change Password.php" />
         <option value="$PROJECT_DIR$/src/app/Components/change-password/change-password.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/change-password/change-password.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.html" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/change-password/change-password.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/header/header.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.html" />
-        <option value="$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/header/header.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.css" />
         <option value="$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.html" />
+        <option value="/8ea2cac3/410f318a-f35c-41dc-994d-e5e567f6eb39/schema/pms_schema/routine/uspUpdatePersonalInfo_SpecificUser@(int(11)).sql" />
+        <option value="$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.html" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.ts" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console.sql" />
+        <option value="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console_1.sql" />
+        <option value="$PROJECT_DIR$/api/Data/DbHandler.php" />
+        <option value="$PROJECT_DIR$/api/Business/Update Personal Info.php" />
+        <option value="$PROJECT_DIR$/src/app/Components/update-personal-info/update-personal-info.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/Components/header/header.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/create-user/create-user.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/update-personal-info/update-personal-info.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/update-personal-info/update-personal-info.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/Components/error/error.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/error/error.component.ts" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1" />
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="1440" />
     <option name="y" value="-180" />
     <option name="width" value="2560" />
@@ -155,6 +137,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,18 +153,6 @@
             <path>
               <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="PMS" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="Business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PMS" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -196,38 +167,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="change-password" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="create-user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="manage-users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
@@ -240,7 +179,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Built-in Web Server.Api">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -322,17 +260,21 @@
       <workItem from="1562158660662" duration="7295000" />
       <workItem from="1562169987225" duration="2306000" />
       <workItem from="1562173773008" duration="1007000" />
+      <workItem from="1562226664395" duration="5586000" />
+      <workItem from="1562237943529" duration="2980000" />
+      <workItem from="1562241214361" duration="260000" />
+      <workItem from="1562243447690" duration="4134000" />
+      <workItem from="1562312249952" duration="70000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44823000" />
+    <option name="totallyTimeSpent" value="57853000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-180" width="2560" height="1080" extended-state="6" />
-    <editor active="true" />
+    <frame x="1440" y="-180" width="2560" height="1080" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2887212" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13463067" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -353,47 +295,13 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32890767" />
+      <window_info anchor="right" id="Database" order="3" weight="0.49366325" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.4127942" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32970297" />
-      <window_info anchor="bottom" id="TypeScript" order="1" />
-      <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.32970297" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32970297" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32970297" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32890767" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@ngtools/webpack/src/virtual_file_system_decorator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -431,19 +339,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/create-user/create-user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding>
-            <element signature="e#61#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="das://410f318a-f35c-41dc-994d-e5e567f6eb39/schema/pms_schema/table/User">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -504,23 +399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/error/error.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding>
-            <element signature="e#68#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/error/error.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -554,49 +432,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/Business/Create User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="44" selection-start-column="18" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/create-user/create-user.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#68#140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.component.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="830">
-          <caret line="94" column="11" lean-forward="true" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/change-password/change-password.component.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -625,27 +462,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/Data/DbHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="834">
-          <caret line="86" column="40" lean-forward="true" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/footer/footer.component.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="45" column="70" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#mat-card-header#0;n#mat-card#0;n#app-header#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-header-cell#0;n#ng-container#2;n#mat-table#0;n#mat-card-content#0;n#mat-card#1;n#app-header#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-cell#0;n#ng-container#2;n#mat-table#0;n#mat-card-content#0;n#mat-card#1;n#app-header#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -654,35 +472,6 @@
           <folding>
             <element signature="e#79#110#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-            <element signature="e#296#360#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="26" />
-          <folding>
-            <element signature="e#216#278#0" expanded="true" />
-            <element signature="e#401#467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/create-user/create-user.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -706,34 +495,198 @@
     <entry file="file://$PROJECT_DIR$/tslint.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/dashboard-it-technician/dashboard-it-technician.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#mat-card-header#0;n#mat-card#0;n#app-header#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#mat-header-cell#0;n#ng-container#2;n#mat-table#0;n#mat-card-content#0;n#mat-card#1;n#app-header#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#mat-cell#0;n#ng-container#2;n#mat-table#0;n#mat-card-content#0;n#mat-card#1;n#app-header#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Business/Create User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbSrc:///8ea2cac3/410f318a-f35c-41dc-994d-e5e567f6eb39/schema/pms_schema/routine/uspUpdatePersonalInfo_SpecificUser@(int(11)).sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        <state relative-caret-position="180">
+          <caret line="10" column="80" lean-forward="true" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#296#360#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/reset-password/reset-password.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+        <state relative-caret-position="270">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="e#68#134#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="46" selection-start-column="18" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="39" />
+          <folding>
+            <element signature="e#216#278#0" expanded="true" />
+            <element signature="e#401#467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="50" selection-start-column="18" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="103" column="11" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/header/header.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state relative-caret-position="199">
+          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/create-user/create-user.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="155" column="46" lean-forward="true" selection-start-line="155" selection-start-column="46" selection-end-line="155" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/create-user/create-user.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="122" selection-end-column="5" />
+          <folding>
+            <element signature="e#68#140#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/manage-users/manage-users.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+        <state relative-caret-position="230">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbSrc:///8ea2cac3/410f318a-f35c-41dc-994d-e5e567f6eb39/schema/pms_schema/routine/uspCreateUser_Suburb@(int(11)).sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/update-personal-info/update-personal-info.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="78" column="106" selection-start-line="78" selection-start-column="106" selection-end-line="78" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/update-personal-info/update-personal-info.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="106" column="57" lean-forward="true" selection-start-line="106" selection-start-column="57" selection-end-line="106" selection-end-column="57" />
+          <folding>
+            <element signature="e#68#134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/create-user/create-user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#61#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/update-personal-info/update-personal-info.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Business/Update Personal Info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Data/DbHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="96" column="57" selection-start-line="96" selection-start-column="57" selection-end-line="96" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/error/error.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/error/error.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#68#109#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -19,12 +19,14 @@ import {ManageUsersComponent} from './Components/manage-users/manage-users.compo
 import {ErrorComponent} from './Components/error/error.component';
 import {ChangePasswordComponent} from './Components/change-password/change-password.component';
 import {ResetPasswordComponent} from './Components/reset-password/reset-password.component';
+import {UpdatePersonalInfoComponent} from './Components/update-personal-info/update-personal-info.component';
 
 // Routing Array
 const routes: Routes = [
     // Default component
     {path: '', component: LoginComponent},
     {path: 'Change_Password', canActivate: [LoginGuard], component: ChangePasswordComponent},
+    {path: 'Update_Personal_Information', canActivate: [LoginGuard], component: UpdatePersonalInfoComponent},
 
     // IT Technician component
     {path: 'Dashboard_It_Technician', canActivate: [LoginGuard], component: DashboardItTechnicianComponent},
@@ -56,5 +58,6 @@ export const routingComponents = [
     CreateUserComponent,
     ManageUsersComponent,
     ChangePasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    UpdatePersonalInfoComponent
 ];

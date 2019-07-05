@@ -90,4 +90,25 @@ class DbHandler
         $param = array(&$userID,&$userPassword);
         return DBHelper::ExecuteNonQuery($sp,$param);
     }
+
+    // Update personal info component methods
+    public static function UpdatePersonalInfo_SpecificUser($userID)
+    {
+        $sp = 'CALL uspUpdatePersonalInfo_SpecificUser(?)';
+        $param = array(&$userID);
+        return DBHelper::SelectParam($sp,$param);
+    }
+
+    public static function UpdatePersonalInfo_Suburb()
+    {
+        $sp = 'CALL uspUpdatePersonalInfo_Suburb';
+        return DBHelper::Select($sp);
+    }
+
+    public static function UpdatePersonalInfo_UpdateInfo($uI, $fN, $lN, $dob, $cN, $eA, $a1, $a2, $sub)
+    {
+        $sp = 'CALL uspUpdatePersonalInfo_UpdateInfo (?,?,?,?,?,?,?,?,?)';
+        $param = array(&$uI, &$fN, &$lN, &$dob, &$cN, &$eA, &$a1, &$a2, &$sub);
+        return DBHelper::ExecuteNonQuery($sp, $param);
+    }
 }

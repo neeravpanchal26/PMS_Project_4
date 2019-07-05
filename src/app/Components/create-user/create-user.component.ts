@@ -59,12 +59,6 @@ export class CreateUserComponent implements OnInit {
 
     // Create user
     createUser(e) {
-        const mDate = this.maxDate.toString().split(' ');
-        const iDate = e.value.dob.toString().split('-');
-        // if (iDate[0] > mDate[3]) {
-        //     this.createUserForm.controls.dob.setErrors({incorrect: true});
-        // } else
-
         if (isNumber(e.value.contact === false)) {
             this.createUserForm.controls.contact.setErrors({incorrect: true});
         } else {

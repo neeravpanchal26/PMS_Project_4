@@ -5,6 +5,7 @@ import {FormGroup, Validators, FormBuilder} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {ChangePasswordService, IPassword} from '../change-password/change-password.service';
 import {SnackbarNotificationService} from '../../Global Services/snackbar-notification.service';
+import {UpdatePersonalInfoService} from '../update-personal-info/update-personal-info.service';
 
 @Component({
     selector: 'app-reset-password',
@@ -15,12 +16,14 @@ export class ResetPasswordComponent implements OnInit {
     // Global variable
     public resetForm: FormGroup;
     public userID: any;
+    public userInfo: any;
 
     // Default constructor
     constructor(private formBuilder: FormBuilder,
                 private route: ActivatedRoute,
                 private CService: ChangePasswordService,
-                private snackBar: SnackbarNotificationService) {
+                private snackBar: SnackbarNotificationService,
+                private UService: UpdatePersonalInfoService) {
     }
 
     // Form load
@@ -30,6 +33,13 @@ export class ResetPasswordComponent implements OnInit {
 
         // Set User ID
         this.userID = this.route.snapshot.paramMap.get('userID');
+
+        // Set user Info
+        this.UService.GetSpecificUser(this.userID)
+            .subscribe(
+                data => this.userInfo = data[0],
+                error => this.snackBar.handleError(error)
+            );
     }
 
     // Reset password
