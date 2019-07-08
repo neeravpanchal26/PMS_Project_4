@@ -5,5 +5,5 @@ export const environment = {
     // Nmu
     // api:'http://sict-iis.nmmu.ac.za/bit1'
     // Local Setup
-    api: 'http://localhost:8000'
+    api: 'http://localhost:8200'
 };

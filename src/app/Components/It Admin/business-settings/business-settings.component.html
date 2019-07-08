@@ -1,0 +1,125 @@
+<!--Header-->
+<app-header>
+    <!--Create user form-->
+    <mat-card class="mat-elevation-z8 margin">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>edit</mat-icon>
+            <mat-card-title>Update business information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form (ngSubmit)="onSubmit(businessForm)" [formGroup]="businessForm">
+                <div class="form-row">
+                    <mat-card class="mat-elevation-z1 col-lg-4">
+                        <mat-card-header>
+                            <mat-card-title>Current Logo</mat-card-title>
+                        </mat-card-header>
+                        <img [src]="businessLogo" *ngIf="businessLogo" style="width: 100%" alt="PMS Logo">
+                    </mat-card>
+
+                    <div class="col-lg-8">
+                        <div class="col-12">
+                            <input type="file" accept="image/jpeg,image/png" formControlName="logo" #BusinessLogo (input)="img=$event.target.files[0]['name']" hidden>
+                            <mat-form-field>
+                                <mat-label>Logo upload</mat-label>
+                                <input matInput type="text" [value]="img" disabled>
+                                <button mat-mini-fab color="primary" type="button" matSuffix (click)="BusinessLogo.click()"><mat-icon>attach_file</mat-icon></button>
+                            </mat-form-field>
+                        </div>
+
+                        <mat-form-field class="col-lg-12">
+                            <mat-label>Name</mat-label>
+                            <input matInput type="text" formControlName="name">
+                            <!--Form validation-->
+                            <mat-error *ngIf="businessForm.controls['name'].hasError('required')">Business name is
+                                required.
+                            </mat-error>
+                            <mat-error *ngIf="businessForm.controls['name'].hasError('maxlength')">Business name may
+                                only contain 45 characters.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-lg-12">
+                            <mat-label>Website</mat-label>
+                            <input matInput type="text" formControlName="website">
+                            <!--Form validation-->
+                            <mat-error *ngIf="businessForm.controls['website'].hasError('maxlength')">Business website
+                                may only contain 200 characters.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-lg-12">
+                            <mat-label>Contact number</mat-label>
+                            <input matInput formControlName="contact" type="tel"
+                                   pattern="[0-9]{3}[0-9]{3}[0-9]{4}" max="10">
+                            <!--Form Validation-->
+                            <mat-error *ngIf="businessForm.controls['contact'].hasError('required')">Business contact
+                                number is required.
+                            </mat-error>
+                            <mat-error
+                                    *ngIf="businessForm.controls['contact'].hasError('maxlength') || businessForm.controls['contact'].hasError('minlength')">
+                                Business contact number may only be 10 characters.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-lg-12">
+                            <mat-label>Vat number</mat-label>
+                            <input matInput formControlName="vat" type="tel"
+                                   pattern="[0-9]{3}[0-9]{3}[0-9]{4}" max="10">
+                            <!--Form Validation-->
+                            <mat-error *ngIf="businessForm.controls['vat'].hasError('required')">Business contact
+                                number is required.
+                            </mat-error>
+                            <mat-error
+                                    *ngIf="businessForm.controls['vat'].hasError('maxlength') || businessForm.controls['vat'].hasError('minlength')">
+                                Business contact number may only be 10 characters.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-lg-12">
+                            <mat-label>City</mat-label>
+                            <select matNativeControl formControlName="city">
+                                <option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</option>
+                            </select>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="businessForm.controls['city'].hasError('required')">A city must be
+                                selected.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <div class="col-lg-12">
+                            <button type="submit" style="display: none" #submit></button>
+                            <button mat-flat-button color="primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Update</button>
+                            <button mat-stroked-button type="button" (click)="location.back()">Go back</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+    <!--Footer-->
+    <app-footer class="footer"></app-footer>
+</app-header>
+
+<!-- Confirmation Dialog-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to apply the new changes?
+            </div>
+            <div class="modal-footer">
+                <button mat-flat-button color="primary" type="button" (click)="submit.click()" data-dismiss="modal">Yes</button>
+                <button mat-stroked-button type="button" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

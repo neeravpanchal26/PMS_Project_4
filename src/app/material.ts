@@ -18,6 +18,8 @@ import {MatNativeDateModule} from '@angular/material';
 import {MAT_DATE_LOCALE} from '@angular/material';
 import {MatSlideToggleModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatTableExporterModule} from 'mat-table-exporter';
 
 @NgModule({
     imports: [
@@ -40,6 +42,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatNativeDateModule,
         MatSlideToggleModule,
         MatDialogModule,
+        MatDividerModule,
+        MatTableExporterModule,
         MatFormFieldModule],
     exports: [
         MatButtonModule,
@@ -61,6 +65,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatNativeDateModule,
         MatSlideToggleModule,
         MatDialogModule,
+        MatDividerModule,
+        MatTableExporterModule,
         MatFormFieldModule],
     providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-ZA'}]
 })

@@ -1,0 +1,61 @@
+<!--Header-->
+<app-header>
+    <mat-card class="mat-elevation-z8 margin">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>people</mat-icon>
+            <mat-card-title>Manage all owners</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <!--Search-->
+            <mat-form-field>
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+            </mat-form-field>
+
+            <!--Table-->
+            <mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="OwnerID">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Owner ID</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.OwnerID}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="owner">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Owner</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.owner}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ContactNumber">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Contact Number</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.ContactNumber}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Active">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <mat-slide-toggle [checked]="row.Active==1" color="primary"></mat-slide-toggle>
+                    </mat-cell>
+                </ng-container>
+
+                <!--Dummy column-->
+                <ng-container matColumnDef="edit">
+                    <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <button mat-stroked-button routerLink="/Update_Owner_Information/{{row.OwnerID}}">
+                            <mat-icon>edit</mat-icon>
+                            Edit owner
+                        </button>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+            <!--Paginantion-->
+            <mat-paginator [pageSizeOptions]="[10, 25, 100, 200]"></mat-paginator>
+        </mat-card-content>
+    </mat-card>
+
+    <!--Footer-->
+    <app-footer class="footer"></app-footer>
+</app-header>

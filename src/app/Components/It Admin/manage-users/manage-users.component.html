@@ -1,0 +1,67 @@
+<!--Header-->
+<app-header>
+    <mat-card class="mat-elevation-z8 margin">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>people</mat-icon>
+            <mat-card-title>Manage all users</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <!--Search-->
+            <mat-form-field>
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+            </mat-form-field>
+
+            <!--Table-->
+            <mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="username">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.username}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Email">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.Email}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Type">
+                    <mat-header-cell *matHeaderCellDef>User role</mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <mat-form-field class="mr-1">
+                            <select matNativeControl (change)="ChangeUserType($event.target.value,row.UserID,row.username)">
+                                <option *ngFor="let u of userType" [value]="u.UserTypeID" [selected]="u.UserTypeID == row.Type">{{u.UserTypeDesc}}</option>
+                            </select>
+                        </mat-form-field>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Active">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="pl-3">Status</mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <mat-slide-toggle class="pl-3" [checked]="row.Active==1" color="primary" (change)="ChangeUserStatus($event.checked,row.UserID,row.username)"></mat-slide-toggle>
+                    </mat-cell>
+                </ng-container>
+
+                <!--Dummy column-->
+                <ng-container matColumnDef="reset">
+                    <mat-header-cell *matHeaderCellDef>Security</mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <button mat-stroked-button routerLink="/Reset_Password/{{row.UserID}}">
+                            <mat-icon>lock</mat-icon>
+                            Reset password
+                        </button>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+            <!--Paginantion-->
+            <mat-paginator [pageSizeOptions]="[10, 25, 100, 200]"></mat-paginator>
+        </mat-card-content>
+    </mat-card>
+
+    <!--Footer-->
+    <app-footer class="footer"></app-footer>
+</app-header>

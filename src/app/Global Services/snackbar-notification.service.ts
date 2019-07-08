@@ -103,4 +103,22 @@ export class SnackbarNotificationService {
             panelClass: ['success'],
         });
     }
+
+    // Business setting component notification
+    BusinessSettingUpdate() {
+        this.snackBar.open('Your business information has been updated.', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
+        });
+    }
+
+    // Create owner component notification
+    CreateOwnerSuccess(firstName, surname) {
+        this.snackBar.open(firstName + ' ' + surname + ' has been added to the system.', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
+        });
+    }
 }

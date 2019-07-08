@@ -45,3 +45,8 @@ body {
     font-size: 14px;
     width: 100%;
 }
+
+/*Mat spacer*/
+.spacer {
+    flex: 1 1 auto;
+}

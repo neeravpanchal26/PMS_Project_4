@@ -20,7 +20,7 @@ class DbHandler
         return DBHelper::SelectParam($sp, $param);
     }
 
-    // Dashboard It Technician component methods
+    // Dashboard It Admin component methods
     public static function DashboardItTechnician_Users($days)
     {
         $sp = 'CALL uspDashboardItTechnician_Users(?)';
@@ -81,14 +81,15 @@ class DbHandler
     public static function ChangePassword_OldCheck($userID, $userPassword)
     {
         $sp = 'CALL uspChangePassword_OldCheck(?,?)';
-        $param = array(&$userID,&$userPassword);
+        $param = array(&$userID, &$userPassword);
         return DBHelper::SelectParam($sp, $param);
     }
+
     public static function ChangePassword_UpdatePassword($userID, $userPassword)
     {
         $sp = 'CALL uspChangePassword_UpdatePassword(?,?)';
-        $param = array(&$userID,&$userPassword);
-        return DBHelper::ExecuteNonQuery($sp,$param);
+        $param = array(&$userID, &$userPassword);
+        return DBHelper::ExecuteNonQuery($sp, $param);
     }
 
     // Update personal info component methods
@@ -96,7 +97,7 @@ class DbHandler
     {
         $sp = 'CALL uspUpdatePersonalInfo_SpecificUser(?)';
         $param = array(&$userID);
-        return DBHelper::SelectParam($sp,$param);
+        return DBHelper::SelectParam($sp, $param);
     }
 
     public static function UpdatePersonalInfo_Suburb()
@@ -110,5 +111,54 @@ class DbHandler
         $sp = 'CALL uspUpdatePersonalInfo_UpdateInfo (?,?,?,?,?,?,?,?,?)';
         $param = array(&$uI, &$fN, &$lN, &$dob, &$cN, &$eA, &$a1, &$a2, &$sub);
         return DBHelper::ExecuteNonQuery($sp, $param);
+    }
+
+    // Business settings component methods
+    public static function BusinessSetting_Info()
+    {
+        $sp = 'CALL uspBusinessSetting_Info';
+        return DBHelper::Select($sp);
+    }
+
+    public static function BusinessSetting_LogoUpload($image)
+    {
+        $sp = 'CALL uspBusinessSetting_LogoUpload(?)';
+        return DBHelper::BlobUpload($sp, $image);
+    }
+
+    public static function BusinessSetting_Update($name, $contact, $website, $vat, $cityID)
+    {
+        $sp = 'CALL uspBusinessSetting_Update(?,?,?,?,?)';
+        $param = array(&$name, &$contact, &$website, &$vat, &$cityID);
+        return DBHelper::ExecuteNonQuery($sp, $param);
+    }
+
+    public static function BusinessSetting_LogoDownload()
+    {
+        $sp = 'CALL uspBusinessSetting_LogoDownload';
+        return DBHelper::BlobRetrieve($sp);
+    }
+
+    // User report component methods
+    public static function UserReport_Users($typeDesc,$cityName,$suburbName)
+    {
+        $sp='CALL uspUserReport_Users(?,?,?)';
+        $param = array(&$typeDesc,&$cityName,&$suburbName);
+        return DBHelper::SelectParam($sp,$param);
+    }
+
+    // Create owner component methods
+    public static function CreateOwner_Create($firstName,$lastName,$contactNumber,$email,$address1,$address2,$suburb)
+    {
+        $sp = 'CALL uspCreateOwner_Create (?,?,?,?,?,?,?)';
+        $param = array(&$firstName,&$lastName,&$contactNumber,&$email,&$address1,&$address2,&$suburb);
+        return DBHelper::SelectParam($sp,$param);
+    }
+
+    // Manage owner component methods
+    public static function ManageOwner_Owners()
+    {
+        $sp = 'CALL uspManageOwner_Owners';
+        return DBHelper::Select($sp);
     }
 }
