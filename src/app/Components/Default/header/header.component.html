@@ -67,6 +67,17 @@
                     </mat-menu>
                 </a>
 
+                <a mat-list-item [mat-menu-trigger-for]="menu2">
+                    <mat-icon matPrefix>location_city</mat-icon>
+                    <span>Property</span>
+                    <mat-menu #menu2='matMenu' xPosition="before">
+                        <a mat-menu-item routerLink="/Add_Property">
+                            <mat-icon matPrefix>add_box</mat-icon>
+                            <span>Add Property</span>
+                        </a>
+                    </mat-menu>
+                </a>
+
                 <a mat-list-item routerLink="">
                     <mat-icon matPrefix>assignment</mat-icon>
                     Reports
@@ -79,7 +90,7 @@
             <!--Maintenance Supervisor ends here-->
 
             <span class="spacer"></span>
-            <div class="footer">
+            <div class="fixedBottom">
                 <a mat-list-item [matMenuTriggerFor]="menu">
                     <mat-icon matPrefix>account_circle</mat-icon>
                     <span>{{userName}}</span></a>
@@ -101,8 +112,8 @@
             </div>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-        <mat-toolbar color="primary">
+    <mat-sidenav-content class="d-flex flex-column h-100">
+        <mat-toolbar color="primary" style="min-height:64px">
             <button
                     type="button"
                     aria-label="Toggle sidenav"
@@ -115,10 +126,12 @@
         </mat-toolbar>
 
         <!--Own content dynamic printing-->
-        <ng-content></ng-content>
-
+        <ng-content ></ng-content>
+        <!--Footer-->
+        <app-footer class="mt-auto"></app-footer>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
 
 <!-- Confirmation Dialog-->
 <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

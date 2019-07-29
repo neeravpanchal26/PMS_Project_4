@@ -1,0 +1,157 @@
+<!--Header-->
+<app-header>
+    <!--Add property form-->
+    <mat-card class="mat-elevation-z8 margin">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>add</mat-icon>
+            <mat-card-title>Add new property</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form (ngSubmit)="addProperty(addPropertyForm)" [formGroup]="addPropertyForm">
+                <h5>General information</h5>
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Property Name" type="text" formControlName="name">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['name'].hasError('required')">Property name is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="addPropertyForm.controls['name'].hasError('maxlength')">Property name may only
+                            contain 45 characters.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="col-lg-6">
+                        <input type="file" accept="image/jpeg,image/png" #PropPhoto
+                               (input)="img=$event.target.files[0]['name']" hidden>
+                        <mat-form-field>
+                            <mat-label>Property Photos</mat-label>
+                            <input matInput type="text" [value]="img" disabled>
+                            <button mat-mini-fab color="primary" type="button" matSuffix (click)="PropPhoto.click()">
+                                <mat-icon>add_photo_alternate</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="1234 Main St" formControlName="address1">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['address1'].hasError('required')">Address is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="addPropertyForm.controls['address1'].hasError('maxlength')">Address should not
+                            exceed 100 characters.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Apartment, studio, or floor" formControlName="address2">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['address2'].hasError('required')">Address 2 is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="addPropertyForm.controls['address2'].hasError('maxlength')">Address 2 should
+                            not
+                            exceed 100 characters.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>City</mat-label>
+                        <mat-select formControlName="city" (selectionChange)="suburbLoad($event.value)">
+                            <mat-option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</mat-option>
+                        </mat-select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['city'].hasError('required')">A city must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Suburb</mat-label>
+                        <mat-select formControlName="suburb" [disabled]="addPropertyForm.value['city'] === null">
+                            <mat-option *ngFor="let s of suburbs" [value]="s.SuburbID">{{s.SuburbName}}</mat-option>
+                        </mat-select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['suburb'].hasError('required')">A suburb must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <hr>
+
+                <div class="form-row">
+                    <div class="col-lg-6">
+                        <h5>Status</h5>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h5>Type</h5>
+                        <mat-radio-group color="primary" formControlName="type">
+                            <mat-radio-button *ngFor="let p of PropType" [value]="p.ResidenceTypeID">
+                                <mat-icon>{{p.iconName}}</mat-icon>
+                                <span class="aligned-with-icon">
+                                {{p.ResidenceTypeDesc}}
+                                </span>
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+                <hr>
+                <h5>Personal information</h5>
+                <div class="form-row">
+                    <mat-form-field class="col-lg-12">
+                        <mat-label>Owner</mat-label>
+                        <mat-select formControlName="owner" (selectionChange)="suburbLoad($event.value)">
+                            <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.OwnerID}} - {{o.fullName}}</mat-option>
+                        </mat-select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['owner'].hasError('owner')">A owner must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <hr>
+                <h5>Additional information</h5>
+                <div class="form-row">
+                    <mat-form-field class="col-3">
+                        <label>No. of Bedrooms</label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-3">
+                        <label>No. of Bathrooms</label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-3">
+                        <label>Size</label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-3">
+                        <label>Year built</label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" style="display: none" #submit></button>
+                    <button mat-flat-button color="primary" type="button" data-toggle="modal"
+                            data-target="#exampleModalCenter">Save
+                    </button>
+                    <button mat-stroked-button type="button" data-toggle="modal" data-target="#exampleModalCenter1">
+                        Clear
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</app-header>

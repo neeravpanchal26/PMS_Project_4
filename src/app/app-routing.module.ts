@@ -26,6 +26,7 @@ import {ResetPasswordComponent} from './Components/It Admin/reset-password/reset
 import {UserReportsComponent} from './Components/It Admin/user-reports/user-reports.component';
 
 // Maintenance supervisor component
+import {AddPropertyComponent} from './Components/Maintenance Supervisor/add-property/add-property.component';
 import {CreateOwnerComponent} from './Components/Maintenance Supervisor/create-owner/create-owner.component';
 import {DashboardMaintenanceSupervisorComponent} from './Components/Maintenance Supervisor/dashboard-maintenance-supervisor/dashboard-maintenance-supervisor.component';
 import {ManageOwnerComponent} from './Components/Maintenance Supervisor/manage-owner/manage-owner.component';
@@ -48,6 +49,7 @@ const routes: Routes = [
     {path: 'User_Reports', canActivate: [LoginGuard], component: UserReportsComponent},
 
     // Maintenance supervisor component
+    {path: 'Add_Property', canActivate: [LoginGuard], component: AddPropertyComponent},
     {path: 'Create_Owner', canActivate: [LoginGuard], component: CreateOwnerComponent},
     {path: 'Dashboard_Supervisor', canActivate: [LoginGuard], component: DashboardMaintenanceSupervisorComponent},
     {path: 'Manage_Owners', canActivate: [LoginGuard], component: ManageOwnerComponent},
@@ -85,6 +87,7 @@ export const routingComponents = [
     UserReportsComponent,
 
     // Maintenance supervisor
+    AddPropertyComponent,
     CreateOwnerComponent,
     DashboardMaintenanceSupervisorComponent,
     ManageOwnerComponent,

@@ -1,0 +1,2 @@
+#n:uspCreateOwner_Create
+#i:(varchar(45),varchar(45),varchar(10),varchar(200),varchar(45),varchar(45),int(11))

@@ -121,4 +121,13 @@ export class SnackbarNotificationService {
             panelClass: ['success'],
         });
     }
+
+    // Update owner component notification
+    UpdateOwnerSuccess(firstName, surname) {
+        this.snackBar.open(firstName + ' ' + surname + ' has been updated.', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['success'],
+        });
+    }
 }

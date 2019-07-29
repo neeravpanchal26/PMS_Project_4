@@ -20,6 +20,7 @@ import {MatSlideToggleModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTableExporterModule} from 'mat-table-exporter';
+import {MatRadioModule} from '@angular/material';
 
 @NgModule({
     imports: [
@@ -44,6 +45,7 @@ import {MatTableExporterModule} from 'mat-table-exporter';
         MatDialogModule,
         MatDividerModule,
         MatTableExporterModule,
+        MatRadioModule,
         MatFormFieldModule],
     exports: [
         MatButtonModule,
@@ -67,6 +69,7 @@ import {MatTableExporterModule} from 'mat-table-exporter';
         MatDialogModule,
         MatDividerModule,
         MatTableExporterModule,
+        MatRadioModule,
         MatFormFieldModule],
     providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-ZA'}]
 })

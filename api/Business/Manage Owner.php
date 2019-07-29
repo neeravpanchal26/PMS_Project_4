@@ -15,4 +15,7 @@ $action = $_GET['action'];
 
 if($action == 'owners') {
     echo json_encode(DbHandler::ManageOwner_Owners());
+} elseif($action == 'status') {
+    $json = json_decode(file_get_contents('php://input'));
+    echo json_encode(DbHandler::ManageOwner_Status($json->userID,$json->status));
 }

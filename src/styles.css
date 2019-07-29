@@ -34,7 +34,7 @@ body {
 }
 
 /*Footer Styles*/
-.footer {
+.fixedBottom {
     bottom: 0;
     width: 100%;
     position: absolute;

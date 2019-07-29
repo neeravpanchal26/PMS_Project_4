@@ -1,1 +1,140 @@
-<p>update-owner-info works!</p>
+<!--Header-->
+<app-header>
+    <!--Create user form-->
+    <mat-card class="mat-elevation-z8 margin">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>edit</mat-icon>
+            <mat-card-title>Edit owner information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form (ngSubmit)="updateOwner(updateOwnerForm)" [formGroup]="updateOwnerForm">
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="First name" type="text" formControlName="name">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updateOwnerForm.controls['name'].hasError('required')">First name is required.
+                        </mat-error>
+                        <mat-error *ngIf="updateOwnerForm.controls['name'].hasError('maxlength')">First name may only
+                            contain 45 characters.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Last name" type="text" formControlName="surname">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updateOwnerForm.controls['surname'].hasError('required')">Last name is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="updateOwnerForm.controls['surname'].hasError('maxlength')">Last name may only
+                            contain 45 characters.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Contact Number" formControlName="contact" type="tel"
+                               pattern="[0-9]{3}[0-9]{3}[0-9]{4}" max="10">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updateOwnerForm.controls['contact'].hasError('required')">Contact number is
+                            required.
+                        </mat-error>
+                        <mat-error
+                                *ngIf="updateOwnerForm.controls['contact'].hasError('maxlength') || updateOwnerForm.controls['contact'].hasError('minlength')">
+                            Contact number may only be 10 characters.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Email address" formControlName="email" type="email">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="emailCheck">It seems this email exists on our system.</mat-error>
+                        <mat-error *ngIf="updateOwnerForm.controls['email'].hasError('required')">Email is required.
+                        </mat-error>
+                        <mat-error *ngIf="updateOwnerForm.controls['email'].hasError('maxlength')">Email may only be 200
+                            characters.
+                        </mat-error>
+                        <mat-error *ngIf="updateOwnerForm.controls['email'].hasError('pattern')">Check your email format.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-12">
+                        <input matInput placeholder="1234 Main St" formControlName="address1">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updateOwnerForm.controls['address1'].hasError('required')">Address is required.
+                        </mat-error>
+                        <mat-error *ngIf="updateOwnerForm.controls['address1'].hasError('maxlength')">Address should not
+                            exceed 100 characters.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-12">
+                        <input matInput placeholder="Apartment, studio, or floor" formControlName="address2">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updateOwnerForm.controls['address2'].hasError('required')">Address 2 is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="updateOwnerForm.controls['address2'].hasError('maxlength')">Address 2 should
+                            not
+                            exceed 100 characters.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>City</mat-label>
+                        <select matNativeControl formControlName="city" (change)="suburbLoad($event.target.value)">
+                            <option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</option>
+                        </select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updateOwnerForm.controls['city'].hasError('required')">A city must be selected.</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Suburb</mat-label>
+                        <select matNativeControl formControlName="suburb">
+                            <option *ngFor="let s of suburbs" [value]="s.SuburbID">{{s.SuburbName}}</option>
+                        </select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updateOwnerForm.controls['suburb'].hasError('required')">A suburb must be selected.</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" style="display: none" #submit></button>
+                    <button mat-flat-button color="primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Update</button>
+                    <button mat-stroked-button type="button" (click)="location.back()">Go back</button>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</app-header>
+
+<!-- Confirmation Dialog-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to apply these new changes?
+            </div>
+            <div class="modal-footer">
+                <button mat-flat-button color="primary" type="button" data-dismiss="modal" (click)="submit.click()">Yes</button>
+                <button mat-stroked-button type="button" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

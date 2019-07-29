@@ -2,7 +2,7 @@
 <form (ngSubmit)="loginCheck(loginForm)" [formGroup]="loginForm" class="center">
     <img [src]="logo" *ngIf="logo" width="310" alt="PMS Logo">
     <br>
-    <h1 class="mat-h1" align="center">Please login</h1>
+    <h1 class="mat-h1" align="center">Login</h1>
     <!--Email Input-->
     <mat-form-field class="width" appearance="outline">
         <mat-label>Email</mat-label>
@@ -26,5 +26,5 @@
     <div align="center">
         <button mat-raised-button class="width" type="submit">Login</button>
     </div>
+    <p class="mt-5 mb-3 footer mat-subheading-1 text-center">©{{date.getFullYear()}}</p>
 </form>
-<footer class="footer mat-subheading-1">©{{date.getFullYear()}}</footer>

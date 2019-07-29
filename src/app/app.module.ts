@@ -13,7 +13,7 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
 @NgModule({
     declarations: [
         AppComponent,
-        routingComponents
+        routingComponents,
     ],
     imports: [
         HttpClientModule,

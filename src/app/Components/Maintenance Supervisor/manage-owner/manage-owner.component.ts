@@ -38,6 +38,8 @@ export class ManageOwnerComponent implements OnInit {
             );
     }
 
+    // Change owner status
+
     // Search filter
     applyFilter(filterValue: string) {
         this.dataSource.filter = filterValue.trim().toLowerCase();

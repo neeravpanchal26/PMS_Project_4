@@ -140,25 +140,67 @@ class DbHandler
     }
 
     // User report component methods
-    public static function UserReport_Users($typeDesc,$cityName,$suburbName)
+    public static function UserReport_Users($typeDesc, $cityName, $suburbName)
     {
-        $sp='CALL uspUserReport_Users(?,?,?)';
-        $param = array(&$typeDesc,&$cityName,&$suburbName);
-        return DBHelper::SelectParam($sp,$param);
+        $sp = 'CALL uspUserReport_Users(?,?,?)';
+        $param = array(&$typeDesc, &$cityName, &$suburbName);
+        return DBHelper::SelectParam($sp, $param);
     }
 
     // Create owner component methods
-    public static function CreateOwner_Create($firstName,$lastName,$contactNumber,$email,$address1,$address2,$suburb)
+    public static function CreateOwner_Create($firstName, $lastName, $contactNumber, $email, $address1, $address2, $suburb)
     {
         $sp = 'CALL uspCreateOwner_Create (?,?,?,?,?,?,?)';
-        $param = array(&$firstName,&$lastName,&$contactNumber,&$email,&$address1,&$address2,&$suburb);
-        return DBHelper::SelectParam($sp,$param);
+        $param = array(&$firstName, &$lastName, &$contactNumber, &$email, &$address1, &$address2, &$suburb);
+        return DBHelper::SelectParam($sp, $param);
     }
 
     // Manage owner component methods
     public static function ManageOwner_Owners()
     {
         $sp = 'CALL uspManageOwner_Owners';
+        return DBHelper::Select($sp);
+    }
+
+    public static function ManageOwner_Status($ownerID, $ownerStatus)
+    {
+        $sp = 'CALL uspManageOwner_Status(?,?)';
+        $param = array(&$ownerID, &$ownerStatus);
+        return DBHelper::ExecuteNonQuery($sp, $param);
+    }
+
+    // Update owner component methods
+    public static function UpdateOwnerInfo_SpecificOwner($ownerID)
+    {
+        $sp = 'CALL uspUpdateOwnerInfo_SpecificOwner (?)';
+        $param = array(&$ownerID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function UpdateOwnerInfo_UpdateInfo($ownerID, $firstName, $lastName, $contactNumber, $email, $address1, $address2, $suburb)
+    {
+        $sp = 'CALL uspUpdateOwnerInfo_UpdateInfo (?,?,?,?,?,?,?,?)';
+        $param = array(&$ownerID, &$firstName, &$lastName, &$contactNumber, &$email, &$address1, &$address2, &$suburb);
+        return DBHelper::ExecuteNonQuery($sp, $param);
+    }
+
+    // Add property component methods
+    public static function AddProperty_Add($Name, $Address1, $Address2, $Suburb, $YearBuilt, $Type, $Owner, $Bedrooms, $Bathrooms, $Size, $Status)
+    {
+        $sp = 'CALL uspAddProperty_Add(?,?,?,?,?,?,?,?,?,?,?)';
+        $param = array(&$Name, &$Address1, &$Address2, &$Suburb, &$YearBuilt, &$Type, &$Owner, &$Bedrooms, &$Bathrooms, &$Size, &$Status);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function AddProperty_PropType()
+    {
+        $sp = 'CALL uspAddProperty_PropType';
+        return DBHelper::Select($sp);
+    }
+
+    public static function AddProperty_Owner()
+    {
+        $sp = 'CALL uspAddProperty_Owner';
         return DBHelper::Select($sp);
     }
 }
