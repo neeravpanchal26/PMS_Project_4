@@ -10,10 +10,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 
+
 @NgModule({
     declarations: [
         AppComponent,
-        routingComponents,
+        routingComponents
     ],
     imports: [
         HttpClientModule,
@@ -23,7 +24,7 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
         ReactiveFormsModule,
         BrowserAnimationsModule,
         MaterialModule,
-        MatPasswordStrengthModule.forRoot(),
+        MatPasswordStrengthModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]

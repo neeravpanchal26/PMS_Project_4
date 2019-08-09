@@ -1,0 +1,66 @@
+<!--Header-->
+<app-header>
+    <mat-card class="mat-elevation-z8 margin">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>location_city</mat-icon>
+            <mat-card-title>Manage all properties</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <!--Search-->
+            <mat-form-field>
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+            </mat-form-field>
+
+            <!--Table-->
+            <mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="PropertyID">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Property ID</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Property ID">{{row.PropertyID}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Property Name</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Property Name">{{row.Name}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Address1">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Address 1</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Address 1">{{row.Address1}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ResidenceTypeDesc">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Type">{{row.ResidenceTypeDesc}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Owner">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Owner</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Owner">{{row.Owner}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Desc">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Status">{{row.Desc}}</mat-cell>
+                </ng-container>
+
+                <!--Dummy column-->
+                <ng-container matColumnDef="Assign">
+                    <mat-header-cell *matHeaderCellDef>Assign</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Assign">
+                        <button mat-stroked-button routerLink="/Update_Owner_Information/{{row.OwnerID}}">
+                            <mat-icon matPrefix>edit</mat-icon>
+                            Edit
+                        </button>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+            <!--Paginantion-->
+            <mat-paginator [pageSizeOptions]="[10, 25, 100, 200]"></mat-paginator>
+        </mat-card-content>
+    </mat-card>
+</app-header>

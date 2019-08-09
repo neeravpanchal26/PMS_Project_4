@@ -21,17 +21,15 @@
                         </mat-error>
                     </mat-form-field>
 
-                    <div class="col-lg-6">
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Property Photos</mat-label>
+                        <input matInput type="text" [value]="img" disabled>
+                        <button mat-mini-fab  matSuffix color="primary" type="button" (click)="PropPhoto.click()">
+                            <mat-icon>add_photo_alternate</mat-icon>
+                        </button>
                         <input type="file" accept="image/jpeg,image/png" #PropPhoto
-                               (input)="img=$event.target.files[0]['name']" hidden>
-                        <mat-form-field>
-                            <mat-label>Property Photos</mat-label>
-                            <input matInput type="text" [value]="img" disabled>
-                            <button mat-mini-fab color="primary" type="button" matSuffix (click)="PropPhoto.click()">
-                                <mat-icon>add_photo_alternate</mat-icon>
-                            </button>
-                        </mat-form-field>
-                    </div>
+                               (input)="img=$event.target.files[0]['name']" hidden multiple="multiple">
+                    </mat-form-field>
                 </div>
 
                 <div class="form-row">
@@ -88,15 +86,21 @@
                 <div class="form-row">
                     <div class="col-lg-6">
                         <h5>Status</h5>
+                        <mat-radio-group color="primary" formControlName="status" class="example-radio-group">
+                            <mat-radio-button *ngFor="let s of status" [value]="s.PropertyStatusID">
+                                <mat-icon class="pt-2">{{s.iconName}}</mat-icon>
+                                {{s.Desc}}
+                            </mat-radio-button>
+                        </mat-radio-group>
                     </div>
 
                     <div class="col-lg-6">
                         <h5>Type</h5>
-                        <mat-radio-group color="primary" formControlName="type">
-                            <mat-radio-button *ngFor="let p of PropType" [value]="p.ResidenceTypeID">
-                                <mat-icon>{{p.iconName}}</mat-icon>
-                                <span class="aligned-with-icon">
-                                {{p.ResidenceTypeDesc}}
+                        <mat-radio-group color="primary" formControlName="type" class="example-radio-group">
+                            <mat-radio-button *ngFor="let p of PropType" [value]="p.ResidenceTypeID" class="aligned-with-icon">
+                                <mat-icon class="pt-2">{{p.iconName}}</mat-icon>
+                                <span class="pb-2">
+                                    {{p.ResidenceTypeDesc}}
                                 </span>
                             </mat-radio-button>
                         </mat-radio-group>
@@ -109,10 +113,11 @@
                     <mat-form-field class="col-lg-12">
                         <mat-label>Owner</mat-label>
                         <mat-select formControlName="owner" (selectionChange)="suburbLoad($event.value)">
-                            <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.OwnerID}} - {{o.fullName}}</mat-option>
+                            <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.OwnerID}}
+                                - {{o.fullName}}</mat-option>
                         </mat-select>
                         <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['owner'].hasError('owner')">A owner must be
+                        <mat-error *ngIf="addPropertyForm.controls['owner'].hasError('required')">A owner must be
                             selected.
                         </mat-error>
                     </mat-form-field>
@@ -121,37 +126,77 @@
                 <hr>
                 <h5>Additional information</h5>
                 <div class="form-row">
-                    <mat-form-field class="col-3">
-                        <label>No. of Bedrooms</label>
-                        <input matInput>
+                    <mat-form-field class="col-lg-3">
+                        <input matInput placeholder="No. of Bedrooms" formControlName="bedroom">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['bedroom'].hasError('required')">Number of bedrooms
+                            is required.
+                        </mat-error>
+                        <mat-error *ngIf="addPropertyForm.controls['bedroom'].hasError('min')">At least 1 bedroom is
+                            required.
+                        </mat-error>
                     </mat-form-field>
 
-                    <mat-form-field class="col-3">
-                        <label>No. of Bathrooms</label>
-                        <input matInput>
+                    <mat-form-field class="col-lg-3">
+                        <input matInput placeholder="No. of bathroom" formControlName="bathroom">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['bathroom'].hasError('required')">Number of bathroom
+                            is required.
+                        </mat-error>
+                        <mat-error *ngIf="addPropertyForm.controls['bathroom'].hasError('min')">At least 1 bathroom is
+                            required.
+                        </mat-error>
                     </mat-form-field>
 
-                    <mat-form-field class="col-3">
-                        <label>Size</label>
-                        <input matInput>
+                    <mat-form-field class="col-lg-3">
+                        <input matInput placeholder="Size (Sq.Ft)" formControlName="size">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['size'].hasError('required')">Size of the place is
+                            required.
+                        </mat-error>
                     </mat-form-field>
 
-                    <mat-form-field class="col-3">
-                        <label>Year built</label>
-                        <input matInput>
+                    <mat-form-field class="col-lg-3">
+                        <input matInput placeholder="Year Built" formControlName="year">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['year'].hasError('required')">Year built is
+                            required.
+                        </mat-error>
                     </mat-form-field>
                 </div>
 
-                <div class="form-row">
-                    <button type="submit" style="display: none" #submit></button>
+                <div class="float-right mt-1">
+                    <button type="submit" hidden #submit></button>
                     <button mat-flat-button color="primary" type="button" data-toggle="modal"
-                            data-target="#exampleModalCenter">Save
+                            data-target="#exampleModalCenter" class="mr-1">Save
                     </button>
-                    <button mat-stroked-button type="button" data-toggle="modal" data-target="#exampleModalCenter1">
-                        Clear
-                    </button>
+                    <button mat-stroked-button type="button" (click)="location.back()" class="ml-1">Back</button>
                 </div>
             </form>
         </mat-card-content>
     </mat-card>
 </app-header>
+
+<!-- Confirmation Dialog-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to add this property?
+            </div>
+            <div class="modal-footer">
+                <button mat-flat-button color="primary" type="button" (click)="submit.click()" data-dismiss="modal">
+                    Yes
+                </button>
+                <button mat-stroked-button type="button" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,7 +14,7 @@ export class SnackbarNotificationService {
         this.snackBar.open('An error has occurred ' + error.message + 'Please contact the administrator for further assistance.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['danger']
+            panelClass: ['snack']
         });
     }
 
@@ -23,16 +23,16 @@ export class SnackbarNotificationService {
         this.snackBar.open('Your form is invalid.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['danger']
+            panelClass: ['snack']
         });
     }
 
     // Login component notifications
     loginSuccess(username) {
-        this.snackBar.open('Welcome ' + username, '', {
+        this.snackBar.open('Welcome  ' + username, '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -40,7 +40,7 @@ export class SnackbarNotificationService {
         this.snackBar.open('Change a few things up and try again.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['danger']
+            panelClass: ['snack']
         });
     }
 
@@ -48,7 +48,7 @@ export class SnackbarNotificationService {
         this.snackBar.open('Your account has been deactivated. Please contact the administrator. ' + username, '', {
             duration: 10000,
             horizontalPosition: 'end',
-            panelClass: ['warning']
+            panelClass: ['snack']
         });
     }
 
@@ -57,7 +57,7 @@ export class SnackbarNotificationService {
         this.snackBar.open(firstName + ' ' + surname + ' has been added to the system. User is currently deactivated.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -66,7 +66,7 @@ export class SnackbarNotificationService {
         this.snackBar.open(userName + ' \'s role has been changed!', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -74,7 +74,7 @@ export class SnackbarNotificationService {
         this.snackBar.open(userName + ' \'s account has been activated!', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -82,7 +82,7 @@ export class SnackbarNotificationService {
         this.snackBar.open(userName + ' \'s account has been deactivated!', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -91,7 +91,7 @@ export class SnackbarNotificationService {
         this.snackBar.open('Your password has been updated.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -100,7 +100,7 @@ export class SnackbarNotificationService {
         this.snackBar.open(userName + ' your personal information has been updated.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -109,7 +109,7 @@ export class SnackbarNotificationService {
         this.snackBar.open('Your business information has been updated.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -118,7 +118,7 @@ export class SnackbarNotificationService {
         this.snackBar.open(firstName + ' ' + surname + ' has been added to the system.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
         });
     }
 
@@ -127,7 +127,16 @@ export class SnackbarNotificationService {
         this.snackBar.open(firstName + ' ' + surname + ' has been updated.', '', {
             duration: 3000,
             horizontalPosition: 'end',
-            panelClass: ['success'],
+            panelClass: ['snack'],
+        });
+    }
+
+    // Add property component notification
+    AddPropertySuccess(Name) {
+        this.snackBar.open(Name + ' has been added.', '', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            panelClass: ['snack'],
         });
     }
 }

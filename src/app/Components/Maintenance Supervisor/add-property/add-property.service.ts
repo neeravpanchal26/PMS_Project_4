@@ -30,6 +30,16 @@ export class AddPropertyService {
     getOwner(): Observable<any> {
         return this.http.get(this.apiUrl + '/api/Business/Add Property.php?action=owner') as Observable<any>;
     }
+
+    // Property status
+    getStatus(): Observable<any> {
+        return this.http.get(this.apiUrl + '/api/Business/Add Property.php?action=status') as Observable<any>;
+    }
+
+    // Property images upload
+    uploadImage(param: FormData): Observable<any> {
+        return this.http.post(this.apiUrl + '/api/Business/Add Property.php?action=imageUpload', param) as Observable<any>;
+    }
 }
 
 // Wrapper interface

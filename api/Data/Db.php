@@ -16,6 +16,12 @@ class Db
     private static $dbPass = 'password1';
     private static $dbName = 'pms_schema';
 
+    // NMU Setup
+//    private static $dbHost = 'sict-mysql.nmmu.ac.za';
+//    private static $dbUser = 'pms';
+//    private static $dbPass = 'SICT2019';
+//    private static $dbName = 'pms_schema';
+
     // Connection
     protected static function Connect()
     {

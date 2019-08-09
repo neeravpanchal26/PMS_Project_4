@@ -23,7 +23,7 @@ export class UserReportsComponent implements OnInit {
 
     // Data Table
     dataSource: MatTableDataSource<any>;
-    displayedColumns: string[] = ['UserID', 'username', 'ContactNumber', 'UserTypeDesc', 'SuburbName', 'CityName'];
+    displayedColumns: string[] = ['UserID', 'username', 'ContactNumber', 'UserTypeDesc', 'CityName', 'SuburbName'];
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 

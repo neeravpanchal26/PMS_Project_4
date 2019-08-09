@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 // Custom imports
-import {AddPropertyService} from './add-property.service';
+import {AddPropertyService, IProperty} from './add-property.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SnackbarNotificationService} from '../../../Global Services/snackbar-notification.service';
 import {CreateUserService} from '../../It Admin/create-user/create-user.service';
+import {Location} from '@angular/common';
 
 @Component({
     selector: 'app-add-property',
@@ -18,13 +19,18 @@ export class AddPropertyComponent implements OnInit {
     public cities: any;
     public suburbs: any;
     public owners: any;
+    public status: any;
     public PropType: any;
+
+    // Native Html Elements
+    @ViewChild('PropPhoto', {static: false}) PropPhoto;
 
     // Default constructor
     constructor(private service: AddPropertyService,
                 private snackBar: SnackbarNotificationService,
                 private formBuilder: FormBuilder,
-                private CService: CreateUserService) {
+                private CService: CreateUserService,
+                public location: Location) {
     }
 
     // Form load
@@ -52,11 +58,64 @@ export class AddPropertyComponent implements OnInit {
                 data => this.owners = data,
                 error => this.snackBar.handleError(error)
             );
+
+        // Status load up
+        this.service.getStatus()
+            .subscribe(
+                data => this.status = data,
+                error => this.snackBar.handleError(error)
+            );
     }
 
     // Add property
     addProperty(e) {
+        if (e.valid) {
+            const param: IProperty = {
+                Name: e.value.name,
+                Address1: e.value.address1,
+                Address2: e.value.address2,
+                Suburb: e.value.suburb,
+                YearBuilt: e.value.year,
+                Type: e.value.type,
+                Owner: e.value.owner,
+                Bedrooms: e.value.bedroom,
+                Bathrooms: e.value.bathroom,
+                Size: e.value.size,
+                Status: e.value.status
+            };
+            this.service.AddProperty(param)
+                .subscribe(
+                    data => {
+                        const r = data[0];
+                        if (r.TRUE === 1) {
+                            this.snackBar.AddPropertySuccess(param.Name);
 
+                            // Image upload
+                            try {
+                                // File validation
+                                const images = this.PropPhoto.nativeElement;
+                                const allowedImages = ['image/jpeg', 'image/png'];
+                                for (const i of images.files) {
+                                    if (allowedImages.indexOf(i.type) > -1) {
+                                        // Logo upload
+                                        const frmData = new FormData();
+                                        frmData.append('file', i);
+                                        this.service.uploadImage(frmData)
+                                            .subscribe(data1 =>
+                                                e.reset()
+                                            );
+                                    }
+                                }
+                            } catch {
+                            }
+                        }
+                    },
+                    error => this.snackBar.handleError(error));
+
+
+        } else if (e.invalid) {
+            this.snackBar.formFailure();
+        }
     }
 
     // Suburb Load up

@@ -3,7 +3,7 @@ export const environment = {
     // Digital Ocean
     // api:'https://bit1ims.club'
     // Nmu
-    // api:'http://sict-iis.nmmu.ac.za/bit1'
+    api: 'http://sict-iis.nmmu.ac.za/PMS'
     // Local Setup
-    api: 'http://localhost:8200'
+    // api: 'http://localhost:8000'
 };

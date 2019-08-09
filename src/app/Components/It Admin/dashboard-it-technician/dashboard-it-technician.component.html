@@ -39,12 +39,12 @@
             <mat-table [dataSource]="dataSource" matSort>
                 <ng-container matColumnDef="UserID">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
-                    <mat-cell *matCellDef="let row">{{row.UserID}}</mat-cell>
+                    <mat-cell *matCellDef="let row" data-label="User ID">{{row.UserID}}</mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="FirstName">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
-                    <mat-cell *matCellDef="let row">{{row.FirstName}} {{row.Surname}}</mat-cell>
+                    <mat-cell *matCellDef="let row" data-label="Username">{{row.FirstName}} {{row.Surname}}</mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="Surname">
@@ -54,12 +54,12 @@
 
                 <ng-container matColumnDef="count">
                     <mat-header-cell *matHeaderCellDef mat-sort-header># of Login's</mat-header-cell>
-                    <mat-cell *matCellDef="let row">{{row.count}}</mat-cell>
+                    <mat-cell *matCellDef="let row" data-label="# of Login's">{{row.count}}</mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="lastAccess">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Latest Access</mat-header-cell>
-                    <mat-cell *matCellDef="let row">{{row.lastAccess}}</mat-cell>
+                    <mat-cell *matCellDef="let row" data-label="Latest Access">{{row.lastAccess}}</mat-cell>
                 </ng-container>
 
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

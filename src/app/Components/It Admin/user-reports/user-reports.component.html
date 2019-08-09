@@ -64,14 +64,14 @@
                     <mat-cell *matCellDef="let row">{{row.UserTypeDesc}}</mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="SuburbName">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Suburb</mat-header-cell>
-                    <mat-cell *matCellDef="let row">{{row.SuburbName}}</mat-cell>
-                </ng-container>
-
                 <ng-container matColumnDef="CityName">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
                     <mat-cell *matCellDef="let row">{{row.CityName}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="SuburbName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Suburb</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.SuburbName}}</mat-cell>
                 </ng-container>
 
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

@@ -19,13 +19,13 @@
                     <mat-icon matPrefix>people</mat-icon>
                     <span>Users</span>
                     <mat-menu #menu1="matMenu" xPosition="before">
-                        <a mat-menu-item routerLink="/Create_User">
+                        <a mat-menu-item routerLink="/Create_User" class="noStyle">
                             <mat-icon matPrefix>person_add</mat-icon>
                             <span>Create user</span>
                         </a>
-                        <a mat-menu-item routerLink="/Manage_Users">
+                        <a mat-menu-item routerLink="/Manage_Users" class="noStyle">
                             <mat-icon matPrefix>people</mat-icon>
-                            <span>Manage users</span>
+                            <span>Users</span>
                         </a>
                     </mat-menu>
                 </a>
@@ -56,13 +56,13 @@
                     <mat-icon matPrefix>people</mat-icon>
                     <span>Owners</span>
                     <mat-menu #menu1="matMenu" xPosition="before">
-                        <a mat-menu-item routerLink="/Create_Owner">
+                        <a mat-menu-item routerLink="/Create_Owner" class="noStyle">
                             <mat-icon matPrefix>person_add</mat-icon>
                             <span>Create owner</span>
                         </a>
-                        <a mat-menu-item routerLink="/Manage_Owners">
+                        <a mat-menu-item routerLink="/Manage_Owners" class="noStyle">
                             <mat-icon matPrefix>people</mat-icon>
-                            <span>Manage owner</span>
+                            <span>Owners</span>
                         </a>
                     </mat-menu>
                 </a>
@@ -71,9 +71,13 @@
                     <mat-icon matPrefix>location_city</mat-icon>
                     <span>Property</span>
                     <mat-menu #menu2='matMenu' xPosition="before">
-                        <a mat-menu-item routerLink="/Add_Property">
+                        <a mat-menu-item routerLink="/Add_Property" class="noStyle">
                             <mat-icon matPrefix>add_box</mat-icon>
                             <span>Add Property</span>
+                        </a>
+                        <a mat-menu-item routerLink="/Manage_Property" class="noStyle">
+                            <mat-icon matPrefix>list</mat-icon>
+                            <span>Properties</span>
                         </a>
                     </mat-menu>
                 </a>
@@ -95,16 +99,16 @@
                     <mat-icon matPrefix>account_circle</mat-icon>
                     <span>{{userName}}</span></a>
                 <mat-menu #menu="matMenu" xPosition="before">
-                    <a mat-menu-item routerLink="/Update_Personal_Information">
+                    <a mat-menu-item routerLink="/Update_Personal_Information" class="noStyle">
                         <mat-icon>account_box</mat-icon>
                         Personal Info
                     </a>
-                    <a mat-menu-item routerLink="/Change_Password">
+                    <a mat-menu-item routerLink="/Change_Password" class="noStyle">
                         <mat-icon matPrefix>lock</mat-icon>
                         Change Password
                     </a>
                     <mat-divider></mat-divider>
-                    <a mat-menu-item data-toggle="modal" data-target="#logout">
+                    <a mat-menu-item data-toggle="modal" data-target="#logout" class="noStyle">
                         <mat-icon matPrefix>exit_to_app</mat-icon>
                         Logout
                     </a>

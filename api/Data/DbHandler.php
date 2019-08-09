@@ -203,4 +203,23 @@ class DbHandler
         $sp = 'CALL uspAddProperty_Owner';
         return DBHelper::Select($sp);
     }
+
+    public static function AddProperty_PropStatus()
+    {
+        $sp = 'CALL uspAddProperty_PropStatus';
+        return DBHelper::Select($sp);
+    }
+
+    public static function AddProperty_ImageUpload($image)
+    {
+        $sp = 'CALL uspAddProperty_ImageUpload(?)';
+        return DBHelper::BlobUpload($sp, $image);
+    }
+
+    // Manage property component methods
+    public static function ManageProperty_Properties()
+    {
+        $sp = 'CALL uspManageProperty_Properties';
+        return DBHelper::Select($sp);
+    }
 }
