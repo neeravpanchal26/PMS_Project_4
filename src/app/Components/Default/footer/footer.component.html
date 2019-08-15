@@ -1,11 +1,10 @@
 <footer>
-    <mat-toolbar *ngIf="businessInfo!= null">
-        <span class="p-2">{{businessInfo.BusinessName}}</span>
-        <span class="p-2">{{businessInfo.CityName}}</span>
-        <span class="p-2">{{businessInfo.BusinessContact}}</span>
-        <span class="p-2">{{businessInfo.BusinessWebsite}}</span>
+    <mat-toolbar *ngIf="businessInfo!= null" class="columnFlex">
+        <span class="flex1">{{businessInfo.CityName}}</span>
+        <span class="flex1">{{businessInfo.BusinessContact}}</span>
+        <span class="flex1">{{businessInfo.BusinessWebsite}}</span>
         <span class="spacer"></span>
-        <span>©{{date.getFullYear()}} NSP</span>
-    </mat-toolbar>
+        <span class="flex1">©{{date.getFullYear()}} NSP</span>
+       </mat-toolbar>
 </footer>
 

@@ -9,6 +9,11 @@ body {
     margin: 0;
 }
 
+/*Black Text*/
+.text-black {
+    color: rgba(0, 0, 0, 0.87);
+}
+
 /*Snackbar Theming*/
 .snack {
     background: #607d8b;
@@ -28,7 +33,7 @@ body {
     position: absolute;
 }
 
-/*Form fileds width*/
+/*Form field width*/
 .mat-form-field {
     font-size: 14px;
     width: 100%;

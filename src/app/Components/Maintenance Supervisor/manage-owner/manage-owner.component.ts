@@ -15,7 +15,7 @@ export class ManageOwnerComponent implements OnInit {
 
     // Data Table
     dataSource: MatTableDataSource<any>;
-    displayedColumns: string[] = ['OwnerID', 'owner', 'ContactNumber', 'Active', 'edit'];
+    displayedColumns: string[] = ['owner', 'ContactNumber', 'Email', 'propertyCount', 'Active', 'edit'];
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 

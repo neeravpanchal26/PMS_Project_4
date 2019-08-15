@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed02ffb1-ac65-4ea4-9b77-012b178c499c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/Business/Manage Property.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39/storage_v2/_src_/schema/pms_schema.6hu9Fg.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39/storage_v2/_src_/schema/pms_schema.6hu9Fg.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Business/Add Property.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Business/Add Property.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/Data/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Data/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Data/DbHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Data/DbHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/error/error.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/error/error.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/login/login.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.component.html" afterDir="false" />
@@ -22,20 +21,13 @@
       <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/reset-password/reset-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/reset-password/reset-password.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/material.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/material.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my-styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/my-styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -91,17 +83,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="106" column="26" lean-forward="true" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -112,13 +94,15 @@
       <find>Back</find>
       <find>style=&quot;display:none&quot;</find>
       <find>style=&quot;display: none&quot;</find>
+      <find>margin</find>
+      <find>footer</find>
     </findStrings>
     <replaceStrings>
       <replace>panelClass: ['snack']</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/src/app</dir>
       <dir>$PROJECT_DIR$/src/app/Components</dir>
+      <dir>$PROJECT_DIR$/src/app</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -127,15 +111,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/api/Business/Manage Owner.php" />
-        <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.component.ts" />
         <option value="$PROJECT_DIR$/api/Business/Update Owner Info.php" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/dashboard-maintenance-supervisor/dashboard-maintenance-supervisor.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/Default/login/login.component.css" />
-        <option value="$PROJECT_DIR$/src/app/Components/Default/login/login.component.html" />
         <option value="/8ea2cac3/410f318a-f35c-41dc-994d-e5e567f6eb39/schema/pms_schema/routine/uspCreateOwner_Create@(varchar(45),varchar(45),varchar(10),varchar(200),varchar(45),varchar(45),int(11)).sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console_1.sql" />
         <option value="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.ts" />
@@ -143,56 +122,60 @@
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.css" />
-        <option value="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.ts" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/angular.json" />
         <option value="$PROJECT_DIR$/src/environments/environment.ts" />
         <option value="$PROJECT_DIR$/src/environments/environment.prod.ts" />
-        <option value="$PROJECT_DIR$/api/Data/Db.php" />
-        <option value="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.css" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/material.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.html" />
         <option value="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/Default/header/header.component.css" />
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.css" />
-        <option value="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.component.html" />
-        <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.html" />
-        <option value="$PROJECT_DIR$/src/app/Components/Default/header/header.component.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/410f318a-f35c-41dc-994d-e5e567f6eb39/console.sql" />
         <option value="$PROJECT_DIR$/api/Data/DbHandler.php" />
         <option value="$PROJECT_DIR$/api/Business/Manage Property.php" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.component.ts" />
         <option value="$PROJECT_DIR$/src/app/Components/Default/error/error.component.html" />
-        <option value="$PROJECT_DIR$/src/styles.css" />
+        <option value="$PROJECT_DIR$/api/Data/Db.php" />
+        <option value="$PROJECT_DIR$/src/my-styles.scss" />
+        <option value="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/It Admin/reset-password/reset-password.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.component.html" />
-        <option value="$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.component.html" />
-        <option value="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.component.html" />
-        <option value="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.component.html" />
         <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/Default/header/header.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/Default/header/header.component.css" />
+        <option value="$PROJECT_DIR$/src/app/Components/Default/header/header.component.ts" />
+        <option value="$PROJECT_DIR$/src/styles.css" />
+        <option value="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/Default/login/login.component.html" />
+        <option value="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.css" />
+        <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.html" />
+        <option value="/8ea2cac3/410f318a-f35c-41dc-994d-e5e567f6eb39/schema/pms_schema/routine/uspManageOwner_Owners@().sql" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1" />
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1440" />
-    <option name="y" value="-180" />
-    <option name="width" value="2560" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,14 +233,7 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
               <item name="Maintenance Supervisor" type="462c0819:PsiDirectoryNode" />
-              <item name="add-property" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Global Services" type="462c0819:PsiDirectoryNode" />
+              <item name="manage-owner" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PMS" type="b2602c69:ProjectViewProjectNode" />
@@ -267,7 +243,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Built-in Web Server.Api">
+  <component name="RunManager" selected="npm.Angular Development Server">
     <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -410,17 +385,23 @@
       <workItem from="1565277146036" duration="4972000" />
       <workItem from="1565332290843" duration="1154000" />
       <workItem from="1565334253112" duration="6444000" />
+      <workItem from="1565593471791" duration="1402000" />
+      <workItem from="1565595457222" duration="143000" />
+      <workItem from="1565769491355" duration="842000" />
+      <workItem from="1565798553013" duration="6446000" />
+      <workItem from="1565879517456" duration="6713000" />
+      <workItem from="1565891412096" duration="1714000" />
+      <workItem from="1565896395112" duration="160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170742000" />
+    <option name="totallyTimeSpent" value="188162000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-180" width="2560" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16997617" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18097281" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -428,7 +409,7 @@
       <window_info anchor="bottom" id="TypeScript" order="1" weight="0.32970297" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32970297" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.3990099" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49928468" weight="0.39759037" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -436,120 +417,46 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32871288" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.23366337" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007153" side_tool="true" weight="0.3987952" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.23253012" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.51826847" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17752184" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" order="0" visible="true" weight="0.32673267" />
+      <window_info anchor="bottom" id="TypeScript" order="1" weight="0.32970297" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32970297" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49928468" weight="0.3980198" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32970297" />
+      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32871288" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007153" side_tool="true" weight="0.3987952" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.23253012" />
+      <window_info anchor="bottom" id="Messages" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.51826847" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-313" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="96" selection-end-column="17" />
-          <folding>
-            <element signature="e#79#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="92" column="43" lean-forward="true" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="e#60#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Business/Add Property.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="34" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="25" column="113" selection-start-line="25" selection-start-column="113" selection-end-line="25" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1217">
-          <caret line="93" column="48" selection-start-line="93" selection-start-column="48" selection-end-line="93" selection-end-column="48" />
-          <folding>
-            <element signature="e#68#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/my-styles.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/environments/environment.prod.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -564,16 +471,6 @@
           <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Data/Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_navbar.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -627,20 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/header/header.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -654,13 +537,6 @@
             <element signature="e#933#1043#0" expanded="true" />
             <element signature="e#1595#1704#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
@@ -684,33 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="49" selection-start-column="49" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Data/DbHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="222" column="33" selection-start-line="222" selection-start-column="33" selection-end-line="222" selection-end-column="33" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#mat-toolbar#0;n#mat-sidenav-content#0;n#mat-sidenav-container#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Business/Manage Owner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -738,46 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="47" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
-          <folding>
-            <element signature="e#79#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#61#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="162" column="44" selection-start-line="162" selection-start-column="44" selection-end-line="162" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/reset-password/reset-password.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -789,16 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-972">
-          <caret line="11" column="92" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
-          <folding>
-            <element signature="n#style#0;n#mat-card#0;n#div#0;n#form#0;n#mat-card-content#0;n#mat-card#0;n#app-header#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,17 +622,232 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
-          <caret line="106" column="26" lean-forward="true" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
+          <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/environments/environment.prod.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Business/Business Settings.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="48" column="59" lean-forward="true" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Data/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="28" selection-end-column="103" />
+          <folding>
+            <element signature="e#68#167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@angular/material/_theming.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="536" column="8" selection-start-line="536" selection-end-line="536" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/my-styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#mat-card#0;n#div#0;n#div#0;n#app-header#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/header/header.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#59#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="5" column="6448" selection-start-line="5" selection-start-column="6448" selection-end-line="5" selection-end-column="6448" />
+          <folding>
+            <element signature="e#25768#26002#2" expanded="true" />
+            <element signature="e#26806#26959#1" expanded="true" />
+            <element signature="e#26999#27233#1" expanded="true" />
+            <element signature="e#30239#30515#2" expanded="true" />
+            <element signature="e#31347#31500#1" expanded="true" />
+            <element signature="e#31540#31816#1" expanded="true" />
+            <element signature="e#61072#61259#2" expanded="true" />
+            <element signature="e#61488#61624#2" expanded="true" />
+            <element signature="e#62027#62160#2" expanded="true" />
+            <element signature="e#63642#63795#1" expanded="true" />
+            <element signature="e#75788#76018#2" expanded="true" />
+            <element signature="e#76885#77121#2" expanded="true" />
+            <element signature="e#106714#106891#2" expanded="true" />
+            <element signature="e#106937#107114#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/header/header.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Data/DbHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="158" column="27" selection-start-line="158" selection-start-column="27" selection-end-line="158" selection-end-column="27" />
+          <folding>
+            <element signature="e#6#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbSrc:///8ea2cac3/410f318a-f35c-41dc-994d-e5e567f6eb39/schema/pms_schema/routine/uspManageOwner_Owners@().sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="e#61#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Business/Manage Owner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="83" selection-start-line="33" selection-start-column="83" selection-end-line="33" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#79#155#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

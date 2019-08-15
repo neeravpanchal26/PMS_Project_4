@@ -1,6 +1,6 @@
 <!--Header-->
 <app-header>
-    <mat-card class="mat-elevation-z8 margin">
+    <mat-card class="mat-elevation-z8 m-3">
         <mat-card-header>
             <mat-icon mat-card-avatar>people</mat-icon>
             <mat-card-title>Manage all owners</mat-card-title>
@@ -14,11 +14,6 @@
 
             <!--Table-->
             <mat-table [dataSource]="dataSource" matSort>
-                <ng-container matColumnDef="OwnerID">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Owner ID</mat-header-cell>
-                    <mat-cell *matCellDef="let row" data-label="Owner ID">{{row.OwnerID}}</mat-cell>
-                </ng-container>
-
                 <ng-container matColumnDef="owner">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Owner</mat-header-cell>
                     <mat-cell *matCellDef="let row" data-label="Owner">{{row.owner}}</mat-cell>
@@ -27,6 +22,16 @@
                 <ng-container matColumnDef="ContactNumber">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Contact Number</mat-header-cell>
                     <mat-cell *matCellDef="let row" data-label="Contact Number">{{row.ContactNumber}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Email">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Email">{{row.Email}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="propertyCount">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header># of Property owned</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="# of Property owned">{{row.propertyCount}}</mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="Active">

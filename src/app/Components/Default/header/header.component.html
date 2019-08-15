@@ -1,11 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav mat-elevation-z15" fixedInViewport
+    <mat-sidenav #drawer class="sidenav mat-elevation-z15" fixedInViewport [position]="(isHandset$ | async) ? 'end' : 'start'"
                  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
                  [opened]="(isHandset$ | async) === false">
         <mat-toolbar color="primary">
-            <img [src]="logo" *ngIf="logo" width="56" alt="PMS Logo">
-            PMS
+           <span class="text-black">Menu</span>
         </mat-toolbar>
         <mat-nav-list>
             <!--IT Technician Routes-->
@@ -117,7 +116,10 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="d-flex flex-column h-100">
-        <mat-toolbar color="primary" style="min-height:64px">
+        <mat-toolbar color="primary">
+            <img [src]="logo" *ngIf="logo" width="56" alt="PMS Logo">
+            <span class="text-black">{{BusinessName}}</span>
+            <span class="spacer"></span>
             <button
                     type="button"
                     aria-label="Toggle sidenav"
@@ -126,7 +128,6 @@
                     *ngIf="isHandset$ | async">
                 <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
-            {{route}}
         </mat-toolbar>
 
         <!--Own content dynamic printing-->
