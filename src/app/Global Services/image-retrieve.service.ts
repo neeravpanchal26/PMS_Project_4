@@ -26,4 +26,9 @@ export class ImageRetrieveService {
     selectPhoto(photos: any) {
         return this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(photos));
     }
+
+    // Image bypass
+    selectPhoto2(photos) {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(photos);
+    }
 }

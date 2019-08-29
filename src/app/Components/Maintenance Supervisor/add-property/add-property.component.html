@@ -1,14 +1,31 @@
 <!--Header-->
 <app-header>
-    <!--Add property form-->
     <mat-card class="mat-elevation-z8 m-3">
         <mat-card-header>
             <mat-icon mat-card-avatar>add</mat-icon>
             <mat-card-title>Add new property</mat-card-title>
         </mat-card-header>
         <mat-card-content>
+            <!--Add property form-->
             <form (ngSubmit)="addProperty(addPropertyForm)" [formGroup]="addPropertyForm">
-                <h5>General information</h5>
+                <h5>Owner Information</h5>
+                <div class="form-row">
+                    <mat-form-field class="col-lg-12">
+                        <mat-label>Owner</mat-label>
+                        <mat-select formControlName="owner" (selectionChange)="suburbLoad($event.value)">
+                            <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.fullName}} -
+                                ({{o.ContactNumber}})
+                            </mat-option>
+                        </mat-select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['owner'].hasError('required')">A owner must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <hr>
+                <h5>General Information</h5>
                 <div class="form-row">
                     <mat-form-field class="col-lg-6">
                         <input matInput placeholder="Property Name" type="text" formControlName="name">
@@ -23,8 +40,8 @@
 
                     <mat-form-field class="col-lg-6">
                         <mat-label>Property Photos</mat-label>
-                        <input matInput type="text" [value]="img" disabled>
-                        <button mat-mini-fab  matSuffix color="primary" type="button" (click)="PropPhoto.click()">
+                        <input placeholder="" matInput type="text" [value]="img" disabled>
+                        <button matSuffix mat-button mat-icon-button type="button" (click)="PropPhoto.click()">
                             <mat-icon>add_photo_alternate</mat-icon>
                         </button>
                         <input type="file" accept="image/jpeg,image/png" #PropPhoto
@@ -82,49 +99,32 @@
                 </div>
 
                 <hr>
-
+                <h5>Additional information</h5>
                 <div class="form-row">
-                    <div class="col-lg-6">
-                        <h5>Status</h5>
-                        <mat-radio-group color="primary" formControlName="status" class="example-radio-group">
-                            <mat-radio-button *ngFor="let s of status" [value]="s.PropertyStatusID">
-                                <mat-icon class="pt-2">{{s.iconName}}</mat-icon>
-                                {{s.Desc}}
-                            </mat-radio-button>
-                        </mat-radio-group>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <h5>Type</h5>
-                        <mat-radio-group color="primary" formControlName="type" class="example-radio-group">
-                            <mat-radio-button *ngFor="let p of PropType" [value]="p.ResidenceTypeID" class="aligned-with-icon">
-                                <mat-icon class="pt-2">{{p.iconName}}</mat-icon>
-                                <span class="pb-2">
-                                    {{p.ResidenceTypeDesc}}
-                                </span>
-                            </mat-radio-button>
-                        </mat-radio-group>
-                    </div>
-                </div>
-
-                <hr>
-                <h5>Personal information</h5>
-                <div class="form-row">
-                    <mat-form-field class="col-lg-12">
-                        <mat-label>Owner</mat-label>
-                        <mat-select formControlName="owner" (selectionChange)="suburbLoad($event.value)">
-                            <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.OwnerID}}
-                                - {{o.fullName}}</mat-option>
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Status</mat-label>
+                        <mat-select formControlName="status">
+                            <mat-option *ngFor="let s of status" [value]="s.PropertyStatusID"> {{s.Desc}}</mat-option>
                         </mat-select>
                         <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['owner'].hasError('required')">A owner must be
+                        <mat-error *ngIf="addPropertyForm.controls['status'].hasError('required')">A status must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Type</mat-label>
+                        <mat-select formControlName="type">
+                            <mat-option *ngFor="let p of PropType"
+                                        [value]="p.ResidenceTypeID">{{p.ResidenceTypeDesc}}</mat-option>
+                        </mat-select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="addPropertyForm.controls['type'].hasError('required')">A type must be
                             selected.
                         </mat-error>
                     </mat-form-field>
                 </div>
 
-                <hr>
-                <h5>Additional information</h5>
                 <div class="form-row">
                     <mat-form-field class="col-lg-3">
                         <input matInput placeholder="No. of Bedrooms" formControlName="bedroom">

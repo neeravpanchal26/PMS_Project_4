@@ -4,6 +4,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {ManageOwnerService} from './manage-owner.service';
 import {SnackbarNotificationService} from '../../../Global Services/snackbar-notification.service';
+import {IUser} from '../../It Admin/manage-users/manage-users.service';
 
 @Component({
     selector: 'app-manage-owner',
@@ -15,7 +16,7 @@ export class ManageOwnerComponent implements OnInit {
 
     // Data Table
     dataSource: MatTableDataSource<any>;
-    displayedColumns: string[] = ['owner', 'ContactNumber', 'Email', 'propertyCount', 'Active', 'edit'];
+    displayedColumns: string[] = ['owner', 'ContactNumber', 'Email', 'Active', 'edit'];
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -39,6 +40,33 @@ export class ManageOwnerComponent implements OnInit {
     }
 
     // Change owner status
+    ChangeOwnerStatus(newStatus, ownerID, ownerName) {
+        let localStatus;
+        if (newStatus === true) {
+            localStatus = 1;
+        } else if ((newStatus === false)) {
+            localStatus = 0;
+        }
+
+        const param: IUser = {
+            userID: ownerID,
+            status: localStatus
+        };
+
+        this.service.OwnerStatus(param)
+            .subscribe(
+                data => {
+                    if (data === true) {
+                        if (newStatus === true) {
+                            this.snackBar.OwnerStatusActivated(ownerName);
+                        } else if (newStatus === false) {
+                            this.snackBar.OwnerStatusDeactivated(ownerName);
+                        }
+                    }
+                },
+                error => this.snackBar.handleError(error)
+            );
+    }
 
     // Search filter
     applyFilter(filterValue: string) {

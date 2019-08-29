@@ -29,15 +29,10 @@
                     <mat-cell *matCellDef="let row" data-label="Email">{{row.Email}}</mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="propertyCount">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header># of Property owned</mat-header-cell>
-                    <mat-cell *matCellDef="let row" data-label="# of Property owned">{{row.propertyCount}}</mat-cell>
-                </ng-container>
-
                 <ng-container matColumnDef="Active">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
                     <mat-cell *matCellDef="let row" data-label="Status">
-                        <mat-slide-toggle [checked]="row.Active==1" color="primary"></mat-slide-toggle>
+                        <mat-slide-toggle [checked]="row.Active==1" color="primary" (change)="ChangeOwnerStatus($event.checked,row.OwnerID,row.owner)"></mat-slide-toggle>
                     </mat-cell>
                 </ng-container>
 

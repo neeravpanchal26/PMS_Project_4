@@ -16,7 +16,7 @@ export class ManagePropertyComponent implements OnInit {
 
     // Data Table
     dataSource: MatTableDataSource<any>;
-    displayedColumns: string[] = ['PropertyID', 'Name', 'Address1', 'ResidenceTypeDesc', 'Owner', 'Desc', 'Assign'];
+    displayedColumns: string[] = ['Name', 'Address1', 'ResidenceTypeDesc', 'Owner', 'Desc', 'Assign'];
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 

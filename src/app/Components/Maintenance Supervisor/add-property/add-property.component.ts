@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 
 // Custom imports
-import {AddPropertyService, IProperty} from './add-property.service';
+import {AddPropertyService, IAddProperty} from './add-property.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SnackbarNotificationService} from '../../../Global Services/snackbar-notification.service';
 import {CreateUserService} from '../../It Admin/create-user/create-user.service';
@@ -70,7 +70,7 @@ export class AddPropertyComponent implements OnInit {
     // Add property
     addProperty(e) {
         if (e.valid) {
-            const param: IProperty = {
+            const param: IAddProperty = {
                 Name: e.value.name,
                 Address1: e.value.address1,
                 Address2: e.value.address2,

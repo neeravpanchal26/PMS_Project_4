@@ -17,7 +17,7 @@ export class AddPropertyService {
     }
 
     // Add property
-    AddProperty(param: IProperty): Observable<any> {
+    AddProperty(param: IAddProperty): Observable<any> {
         return this.http.post(this.apiUrl + '/api/Business/Add Property.php?action=create', param) as Observable<any>;
     }
 
@@ -43,7 +43,7 @@ export class AddPropertyService {
 }
 
 // Wrapper interface
-export interface IProperty {
+export interface IAddProperty {
     Name: any;
     Address1: any;
     Address2: any;

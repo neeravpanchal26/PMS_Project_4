@@ -67,7 +67,7 @@ export class UserReportsComponent implements OnInit {
             );
 
         // Suburb load up
-        this.UService.GetAllSuburbs()
+        this.CService.GetSuburb(1)
             .subscribe(
                 data => this.suburbs = data,
                 error => this.snackBar.handleError(error)

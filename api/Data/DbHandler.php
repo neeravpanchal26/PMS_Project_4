@@ -100,17 +100,11 @@ class DbHandler
         return DBHelper::SelectParam($sp, $param);
     }
 
-    public static function UpdatePersonalInfo_Suburb()
-    {
-        $sp = 'CALL uspUpdatePersonalInfo_Suburb';
-        return DBHelper::Select($sp);
-    }
-
     public static function UpdatePersonalInfo_UpdateInfo($uI, $fN, $lN, $dob, $cN, $eA, $a1, $a2, $sub)
     {
         $sp = 'CALL uspUpdatePersonalInfo_UpdateInfo (?,?,?,?,?,?,?,?,?)';
         $param = array(&$uI, &$fN, &$lN, &$dob, &$cN, &$eA, &$a1, &$a2, &$sub);
-        return DBHelper::ExecuteNonQuery($sp, $param);
+        return DBHelper::SelectParam($sp, $param);
     }
 
     // Business settings component methods
@@ -181,7 +175,7 @@ class DbHandler
     {
         $sp = 'CALL uspUpdateOwnerInfo_UpdateInfo (?,?,?,?,?,?,?,?)';
         $param = array(&$ownerID, &$firstName, &$lastName, &$contactNumber, &$email, &$address1, &$address2, &$suburb);
-        return DBHelper::ExecuteNonQuery($sp, $param);
+        return DBHelper::SelectParam($sp, $param);
     }
 
     // Add property component methods
@@ -221,5 +215,53 @@ class DbHandler
     {
         $sp = 'CALL uspManageProperty_Properties';
         return DBHelper::Select($sp);
+    }
+
+    // Update property component methods
+    public static function UpdateProperty_Property($propertyID)
+    {
+        $sp = 'CALL uspUpdateProperty_Property(?)';
+        $param = array(&$propertyID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function UpdateProperty_UpdateInfo($PropID, $Name, $Address1, $Address2, $Suburb, $YearBuilt, $Type, $Owner, $Bedrooms, $Bathrooms, $Size, $Status)
+    {
+        $sp = 'CALL uspUpdateProperty_UpdateInfo(?,?,?,?,?,?,?,?,?,?,?,?)';
+        $param = array(&$PropID, &$Name, &$Address1, &$Address2, &$Suburb, &$YearBuilt, &$Type, &$Owner, &$Bedrooms, &$Bathrooms, &$Size, &$Status);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    // Assign property component methods
+    public static function AssignProperty_Property()
+    {
+        $sp = 'CALL uspAssignProperty_Property';
+        return DBHelper::Select($sp);
+    }
+
+    public static function AssignProperty_Tenants()
+    {
+        $sp = 'CALL uspAssignProperty_Tenants';
+        return DBHelper::Select($sp);
+    }
+
+    public static function AssignProperty_PropertyImageID($propertyID)
+    {
+        $sp = 'CALL uspAssignProperty_PropertyImageID(?)';
+        $param = array(&$propertyID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function AssignProperty_PropertyImages($imgID)
+    {
+        $sp = 'CALL uspAssignProperty_PropertyImages(?)';
+        return DBHelper::BlobParamRetrieve($sp, $imgID);
+    }
+
+    public static function AssignProperty_Add($propertyID, $tenantID, $startDate, $endDate)
+    {
+        $sp = 'CALL uspAssignProperty_Add(?,?,?,?)';
+        $param = array(&$propertyID, &$tenantID, &$startDate, &$endDate);
+        return DBHelper::SelectParam($sp, $param);
     }
 }

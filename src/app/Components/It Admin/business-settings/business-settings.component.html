@@ -1,13 +1,13 @@
 <!--Header-->
 <app-header>
-    <div class="form-row">
+    <div class="row">
         <div class="col-lg-4">
             <mat-card class="mat-elevation-z8 m-3">
                 <mat-card-header>
                     <mat-icon mat-card-avatar>photo</mat-icon>
                     <mat-card-title>Current Logo</mat-card-title>
                 </mat-card-header>
-                <img [src]="businessLogo" *ngIf="businessLogo" style="width: 100%" alt="PMS Logo">
+                <img [src]="businessLogo" *ngIf="businessLogo" class="w-100" alt="PMS Logo">
             </mat-card>
         </div>
 
@@ -96,10 +96,10 @@
                         <div class="col-lg-12">
                             <div class="float-right mt-1">
                                 <button type="submit" hidden #submit></button>
-                                <button mat-flat-button color="primary" type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter" class="mr-1">Update
-                                </button>
                                 <button mat-stroked-button type="button" (click)="location.back()" class="ml-1">Back
+                                </button>
+                                <button mat-flat-button color="primary" type="button" data-toggle="modal"
+                                        data-target="#exampleModalCenter" class="mr-1">Save
                                 </button>
                             </div>
                         </div>

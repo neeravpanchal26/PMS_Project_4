@@ -4,6 +4,7 @@
                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
                  [opened]="(isHandset$ | async) === false">
         <mat-toolbar color="primary">
+            <mat-icon></mat-icon>
            <span class="text-black">Menu</span>
         </mat-toolbar>
         <mat-nav-list>
@@ -17,7 +18,7 @@
                 <a mat-list-item [mat-menu-trigger-for]="menu1">
                     <mat-icon matPrefix>people</mat-icon>
                     <span>Users</span>
-                    <mat-menu #menu1="matMenu" xPosition="before">
+                    <mat-menu #menu1="matMenu" [xPosition]="(isHandset$ | async) ? 'after' : 'before'">
                         <a mat-menu-item routerLink="/Create_User" class="noStyle">
                             <mat-icon matPrefix>person_add</mat-icon>
                             <span>Create user</span>
@@ -51,10 +52,10 @@
                     Dashboard
                 </a>
 
-                <a mat-list-item [mat-menu-trigger-for]="menu1">
+                <a mat-list-item [mat-menu-trigger-for]="menu2">
                     <mat-icon matPrefix>people</mat-icon>
                     <span>Owners</span>
-                    <mat-menu #menu1="matMenu" xPosition="before">
+                    <mat-menu #menu2="matMenu" [xPosition]="(isHandset$ | async) ? 'after' : 'before'">
                         <a mat-menu-item routerLink="/Create_Owner" class="noStyle">
                             <mat-icon matPrefix>person_add</mat-icon>
                             <span>Create owner</span>
@@ -66,17 +67,28 @@
                     </mat-menu>
                 </a>
 
-                <a mat-list-item [mat-menu-trigger-for]="menu2">
+                <a mat-list-item [mat-menu-trigger-for]="menu3">
                     <mat-icon matPrefix>location_city</mat-icon>
                     <span>Property</span>
-                    <mat-menu #menu2='matMenu' xPosition="before">
+                    <mat-menu #menu3='matMenu' [xPosition]="(isHandset$ | async) ? 'after' : 'before'">
                         <a mat-menu-item routerLink="/Add_Property" class="noStyle">
-                            <mat-icon matPrefix>add_box</mat-icon>
+                            <mat-icon matPrefix>add</mat-icon>
                             <span>Add Property</span>
                         </a>
                         <a mat-menu-item routerLink="/Manage_Property" class="noStyle">
                             <mat-icon matPrefix>list</mat-icon>
                             <span>Properties</span>
+                        </a>
+                    </mat-menu>
+                </a>
+
+                <a mat-list-item [mat-menu-trigger-for]="menu4">
+                    <mat-icon matPrefix>people</mat-icon>
+                    <span>Tenants</span>
+                    <mat-menu #menu4='matMenu' [xPosition]="(isHandset$ | async) ? 'after' : 'before'">
+                        <a mat-menu-item routerLink="/Assign_Property" class="noStyle">
+                            <mat-icon matPrefix>how_to_reg</mat-icon>
+                            <span>Assign Property</span>
                         </a>
                     </mat-menu>
                 </a>
@@ -94,10 +106,10 @@
 
             <span class="spacer"></span>
             <div class="fixedBottom">
-                <a mat-list-item [matMenuTriggerFor]="menu">
+                <a mat-list-item [matMenuTriggerFor]="menu5">
                     <mat-icon matPrefix>account_circle</mat-icon>
                     <span>{{userName}}</span></a>
-                <mat-menu #menu="matMenu" xPosition="before">
+                <mat-menu #menu5="matMenu" [xPosition]="(isHandset$ | async) ? 'after' : 'before'">
                     <a mat-menu-item routerLink="/Update_Personal_Information" class="noStyle">
                         <mat-icon>account_box</mat-icon>
                         Personal Info
@@ -117,7 +129,7 @@
     </mat-sidenav>
     <mat-sidenav-content class="d-flex flex-column h-100">
         <mat-toolbar color="primary">
-            <img [src]="logo" *ngIf="logo" width="56" alt="PMS Logo">
+            <img [src]="logo" *ngIf="logo" width="56" alt="PMS Logo" class="hidden">
             <span class="text-black">{{BusinessName}}</span>
             <span class="spacer"></span>
             <button

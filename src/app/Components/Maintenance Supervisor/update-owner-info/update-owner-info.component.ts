@@ -56,6 +56,8 @@ export class UpdateOwnerInfoComponent implements OnInit {
                     this.updateOwnerForm.controls.email.setValue(this.owner.Email);
                     this.updateOwnerForm.controls.city.setValue(this.owner.CityID);
                     this.updateOwnerForm.controls.suburb.setValue(this.owner.Suburb);
+                    // Suburb Load up
+                    this.suburbLoad(this.owner.CityID);
                 },
                 error => this.snackBar.handleError(error)
             );
@@ -64,13 +66,6 @@ export class UpdateOwnerInfoComponent implements OnInit {
         this.CService.GetCity()
             .subscribe(
                 data => this.cities = data,
-                error => this.snackBar.handleError(error)
-            );
-
-        // Suburb Load up
-        this.UService.GetAllSuburbs()
-            .subscribe(
-                data => this.suburbs = data,
                 error => this.snackBar.handleError(error)
             );
     }
@@ -91,7 +86,7 @@ export class UpdateOwnerInfoComponent implements OnInit {
             this.service.UpdateOwner(param)
                 .subscribe(
                     data => {
-                        if (data === true) {
+                        if (data[0].TRUE === 1) {
                             this.snackBar.UpdateOwnerSuccess(param.firstName, param.lastName);
                         }
                     },

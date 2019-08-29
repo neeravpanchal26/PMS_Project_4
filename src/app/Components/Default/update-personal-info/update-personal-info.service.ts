@@ -21,11 +21,6 @@ export class UpdatePersonalInfoService {
         return this.httpClient.get(this.apiUrl + '/api/Business/Update Personal Info.php?action=specificUser&userID=' + userID) as Observable<any>;
     }
 
-    // Get all suburbs
-    GetAllSuburbs(): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Update Personal Info.php?action=suburb') as Observable<any>;
-    }
-
     // Update user info
     UpdatePersonalInfo(param: IUpdateUserInfo): Observable<any> {
         return this.httpClient.post(this.apiUrl + '/api/Business/Update Personal Info.php?action=update', param) as Observable<any>;

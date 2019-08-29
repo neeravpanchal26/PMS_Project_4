@@ -109,7 +109,6 @@ export class BusinessSettingsComponent implements OnInit {
             this.service.BusinessSettingsUpdate(param)
                 .subscribe(
                     data => {
-                        console.log(param);
                         if (data === true) {
                             this.snackBar.BusinessSettingUpdate();
                         }

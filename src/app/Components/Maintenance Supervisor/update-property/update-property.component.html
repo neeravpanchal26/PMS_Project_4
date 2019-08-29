@@ -1,0 +1,189 @@
+<!--Header-->
+<app-header>
+    <!--Update property form-->
+    <mat-card class="mat-elevation-z8 m-3">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>edit</mat-icon>
+            <mat-card-title>Update property</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <!--Update property form-->
+            <form (ngSubmit)="updateProperty(updatePropertyForm)" [formGroup]="updatePropertyForm">
+                <h5>General Information</h5>
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Property Name" type="text" formControlName="name">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['name'].hasError('required')">Property name is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="updatePropertyForm.controls['name'].hasError('maxlength')">Property name may only
+                            contain 45 characters.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Owner</mat-label>
+                        <select matNativeControl formControlName="owner" (selectionChange)="suburbLoad($event.value)">
+                            <option *ngFor="let o of owners" [value]="o.OwnerID">{{o.fullName}} -
+                                ({{o.ContactNumber}})
+                            </option>
+                        </select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['owner'].hasError('required')">A owner must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="1234 Main St" formControlName="address1">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['address1'].hasError('required')">Address is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="updatePropertyForm.controls['address1'].hasError('maxlength')">Address should not
+                            exceed 100 characters.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Apartment, studio, or floor" formControlName="address2">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['address2'].hasError('required')">Address 2 is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="updatePropertyForm.controls['address2'].hasError('maxlength')">Address 2 should
+                            not
+                            exceed 100 characters.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>City</mat-label>
+                        <select matNativeControl formControlName="city" (change)="suburbLoad($event.target.value)">
+                            <option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</option>
+                        </select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['city'].hasError('required')">A city must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Suburb</mat-label>
+                        <select matNativeControl formControlName="suburb" [disabled]="updatePropertyForm.value['city'] === null">
+                            <option *ngFor="let s of suburbs" [value]="s.SuburbID">{{s.SuburbName}}</option>
+                        </select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['suburb'].hasError('required')">A suburb must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <hr>
+                <h5>Additional information</h5>
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Status</mat-label>
+                        <select matNativeControl formControlName="status">
+                            <option *ngFor="let s of status" [value]="s.PropertyStatusID"> {{s.Desc}}</option>
+                        </select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['status'].hasError('required')">A status must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <mat-label>Type</mat-label>
+                        <select matNativeControl formControlName="type">
+                            <option *ngFor="let p of PropType"
+                                        [value]="p.ResidenceTypeID">{{p.ResidenceTypeDesc}}</option>
+                        </select>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['type'].hasError('required')">A type must be
+                            selected.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-3">
+                        <input matInput placeholder="No. of Bedrooms" formControlName="bedroom">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['bedroom'].hasError('required')">Number of bedrooms
+                            is required.
+                        </mat-error>
+                        <mat-error *ngIf="updatePropertyForm.controls['bedroom'].hasError('min')">At least 1 bedroom is
+                            required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-3">
+                        <input matInput placeholder="No. of bathroom" formControlName="bathroom">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['bathroom'].hasError('required')">Number of bathroom
+                            is required.
+                        </mat-error>
+                        <mat-error *ngIf="updatePropertyForm.controls['bathroom'].hasError('min')">At least 1 bathroom is
+                            required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-3">
+                        <input matInput placeholder="Size (Sq.Ft)" formControlName="size">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['size'].hasError('required')">Size of the place is
+                            required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-3">
+                        <input matInput placeholder="Year Built" formControlName="year">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="updatePropertyForm.controls['year'].hasError('required')">Year built is
+                            required.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="float-right mt-1">
+                    <button type="submit" hidden #submit></button>
+                    <button mat-flat-button color="primary" type="button" data-toggle="modal"
+                            data-target="#exampleModalCenter" class="mr-1">Save
+                    </button>
+                    <button mat-stroked-button type="button" (click)="location.back()" class="ml-1">Back</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</app-header>
+
+<!-- Confirmation Dialog-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to update this property?
+            </div>
+            <div class="modal-footer">
+                <button mat-flat-button color="primary" type="button" (click)="submit.click()" data-dismiss="modal">
+                    Yes
+                </button>
+                <button mat-stroked-button type="button" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

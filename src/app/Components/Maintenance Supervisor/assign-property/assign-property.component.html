@@ -1,0 +1,128 @@
+<!--Header-->
+<app-header>
+    <div class="row">
+        <div class="col-lg-4">
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-icon mat-card-avatar>photo</mat-icon>
+                    <mat-card-title>Property photo's</mat-card-title>
+                </mat-card-header>
+                <div class="carousel" id="slider" data-pause="true">
+                    <ol class="carousel-indicators" [hidden]="imageObject[0].title == 'Error image'">
+                        <li data-target="#slider" *ngFor="let o of imageObject" [class.active]="o.title == 1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item" *ngFor="let o of imageObject"
+                             [class.active]="o.title  == 1 || o.title == 'Error image'">
+                            <img class="d-block w-100" [src]="o.image" [alt]="o.title">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev" [hidden]="imageObject[0].title == 'Error image'">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#slider" role="button" data-slide="next" [hidden]="imageObject[0].title == 'Error image'">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </mat-card>
+        </div>
+
+        <div class="col-lg-8">
+            <!--Assign property form-->
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-icon mat-card-avatar>how_to_reg</mat-icon>
+                    <mat-card-title>Assign property to tenant</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form (ngSubmit)="AssignProperty(assignPropertyForm)" [formGroup]="assignPropertyForm" class="form-row">
+                        <h5>Property</h5>
+                        <mat-form-field>
+                            <mat-label>Property</mat-label>
+                            <mat-select formControlName="property" (selectionChange)="ImageLoadUp($event.value)">
+                                <mat-option *ngFor="let p of property" [value]="p.PropertyID">{{p.Name}}</mat-option>
+                            </mat-select>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="assignPropertyForm.controls['property'].hasError('required')">A property
+                                must be selected.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Tenant</mat-label>
+                            <mat-select formControlName="tenant">
+                                <mat-option *ngFor="let t of tenant" [value]="t.UserID">{{t.fullName}}</mat-option>
+                            </mat-select>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="assignPropertyForm.controls['tenant'].hasError('required')">A tenant
+                                must be selected.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <hr>
+                        <h5>Lease</h5>
+
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="startDate" placeholder="Start Date"
+                                   formControlName="startDate" data-date-format="yyyy-MM-dd">
+                            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                            <mat-datepicker #startDate></mat-datepicker>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="assignPropertyForm.controls['startDate'].hasError('required')">A lease
+                                start date is required.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="endDate" placeholder="Start Date" formControlName="endDate"
+                                   data-date-format="yyyy-MM-dd">
+                            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                            <mat-datepicker #endDate></mat-datepicker>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="assignPropertyForm.controls['endDate'].hasError('required')">A lease end
+                                date is required.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <div class="col-lg-12">
+                            <div class="float-right mt-1">
+                                <button type="submit" hidden #submit></button>
+                                <button mat-stroked-button type="button" (click)="location.back()" class="ml-1">Back
+                                </button>
+                                <button mat-flat-button color="primary" type="button" data-toggle="modal"
+                                        data-target="#exampleModalCenter" class="mr-1">Save
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</app-header>
+
+<!-- Confirmation Dialog-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to apply the new changes?
+            </div>
+            <div class="modal-footer">
+                <button mat-flat-button color="primary" type="button" (click)="submit.click()" data-dismiss="modal">
+                    Yes
+                </button>
+                <button mat-stroked-button type="button" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

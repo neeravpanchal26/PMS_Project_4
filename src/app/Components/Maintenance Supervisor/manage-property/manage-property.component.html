@@ -14,11 +14,6 @@
 
             <!--Table-->
             <mat-table [dataSource]="dataSource" matSort>
-                <ng-container matColumnDef="PropertyID">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Property ID</mat-header-cell>
-                    <mat-cell *matCellDef="let row" data-label="Property ID">{{row.PropertyID}}</mat-cell>
-                </ng-container>
-
                 <ng-container matColumnDef="Name">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Property Name</mat-header-cell>
                     <mat-cell *matCellDef="let row" data-label="Property Name">{{row.Name}}</mat-cell>
@@ -46,9 +41,9 @@
 
                 <!--Dummy column-->
                 <ng-container matColumnDef="Assign">
-                    <mat-header-cell *matHeaderCellDef>Assign</mat-header-cell>
-                    <mat-cell *matCellDef="let row" data-label="Assign">
-                        <button mat-stroked-button routerLink="/Update_Owner_Information/{{row.OwnerID}}">
+                    <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Edit">
+                        <button mat-stroked-button routerLink="/Update_Property_Information/{{row.PropertyID}}">
                             <mat-icon matPrefix>edit</mat-icon>
                             Edit
                         </button>

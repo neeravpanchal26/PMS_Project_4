@@ -54,6 +54,8 @@ export class UpdatePersonalInfoComponent implements OnInit {
                     this.settingForm.controls.address2.setValue(this.user.Address2);
                     this.settingForm.controls.city.setValue(this.user.CityID);
                     this.settingForm.controls.suburb.setValue(this.user.Suburb);
+                    // Suburb Load up
+                    this.suburbLoad(this.user.CityID);
                 },
                 error => this.snackBar.handleError(error));
 
@@ -61,13 +63,6 @@ export class UpdatePersonalInfoComponent implements OnInit {
         this.CService.GetCity()
             .subscribe(
                 data => this.cities = data,
-                error => this.snackBar.handleError(error)
-            );
-
-        // Suburb Load up
-        this.service.GetAllSuburbs()
-            .subscribe(
-                data => this.suburbs = data,
                 error => this.snackBar.handleError(error)
             );
     }
@@ -89,7 +84,7 @@ export class UpdatePersonalInfoComponent implements OnInit {
             this.service.UpdatePersonalInfo(param)
                 .subscribe(
                     data => {
-                        if (data === true) {
+                        if (data[0].TRUE === 1) {
                             this.snackBar.UpdatePersonalInfoSuccess(param.firstName + ' ' + param.lastName);
                         }
                     },
