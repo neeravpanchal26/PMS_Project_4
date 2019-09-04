@@ -264,4 +264,50 @@ class DbHandler
         $param = array(&$propertyID, &$tenantID, &$startDate, &$endDate);
         return DBHelper::SelectParam($sp, $param);
     }
+
+    // Report complaint component methods
+    public static function ReportComplaint_Category()
+    {
+        $sp = 'CALL uspReportComplaint_Category';
+        return DBHelper::Select($sp);
+    }
+
+    public static function ReportComplaint_CategoryImages($catID)
+    {
+        $sp = 'CALL uspReportComplaint_CategoryImages(?)';
+        return DBHelper::BlobParamRetrieve($sp, $catID);
+    }
+
+    public static function ReportComplaint_SubCategory($catID)
+    {
+        $sp = 'CALL uspReportComplaint_SubCategory(?)';
+        $param = array(&$catID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function ReportComplaint_SubCategoryImages($subID)
+    {
+        $sp = 'CALL uspReportComplaint_SubCategoryImages(?)';
+        return DBHelper::BlobParamRetrieve($sp, $subID);
+    }
+
+    public static function ReportComplaint_Property($tenantID)
+    {
+        $sp = 'CALL uspReportComplaint_Property(?)';
+        $param = array(&$tenantID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function ReportComplaint_Add($propertyID, $tenantID, $desc, $subCate)
+    {
+        $sp = 'CALL uspReportComplaint_Add(?,?,?,?)';
+        $param = array(&$propertyID, &$tenantID, &$desc, &$subCate);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function ReportComplaint_Image($image)
+    {
+        $sp = 'CALL uspReportComplaint_Image(?)';
+        return DBHelper::BlobUpload($sp, $image);
+    }
 }

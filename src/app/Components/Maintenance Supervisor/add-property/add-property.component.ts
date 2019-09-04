@@ -10,7 +10,7 @@ import {Location} from '@angular/common';
 @Component({
     selector: 'app-add-property',
     templateUrl: './add-property.component.html',
-    styleUrls: ['./add-property.component.css']
+    styleUrls: ['./add-property.component.scss']
 })
 export class AddPropertyComponent implements OnInit {
     // Global variable
@@ -21,9 +21,23 @@ export class AddPropertyComponent implements OnInit {
     public owners: any;
     public status: any;
     public PropType: any;
+    public step = 0;
 
     // Native Html Elements
     @ViewChild('PropPhoto', {static: false}) PropPhoto;
+
+    // Expansion functions
+    setStep(index: number) {
+        this.step = index;
+    }
+
+    nextStep() {
+        this.step++;
+    }
+
+    prevStep() {
+        this.step--;
+    }
 
     // Default constructor
     constructor(private service: AddPropertyService,

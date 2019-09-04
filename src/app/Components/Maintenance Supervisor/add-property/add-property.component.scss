@@ -1,0 +1,19 @@
+/*Accessing colors of theme CSS*/
+@import "../../../../my-styles.scss";
+
+.primaryBackground {
+  background-color: $primary;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.primaryBackground:hover {
+  background-color: $primary !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.example-headers-align {
+  flex-basis: 0;
+}
+

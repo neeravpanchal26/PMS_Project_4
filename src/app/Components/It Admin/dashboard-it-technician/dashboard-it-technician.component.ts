@@ -10,7 +10,7 @@ import {MatTableDataSource} from '@angular/material/table';
 @Component({
     selector: 'app-dashboard-it-technician',
     templateUrl: './dashboard-it-technician.component.html',
-    styleUrls: ['./dashboard-it-technician.component.css']
+    styleUrls: ['./dashboard-it-technician.component.scss']
 })
 export class DashboardItTechnicianComponent implements OnInit {
     // Global variables

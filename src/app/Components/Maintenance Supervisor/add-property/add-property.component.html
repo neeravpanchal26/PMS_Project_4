@@ -8,169 +8,226 @@
         <mat-card-content>
             <!--Add property form-->
             <form (ngSubmit)="addProperty(addPropertyForm)" [formGroup]="addPropertyForm">
-                <h5>Owner Information</h5>
-                <div class="form-row">
-                    <mat-form-field class="col-lg-12">
-                        <mat-label>Owner</mat-label>
-                        <mat-select formControlName="owner" (selectionChange)="suburbLoad($event.value)">
-                            <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.fullName}} -
-                                ({{o.ContactNumber}})
-                            </mat-option>
-                        </mat-select>
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['owner'].hasError('required')">A owner must be
-                            selected.
-                        </mat-error>
-                    </mat-form-field>
-                </div>
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                        <mat-expansion-panel-header [class.primaryBackground]="step === 0">
+                            <mat-panel-title>
+                                Owner Information
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
 
-                <hr>
-                <h5>General Information</h5>
-                <div class="form-row">
-                    <mat-form-field class="col-lg-6">
-                        <input matInput placeholder="Property Name" type="text" formControlName="name">
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['name'].hasError('required')">Property name is
-                            required.
-                        </mat-error>
-                        <mat-error *ngIf="addPropertyForm.controls['name'].hasError('maxlength')">Property name may only
-                            contain 45 characters.
-                        </mat-error>
-                    </mat-form-field>
+                        <div class="form-row">
+                            <mat-form-field class="col-lg-12">
+                                <mat-label>Owner</mat-label>
+                                <mat-select formControlName="owner" (selectionChange)="suburbLoad($event.value)">
+                                    <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.fullName}} -
+                                        ({{o.ContactNumber}})
+                                    </mat-option>
+                                </mat-select>
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['owner'].hasError('required')">A owner must
+                                    be
+                                    selected.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
 
-                    <mat-form-field class="col-lg-6">
-                        <mat-label>Property Photos</mat-label>
-                        <input placeholder="" matInput type="text" [value]="img" disabled>
-                        <button matSuffix mat-button mat-icon-button type="button" (click)="PropPhoto.click()">
-                            <mat-icon>add_photo_alternate</mat-icon>
-                        </button>
-                        <input type="file" accept="image/jpeg,image/png" #PropPhoto
-                               (input)="img=$event.target.files[0]['name']" hidden multiple="multiple">
-                    </mat-form-field>
-                </div>
+                        <mat-action-row>
+                            <button mat-flat-button color="primary" (click)="nextStep()" type="button">Next</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
 
-                <div class="form-row">
-                    <mat-form-field class="col-lg-6">
-                        <input matInput placeholder="1234 Main St" formControlName="address1">
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['address1'].hasError('required')">Address is
-                            required.
-                        </mat-error>
-                        <mat-error *ngIf="addPropertyForm.controls['address1'].hasError('maxlength')">Address should not
-                            exceed 100 characters.
-                        </mat-error>
-                    </mat-form-field>
+                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                        <mat-expansion-panel-header [class.primaryBackground]="step === 1">
+                            <mat-panel-title>
+                                General Information
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="form-row">
+                            <mat-form-field class="col-lg-6">
+                                <input matInput placeholder="Property Name" type="text" formControlName="name">
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['name'].hasError('required')">Property name
+                                    is
+                                    required.
+                                </mat-error>
+                                <mat-error *ngIf="addPropertyForm.controls['name'].hasError('maxlength')">Property name
+                                    may only
+                                    contain 45 characters.
+                                </mat-error>
+                            </mat-form-field>
 
-                    <mat-form-field class="col-lg-6">
-                        <input matInput placeholder="Apartment, studio, or floor" formControlName="address2">
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['address2'].hasError('required')">Address 2 is
-                            required.
-                        </mat-error>
-                        <mat-error *ngIf="addPropertyForm.controls['address2'].hasError('maxlength')">Address 2 should
-                            not
-                            exceed 100 characters.
-                        </mat-error>
-                    </mat-form-field>
-                </div>
+                            <mat-form-field class="col-lg-6">
+                                <mat-label>Property Photos</mat-label>
+                                <input placeholder="" matInput type="text" [value]="img" disabled>
+                                <button matSuffix mat-button mat-icon-button type="button" (click)="PropPhoto.click()">
+                                    <mat-icon>add_photo_alternate</mat-icon>
+                                </button>
+                                <input type="file" accept="image/jpeg,image/png" #PropPhoto
+                                       (input)="img=$event.target.files[0]['name']" hidden multiple="multiple">
+                            </mat-form-field>
+                        </div>
 
-                <div class="form-row">
-                    <mat-form-field class="col-lg-6">
-                        <mat-label>City</mat-label>
-                        <mat-select formControlName="city" (selectionChange)="suburbLoad($event.value)">
-                            <mat-option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</mat-option>
-                        </mat-select>
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['city'].hasError('required')">A city must be
-                            selected.
-                        </mat-error>
-                    </mat-form-field>
+                        <div class="form-row">
+                            <mat-form-field class="col-lg-6">
+                                <input matInput placeholder="1234 Main St" formControlName="address1">
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['address1'].hasError('required')">Address is
+                                    required.
+                                </mat-error>
+                                <mat-error *ngIf="addPropertyForm.controls['address1'].hasError('maxlength')">Address
+                                    should not
+                                    exceed 100 characters.
+                                </mat-error>
+                            </mat-form-field>
 
-                    <mat-form-field class="col-lg-6">
-                        <mat-label>Suburb</mat-label>
-                        <mat-select formControlName="suburb" [disabled]="addPropertyForm.value['city'] === null">
-                            <mat-option *ngFor="let s of suburbs" [value]="s.SuburbID">{{s.SuburbName}}</mat-option>
-                        </mat-select>
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['suburb'].hasError('required')">A suburb must be
-                            selected.
-                        </mat-error>
-                    </mat-form-field>
-                </div>
+                            <mat-form-field class="col-lg-6">
+                                <input matInput placeholder="Apartment, studio, or floor" formControlName="address2">
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['address2'].hasError('required')">Address 2
+                                    is
+                                    required.
+                                </mat-error>
+                                <mat-error *ngIf="addPropertyForm.controls['address2'].hasError('maxlength')">Address 2
+                                    should
+                                    not
+                                    exceed 100 characters.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
 
-                <hr>
-                <h5>Additional information</h5>
-                <div class="form-row">
-                    <mat-form-field class="col-lg-6">
-                        <mat-label>Status</mat-label>
-                        <mat-select formControlName="status">
-                            <mat-option *ngFor="let s of status" [value]="s.PropertyStatusID"> {{s.Desc}}</mat-option>
-                        </mat-select>
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['status'].hasError('required')">A status must be
-                            selected.
-                        </mat-error>
-                    </mat-form-field>
+                        <div class="form-row">
+                            <mat-form-field class="col-lg-6">
+                                <mat-label>City</mat-label>
+                                <mat-select formControlName="city" (selectionChange)="suburbLoad($event.value)">
+                                    <mat-option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</mat-option>
+                                </mat-select>
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['city'].hasError('required')">A city must be
+                                    selected.
+                                </mat-error>
+                            </mat-form-field>
 
-                    <mat-form-field class="col-lg-6">
-                        <mat-label>Type</mat-label>
-                        <mat-select formControlName="type">
-                            <mat-option *ngFor="let p of PropType"
-                                        [value]="p.ResidenceTypeID">{{p.ResidenceTypeDesc}}</mat-option>
-                        </mat-select>
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['type'].hasError('required')">A type must be
-                            selected.
-                        </mat-error>
-                    </mat-form-field>
-                </div>
+                            <mat-form-field class="col-lg-6">
+                                <mat-label>Suburb</mat-label>
+                                <mat-select formControlName="suburb"
+                                            [disabled]="addPropertyForm.value['city'] === null">
+                                    <mat-option *ngFor="let s of suburbs"
+                                                [value]="s.SuburbID">{{s.SuburbName}}</mat-option>
+                                </mat-select>
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['suburb'].hasError('required')">A suburb must
+                                    be
+                                    selected.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <mat-action-row>
+                            <button mat-stroked-button color="primary" (click)="prevStep()" type="button" class="mr-1">
+                                Previous
+                            </button>
+                            <button mat-flat-button color="primary" (click)="nextStep()" type="button" class="ml-1">
+                                Next
+                            </button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
 
-                <div class="form-row">
-                    <mat-form-field class="col-lg-3">
-                        <input matInput placeholder="No. of Bedrooms" formControlName="bedroom">
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['bedroom'].hasError('required')">Number of bedrooms
-                            is required.
-                        </mat-error>
-                        <mat-error *ngIf="addPropertyForm.controls['bedroom'].hasError('min')">At least 1 bedroom is
-                            required.
-                        </mat-error>
-                    </mat-form-field>
+                    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                        <mat-expansion-panel-header [class.primaryBackground]="step === 2">
+                            <mat-panel-title>
+                                Additional information
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="form-row">
+                            <mat-form-field class="col-lg-6">
+                                <mat-label>Status</mat-label>
+                                <mat-select formControlName="status">
+                                    <mat-option *ngFor="let s of status"
+                                                [value]="s.PropertyStatusID"> {{s.Desc}}</mat-option>
+                                </mat-select>
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['status'].hasError('required')">A status must
+                                    be
+                                    selected.
+                                </mat-error>
+                            </mat-form-field>
 
-                    <mat-form-field class="col-lg-3">
-                        <input matInput placeholder="No. of bathroom" formControlName="bathroom">
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['bathroom'].hasError('required')">Number of bathroom
-                            is required.
-                        </mat-error>
-                        <mat-error *ngIf="addPropertyForm.controls['bathroom'].hasError('min')">At least 1 bathroom is
-                            required.
-                        </mat-error>
-                    </mat-form-field>
+                            <mat-form-field class="col-lg-6">
+                                <mat-label>Type</mat-label>
+                                <mat-select formControlName="type">
+                                    <mat-option *ngFor="let p of PropType"
+                                                [value]="p.ResidenceTypeID">{{p.ResidenceTypeDesc}}</mat-option>
+                                </mat-select>
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['type'].hasError('required')">A type must be
+                                    selected.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
 
-                    <mat-form-field class="col-lg-3">
-                        <input matInput placeholder="Size (Sq.Ft)" formControlName="size">
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['size'].hasError('required')">Size of the place is
-                            required.
-                        </mat-error>
-                    </mat-form-field>
+                        <div class="form-row">
+                            <mat-form-field class="col-lg-3">
+                                <input matInput placeholder="No. of Bedrooms" formControlName="bedroom">
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['bedroom'].hasError('required')">Number of
+                                    bedrooms
+                                    is required.
+                                </mat-error>
+                                <mat-error *ngIf="addPropertyForm.controls['bedroom'].hasError('min')">At least 1
+                                    bedroom is
+                                    required.
+                                </mat-error>
+                            </mat-form-field>
 
-                    <mat-form-field class="col-lg-3">
-                        <input matInput placeholder="Year Built" formControlName="year">
-                        <!--Form Validation-->
-                        <mat-error *ngIf="addPropertyForm.controls['year'].hasError('required')">Year built is
-                            required.
-                        </mat-error>
-                    </mat-form-field>
-                </div>
+                            <mat-form-field class="col-lg-3">
+                                <input matInput placeholder="No. of bathroom" formControlName="bathroom">
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['bathroom'].hasError('required')">Number of
+                                    bathroom
+                                    is required.
+                                </mat-error>
+                                <mat-error *ngIf="addPropertyForm.controls['bathroom'].hasError('min')">At least 1
+                                    bathroom is
+                                    required.
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="col-lg-3">
+                                <input matInput placeholder="Size (Sq.Ft)" formControlName="size">
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['size'].hasError('required')">Size of the
+                                    place is
+                                    required.
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="col-lg-3">
+                                <input matInput placeholder="Year Built" formControlName="year">
+                                <!--Form Validation-->
+                                <mat-error *ngIf="addPropertyForm.controls['year'].hasError('required')">Year built is
+                                    required.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+                        <mat-action-row>
+                            <button mat-stroked-button color="primary" (click)="prevStep()" type="button" class="mr-1">
+                                Previous
+                            </button>
+                            <button mat-flat-button color="primary" (click)="nextStep()" type="button" class="ml-1">
+                                End
+                            </button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+                </mat-accordion>
 
                 <div class="float-right mt-1">
                     <button type="submit" hidden #submit></button>
+                    <button mat-stroked-button type="button" (click)="location.back()" class="mr-1">Back</button>
                     <button mat-flat-button color="primary" type="button" data-toggle="modal"
-                            data-target="#exampleModalCenter" class="mr-1">Save
+                            data-target="#exampleModalCenter" class="ml-1">Save
                     </button>
-                    <button mat-stroked-button type="button" (click)="location.back()" class="ml-1">Back</button>
                 </div>
             </form>
         </mat-card-content>

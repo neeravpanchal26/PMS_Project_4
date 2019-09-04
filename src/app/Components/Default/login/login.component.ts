@@ -64,7 +64,10 @@ export class LoginComponent implements OnInit {
                         this.service.SetUserLoggedIn(this.result.UserTypeID, this.result.username, this.result.UserID);
                         if (this.result.UserTypeID === 1) {
                             this.router.navigate(['Dashboard_It_Admin']);
-                        } else if (this.result.UserTypeID === 3) {
+                        } else if(this.result.UserTypeID ===2) {
+                            this.router.navigate(['Dashboard_Tenant']);
+                        }
+                        else if (this.result.UserTypeID === 3) {
                             this.router.navigate(['Dashboard_Supervisor']);
                         }
                         e.controls.password.reset();

@@ -3,6 +3,7 @@ import {
     MAT_DATE_LOCALE,
     MatButtonModule,
     MatCheckboxModule,
+    MatExpansionModule,
     MatInputModule,
     MatListModule,
     MatNativeDateModule,
@@ -25,6 +26,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTableExporterModule} from 'mat-table-exporter';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
     imports: [
@@ -50,6 +53,9 @@ import {MatTableExporterModule} from 'mat-table-exporter';
         MatDividerModule,
         MatTableExporterModule,
         MatRadioModule,
+        MatExpansionModule,
+        MatStepperModule,
+        MatRippleModule,
         MatFormFieldModule],
     exports: [
         MatButtonModule,
@@ -74,6 +80,9 @@ import {MatTableExporterModule} from 'mat-table-exporter';
         MatDividerModule,
         MatTableExporterModule,
         MatRadioModule,
+        MatExpansionModule,
+        MatStepperModule,
+        MatRippleModule,
         MatFormFieldModule],
     providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-ZA'}]
 })

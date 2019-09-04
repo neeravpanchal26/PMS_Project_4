@@ -23,3 +23,8 @@ $my-style-theme: mat-light-theme($my-style-primary, $my-style-accent, $my-style-
 // that you are using.
 @include angular-material-theme($my-style-theme);
 
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($my-style-primary);
+$accent: mat-color($my-style-accent);
+$warn: mat-color($my-style-warn);
+

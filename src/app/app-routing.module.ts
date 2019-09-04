@@ -35,6 +35,10 @@ import {ManagePropertyComponent} from './Components/Maintenance Supervisor/manag
 import {UpdateOwnerInfoComponent} from './Components/Maintenance Supervisor/update-owner-info/update-owner-info.component';
 import {UpdatePropertyComponent} from './Components/Maintenance Supervisor/update-property/update-property.component';
 
+// Tenant component
+import {DashboardTenantComponent} from './Components/Tenant/dashboard-tenant/dashboard-tenant.component';
+import {ReportComplaintComponent} from './Components/Tenant/report-complaint/report-complaint.component';
+
 // Routing Array
 const routes: Routes = [
     // Default component
@@ -59,6 +63,10 @@ const routes: Routes = [
     {path: 'Manage_Property', canActivate: [LoginGuard], component: ManagePropertyComponent},
     {path: 'Update_Owner_Information/:ownerID', canActivate: [LoginGuard], component: UpdateOwnerInfoComponent},
     {path: 'Update_Property_Information/:propertyID', canActivate: [LoginGuard], component: UpdatePropertyComponent},
+
+    // Tenant component
+    {path: 'Dashboard_Tenant', canActivate: [LoginGuard], component: DashboardTenantComponent},
+    {path: 'Report_Complaint', canActivate: [LoginGuard], component: ReportComplaintComponent},
 
     {path: '**', component: ErrorComponent},// Always keep this last!!
 ];
@@ -99,5 +107,9 @@ export const routingComponents = [
     ManageOwnerComponent,
     ManagePropertyComponent,
     UpdateOwnerInfoComponent,
-    UpdatePropertyComponent
+    UpdatePropertyComponent,
+
+    // Tenant
+    DashboardTenantComponent,
+    ReportComplaintComponent
 ];

@@ -45,6 +45,20 @@
             </div>
             <!--IT Technician Routes ends here-->
 
+            <!--Tenant Routes-->
+            <div *ngIf="userType==2">
+                <a mat-list-item routerLink="/Dashboard_Tenant">
+                    <mat-icon>dashboard</mat-icon>
+                    Dashboard
+                </a>
+
+                <a mat-list-item routerLink="/Report_Complaint">
+                    <mat-icon>report_problem</mat-icon>
+                    Report Complaint
+                </a>
+            </div>
+            <!--Tenant Routes ends here-->
+
             <!--Maintenance Supervisor Routes-->
             <div *ngIf="userType==3">
                 <a mat-list-item routerLink="/Dashboard_Supervisor">

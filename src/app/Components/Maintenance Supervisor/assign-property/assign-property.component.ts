@@ -31,6 +31,7 @@ export class AssignPropertyComponent implements OnInit {
                 public location: Location) {
     }
 
+    // Form load
     ngOnInit() {
         // Form Validation
         this.buildForm();

@@ -179,4 +179,13 @@ export class SnackbarNotificationService {
             panelClass: [this.class],
         });
     }
+
+    // Report complaint component notification
+    ReportComplaintSuccess() {
+        this.snackBar.open('Complaint has been successfully lodged.', '', {
+            duration: this.duration,
+            horizontalPosition: this.position,
+            panelClass: [this.class],
+        });
+    }
 }
