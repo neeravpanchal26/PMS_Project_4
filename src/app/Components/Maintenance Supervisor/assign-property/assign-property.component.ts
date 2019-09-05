@@ -16,7 +16,7 @@ import {DatePipe, Location} from '@angular/common';
 })
 export class AssignPropertyComponent implements OnInit {
     // Global variable
-    imageObject: Array<object> = [];
+    imageObject: Array<Images> = [];
     public assignPropertyForm: FormGroup;
     public property: any;
     public tenant: any;

@@ -10,7 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class ReportComplaintService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Report Complaint.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -18,37 +22,37 @@ export class ReportComplaintService {
 
     // Get Category
     GetCategory(): Observable<any[]> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Report Complaint.php?action=category') as Observable<any[]>;
+        return this.httpClient.get(this.fullPath + this.action + 'category') as Observable<any[]>;
     }
 
     // Get Category image
     async GetCategoryImage(imgID) {
-        return await this.httpClient.get(this.apiUrl + '/api/Business/Report Complaint.php?action=categoryImage&imgID=' + imgID, {responseType: 'blob'}).toPromise();
+        return await this.httpClient.get(this.fullPath + this.action + 'categoryImage&imgID=' + imgID, {responseType: 'blob'}).toPromise();
     }
 
     // Get Sub Category
     GetSubCategory(catID): Observable<any[]> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Report Complaint.php?action=subCategory&catID=' + catID) as Observable<any[]>;
+        return this.httpClient.get(this.fullPath + this.action + 'subCategory&catID=' + catID) as Observable<any[]>;
     }
 
     // Get Sub Category images
     async GetSubImage(subID) {
-        return await this.httpClient.get(this.apiUrl + '/api/Business/Report Complaint.php?action=subImage&subID=' + subID, {responseType: 'blob'}).toPromise();
+        return await this.httpClient.get(this.fullPath + this.action + 'subImage&subID=' + subID, {responseType: 'blob'}).toPromise();
     }
 
     // Get Property
     GetProperty(tID): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Report Complaint.php?action=property&tID=' + tID) as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'property&tID=' + tID) as Observable<any>;
     }
 
     // Add complaint
     AddComplaint(param: IAddComplaint): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Report Complaint.php?action=add', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'add', param) as Observable<any>;
     }
 
     // Complaint image upload
     UploadImage(param: FormData): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Report Complaint.php?action=imageUpload', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'imageUpload', param) as Observable<any>;
     }
 }
 

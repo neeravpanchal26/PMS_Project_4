@@ -10,7 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class UpdatePropertyService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Update Property.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -18,12 +22,12 @@ export class UpdatePropertyService {
 
     // Get specific property
     GetPropertyInfo(propertyID): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Update Property.php?action=specificProperty&propertyID=' + propertyID) as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'specificProperty&propertyID=' + propertyID) as Observable<any>;
     }
 
     // Update property
     UpdateProperty(param: IProperty): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Update Property.php?action=update', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'update', param) as Observable<any>;
     }
 }
 

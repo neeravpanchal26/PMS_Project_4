@@ -10,7 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class ManagePropertyService {
     // Global variables
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Manage Property.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -18,6 +22,6 @@ export class ManagePropertyService {
 
     // Get properties
     GetProperties(): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Manage Property.php?action=properties') as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'properties') as Observable<any>;
     }
 }

@@ -10,7 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class DashboardItTechnicianService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Dashboard It Admin.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default Constructor
     constructor(private httpClient: HttpClient) {
@@ -18,6 +22,6 @@ export class DashboardItTechnicianService {
 
     // Users Graph
     GetUsers(days): Observable<any[]> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Dashboard It Admin.php?action=users&days=' + days) as Observable<any[]>;
+        return this.httpClient.get(this.fullPath + this.action + 'users&days=' + days) as Observable<any[]>;
     }
 }

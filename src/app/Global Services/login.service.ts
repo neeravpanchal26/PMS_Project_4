@@ -14,7 +14,11 @@ export class LoginService {
     private UserType: any;
     private UserName: any;
     private UserID: any;
-    apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Login.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default Constructor
     constructor(private httpClient: HttpClient) {
@@ -51,9 +55,10 @@ export class LoginService {
 
     // Login Check Service
     check(param: ILogin): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Login.php', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath, param) as Observable<any>;
     }
 }
+
 // Wrapper Interface
 export interface ILogin {
     Username: any;

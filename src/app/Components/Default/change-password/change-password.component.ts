@@ -21,7 +21,7 @@ export class ChangePasswordComponent implements OnInit {
                 private LService: LoginService,
                 private formBuilder: FormBuilder,
                 private snackBar: SnackbarNotificationService,
-                private router:Router) {
+                private router: Router) {
     }
 
     // Password Validator
@@ -76,7 +76,6 @@ export class ChangePasswordComponent implements OnInit {
                     if (data === true) {
                         this.router.navigate(['']);
                         this.snackBar.ChangePasswordSuccess();
-                        e.reset();
                     }
                 },
                 error => this.snackBar.handleError(error)

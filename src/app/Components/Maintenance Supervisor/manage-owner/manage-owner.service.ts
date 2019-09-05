@@ -11,7 +11,11 @@ import {IUser} from '../../It Admin/manage-users/manage-users.service';
 })
 export class ManageOwnerService {
     // Global variables
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Manage Owner.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -19,11 +23,11 @@ export class ManageOwnerService {
 
     // Get owners
     GetOwners(): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Manage Owner.php?action=owners') as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'owners') as Observable<any>;
     }
 
     // Change status
     OwnerStatus(param: IUser): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Manage Owner.php?action=status', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'status', param) as Observable<any>;
     }
 }

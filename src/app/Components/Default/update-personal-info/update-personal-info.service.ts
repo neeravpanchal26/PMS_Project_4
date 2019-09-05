@@ -10,7 +10,11 @@ import {HttpClient} from '@angular/common/http';
 })
 export class UpdatePersonalInfoService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Update Personal Info.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -18,12 +22,12 @@ export class UpdatePersonalInfoService {
 
     // Get user info
     GetSpecificUser(userID): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Update Personal Info.php?action=specificUser&userID=' + userID) as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'specificUser&userID=' + userID) as Observable<any>;
     }
 
     // Update user info
     UpdatePersonalInfo(param: IUpdateUserInfo): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Update Personal Info.php?action=update', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'update', param) as Observable<any>;
     }
 }
 

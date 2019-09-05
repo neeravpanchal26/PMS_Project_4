@@ -11,7 +11,11 @@ import {Observable} from 'rxjs';
 })
 export class ImageRetrieveService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Business Settings.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient, private sanitizer: DomSanitizer) {
@@ -19,7 +23,7 @@ export class ImageRetrieveService {
 
     // Get business logo
     GetBusinessLogo(): Observable<Blob> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Business Settings.php?action=logoDownload', {responseType: 'blob'}) as Observable<Blob>;
+        return this.httpClient.get(this.fullPath + this.action + 'logoDownload', {responseType: 'blob'}) as Observable<Blob>;
     }
 
     // Image to URL

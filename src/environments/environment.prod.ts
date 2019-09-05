@@ -1,9 +1,9 @@
 export const environment = {
     production: true,
-    // Digital Ocean
-    // api:'https://bit1ims.club'
     // Nmu
-    api: 'http://sict-iis.nmmu.ac.za/PMS'
+    api: 'http://sict-iis.nmmu.ac.za/PMS',
+    business: '/api/Business/',
+    assets: '/api/Assets/'
     // Local Setup
     // api: 'http://localhost:8000'
 };

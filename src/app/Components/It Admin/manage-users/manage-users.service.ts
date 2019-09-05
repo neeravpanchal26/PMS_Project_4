@@ -10,7 +10,11 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ManageUsersService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Manage Users.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -18,17 +22,17 @@ export class ManageUsersService {
 
     // Get User
     GetUsers(userID): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Manage Users.php?action=users&userID=' + userID) as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'users&userID=' + userID) as Observable<any>;
     }
 
     // Change user type
     ChangeUserType(param: IUser): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Manage Users.php?action=type', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'type', param) as Observable<any>;
     }
 
     // Change user status
     ChangeUserStatus(param: IUser): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Manage Users.php?action=status', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'status', param) as Observable<any>;
     }
 }
 

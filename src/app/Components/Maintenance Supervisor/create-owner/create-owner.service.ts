@@ -10,7 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class CreateOwnerService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Create Owner.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -18,7 +22,7 @@ export class CreateOwnerService {
 
     // Create owner
     CreateOwner(param: IAddOwner): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Create Owner.php?action=create', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'create', param) as Observable<any>;
     }
 }
 

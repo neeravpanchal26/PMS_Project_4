@@ -10,7 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class CreateUserService {
     // Global variables
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Create User.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default Constructor
     constructor(private httpClient: HttpClient) {
@@ -18,22 +22,22 @@ export class CreateUserService {
 
     // Get user type
     GetUserType(): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Create User.php?action=userType') as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'userType') as Observable<any>;
     }
 
     // Get City
     GetCity(): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Create User.php?action=city') as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'city') as Observable<any>;
     }
 
     // Get Suburb
     GetSuburb(cityID): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Create User.php?action=suburb&cityID=' + cityID) as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'suburb&cityID=' + cityID) as Observable<any>;
     }
 
     // Create user
     CreateUser(param: IAddUser): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Create User.php?action=create', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'create', param) as Observable<any>;
     }
 }
 

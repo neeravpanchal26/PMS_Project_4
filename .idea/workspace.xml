@@ -2,37 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed02ffb1-ac65-4ea4-9b77-012b178c499c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/Business/Report Complaint.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39/storage_v2/_src_/schema/pms_schema.6hu9Fg.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39/storage_v2/_src_/schema/pms_schema.6hu9Fg.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Data/DbHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Data/DbHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/reset-password/reset-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/reset-password/reset-password.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/create-user/create-user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-property/update-property.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-property/update-property.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/material.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/material.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/my-styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/my-styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-property/update-property.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-property/update-property.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/report-complaint/report-complaint.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Tenant/report-complaint/report-complaint.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Global Services/image-retrieve.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Global Services/image-retrieve.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Global Services/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Global Services/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,39 +87,12 @@
   <component name="FavoritesManager">
     <favorites_list name="PMS" />
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>&lt;mat-icon&gt;{{p.iconName}}&lt;/mat-icon&gt;</find>
-      <find>create</find>
-      <find>panelClass: ['warning']</find>
-      <find>Go back</find>
-      <find>Back</find>
-      <find>style=&quot;display:none&quot;</find>
-      <find>style=&quot;display: none&quot;</find>
-      <find>margin</find>
-      <find>footer</find>
-      <find>addPropertyForm</find>
-      <find>menu</find>
-      <find>#menu</find>
-      <find>3000</find>
-      <find>'end'</find>
-      <find>'snack'</find>
-      <find>updatpe</find>
-      <find>UpdateInfo</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>panelClass: ['snack']</replace>
-      <replace>updatePropertyForm</replace>
-      <replace>duration</replace>
-      <replace>this.duration</replace>
-      <replace>this.position</replace>
-      <replace>this.class</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/src/app/Components</dir>
-      <dir>$PROJECT_DIR$/src/app</dir>
-      <dir>$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-property</dir>
-    </dirStrings>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -170,7 +138,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular Development Server">
+  <component name="RunManager" selected="PHP Built-in Web Server.Api">
     <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -207,17 +175,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a2337aeb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a2337aeb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3876409f" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -354,6 +312,14 @@
       <workItem from="1567530598677" duration="3913000" />
       <workItem from="1567578001963" duration="9987000" />
       <workItem from="1567595050646" duration="2123000" />
+      <workItem from="1567601738819" duration="1779000" />
+      <workItem from="1567612791722" duration="207000" />
+      <workItem from="1567613151640" duration="468000" />
+      <workItem from="1567615828914" duration="1040000" />
+      <workItem from="1567670347989" duration="282000" />
+      <workItem from="1567671184293" duration="351000" />
+      <workItem from="1567685519429" duration="3740000" />
+      <workItem from="1567697214088" duration="4454000" />
     </task>
     <servers />
   </component>

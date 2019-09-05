@@ -10,7 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class UpdateOwnerInfoService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Update Owner Info.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -18,12 +22,12 @@ export class UpdateOwnerInfoService {
 
     // Get specific owner
     GetOwnerInfo(ownerID): Observable<any> {
-        return this.httpClient.get(this.apiUrl + '/api/Business/Update Owner Info.php?action=owner&ownerID=' + ownerID) as Observable<any>;
+        return this.httpClient.get(this.fullPath + this.action + 'owner&ownerID=' + ownerID) as Observable<any>;
     }
 
     // Update owner
     UpdateOwner(param: IOwner): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Update Owner Info.php?action=updateInfo', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'updateInfo', param) as Observable<any>;
     }
 }
 

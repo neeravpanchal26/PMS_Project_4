@@ -10,7 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class ChangePasswordService {
     // Global variable
-    public apiUrl = environment.api;
+    private apiUrl = environment.api;
+    private basePath = environment.business;
+    private file = 'Change Password.php';
+    private action = '?action=';
+    private fullPath = this.apiUrl + this.basePath + this.file;
 
     // Default constructor
     constructor(private httpClient: HttpClient) {
@@ -18,12 +22,12 @@ export class ChangePasswordService {
 
     // Old password check
     OldPasswordCheck(param: IPassword): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Change Password.php?action=oldPassword', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'oldPassword', param) as Observable<any>;
     }
 
     // Old password check
     UpdatePassword(param: IPassword): Observable<any> {
-        return this.httpClient.post(this.apiUrl + '/api/Business/Change Password.php?action=update', param) as Observable<any>;
+        return this.httpClient.post(this.fullPath + this.action + 'update', param) as Observable<any>;
     }
 }
 
