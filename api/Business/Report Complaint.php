@@ -24,12 +24,9 @@ if ($action == 'category') {
 } elseif ($action == 'subImage') {
     $subID = $_GET['subID'];
     echo DbHandler::ReportComplaint_SubCategoryImages($subID);
-} elseif ($action == 'property') {
-    $tID = $_GET['tID'];
-    echo json_encode(DbHandler::ReportComplaint_Property($tID));
 } elseif ($action == 'add') {
     $json = json_decode(file_get_contents('php://input'));
-    echo json_encode(DbHandler::ReportComplaint_Add($json->propertyID, $json->tenantID, $json->desc, $json->subCat));
+    echo json_encode(DbHandler::ReportComplaint_Add($json->tenantID, $json->desc, $json->subCat));
 } elseif ($action == 'imageUpload') {
     // Get Temp Path
     $tempPath = $_FILES['file']['tmp_name'];

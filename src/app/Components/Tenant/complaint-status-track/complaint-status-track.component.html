@@ -1,0 +1,41 @@
+<!--Header-->
+<app-header>
+    <mat-card class="mat-elevation-z8 m-3">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>view_list</mat-icon>
+            <mat-card-title>Check Complaint Status</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Complaints</mat-label>
+                <mat-select (selectionChange)="LoadComplaintDetails($event.value)">
+                    <mat-option *ngFor="let c of complaints" [value]="c.ComplaintID">{{c.ComplaintID}} {{c.Name}} -
+                        ({{c.Date}})
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!--Table-->
+            <mat-table [dataSource]="dataSource">
+                <ng-container matColumnDef="Date">
+                    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Date">{{row.Date}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="complaintDetailDesc">
+                    <mat-header-cell *matHeaderCellDef>Complaint Detail</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Complaint Detail">{{row.complaintDetailDesc}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="statusDesc">
+                    <mat-header-cell *matHeaderCellDef>Complaint Status</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Complaint Status">{{row.statusDesc}}</mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+        </mat-card-content>
+    </mat-card>
+</app-header>

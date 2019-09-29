@@ -147,7 +147,7 @@ export class SnackbarNotificationService {
 
     // Manage owner component notification
     OwnerStatusActivated(ownerName) {
-        this.snackBar.open(ownerName + ' \'s has been activated!', '', {
+        this.snackBar.open(ownerName + ' has been activated!', '', {
             duration: this.duration,
             horizontalPosition: this.position,
             panelClass: [this.class],
@@ -155,7 +155,7 @@ export class SnackbarNotificationService {
     }
 
     OwnerStatusDeactivated(ownerName) {
-        this.snackBar.open(ownerName + ' \'s has been deactivated!', '', {
+        this.snackBar.open(ownerName + ' has been deactivated!', '', {
             duration: this.duration,
             horizontalPosition: this.position,
             panelClass: [this.class],
@@ -183,6 +183,58 @@ export class SnackbarNotificationService {
     // Report complaint component notification
     ReportComplaintSuccess() {
         this.snackBar.open('Complaint has been successfully lodged.', '', {
+            duration: this.duration,
+            horizontalPosition: this.position,
+            panelClass: [this.class],
+        });
+    }
+
+    // Create supplier component notification
+    CreateSupplierSuccess(Name) {
+        this.snackBar.open(Name + ' has been successfully created.', '', {
+            duration: this.duration,
+            horizontalPosition: this.position,
+            panelClass: [this.class],
+        });
+    }
+
+    // Manage Supplier component notification
+    SupplierStatusActivated(supplierName) {
+        this.snackBar.open(supplierName + ' has been activated!', '', {
+            duration: this.duration,
+            horizontalPosition: this.position,
+            panelClass: [this.class],
+        });
+    }
+
+    SupplierStatusDeactivated(supplierName) {
+        this.snackBar.open(supplierName + ' has been deactivated!', '', {
+            duration: this.duration,
+            horizontalPosition: this.position,
+            panelClass: [this.class],
+        });
+    }
+
+    // Update supplier component notification
+    UpdateSupplierSuccess(Name) {
+        this.snackBar.open(Name + ' has been updated.', '', {
+            duration: this.duration,
+            horizontalPosition: this.position,
+            panelClass: [this.class],
+        });
+    }
+
+    // Assign complaint component notification
+    AssignComplaintSuccess() {
+        this.snackBar.open('Complaint(s) have been assigned.', '', {
+            duration: this.duration,
+            horizontalPosition: this.position,
+            panelClass: [this.class],
+        });
+    }
+
+    AssignComplaintEmailSucess() {
+        this.snackBar.open('Complaints have been email.', '', {
             duration: this.duration,
             horizontalPosition: this.position,
             panelClass: [this.class],

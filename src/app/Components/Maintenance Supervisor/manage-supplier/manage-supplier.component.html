@@ -1,0 +1,59 @@
+<!--Header-->
+<app-header>
+    <mat-card class="mat-elevation-z8 m-3">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>people</mat-icon>
+            <mat-card-title>Manage all suppliers</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <!--Search-->
+            <mat-form-field>
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+            </mat-form-field>
+
+            <!--Table-->
+            <mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="Name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Supplier Name</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Supplier Name">{{row.Name}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="contactNumber">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Contact Number</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Contact Number">{{row.contactNumber}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Email">{{row.email}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Active">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Status">
+                        <mat-slide-toggle [checked]="row.Active==1" color="primary"
+                                          (change)="ChangeSupplierStatus($event.checked,row.SupplierID,row.Name)"></mat-slide-toggle>
+                    </mat-cell>
+                </ng-container>
+
+                <!--Dummy column-->
+                <ng-container matColumnDef="edit">
+                    <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="Edit">
+                        <button mat-stroked-button routerLink="/Update_Supplier_Information/{{row.SupplierID}}">
+                            <mat-icon>edit</mat-icon>
+                            Edit
+                        </button>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+            <!--Paginantion-->
+            <mat-paginator [pageSizeOptions]="[10, 25, 100, 200]"></mat-paginator>
+        </mat-card-content>
+    </mat-card>
+</app-header>

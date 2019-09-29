@@ -2,31 +2,31 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 // Custom imports
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import {ManageOwnerService} from './manage-owner.service';
+import {ManageSupplierService} from './manage-supplier.service';
 import {SnackbarNotificationService} from '../../../Global Services/snackbar-notification.service';
 import {IUser} from '../../It Admin/manage-users/manage-users.service';
 
 @Component({
-    selector: 'app-manage-owner',
-    templateUrl: './manage-owner.component.html',
-    styleUrls: ['./manage-owner.component.css']
+    selector: 'app-manage-supplier',
+    templateUrl: './manage-supplier.component.html',
+    styleUrls: ['./manage-supplier.component.css']
 })
-export class ManageOwnerComponent implements OnInit {
+export class ManageSupplierComponent implements OnInit {
     // Data Table
     dataSource: MatTableDataSource<any>;
-    displayedColumns: string[] = ['owner', 'ContactNumber', 'Email', 'Active', 'edit'];
+    displayedColumns: string[] = ['Name', 'contactNumber', 'email', 'Active', 'edit'];
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 
     // Default constructor
-    constructor(private service: ManageOwnerService,
+    constructor(private service: ManageSupplierService,
                 private snackBar: SnackbarNotificationService) {
     }
 
     // Form load
     ngOnInit() {
-        // Load owners
-        this.service.GetOwners()
+        // Load suppliers
+        this.service.GetSuppliers()
             .subscribe(
                 data => {
                     this.dataSource = new MatTableDataSource<any>(data);
@@ -37,8 +37,8 @@ export class ManageOwnerComponent implements OnInit {
             );
     }
 
-    // Change owner status
-    ChangeOwnerStatus(newStatus, ownerID, ownerName) {
+    // Change supplier status
+    ChangeSupplierStatus(newStatus, supplierID, supplierName) {
         let localStatus;
         if (newStatus === true) {
             localStatus = 1;
@@ -47,18 +47,18 @@ export class ManageOwnerComponent implements OnInit {
         }
 
         const param: IUser = {
-            userID: ownerID,
+            userID: supplierID,
             status: localStatus
         };
 
-        this.service.OwnerStatus(param)
+        this.service.SupplierStatus(param)
             .subscribe(
                 data => {
                     if (data === true) {
                         if (newStatus === true) {
-                            this.snackBar.OwnerStatusActivated(ownerName);
+                            this.snackBar.SupplierStatusActivated(supplierName);
                         } else if (newStatus === false) {
-                            this.snackBar.OwnerStatusDeactivated(ownerName);
+                            this.snackBar.SupplierStatusDeactivated(supplierName);
                         }
                     }
                 },

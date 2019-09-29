@@ -14,13 +14,14 @@ import {LoginService} from '../../../Global Services/login.service';
 })
 export class ReportComplaintComponent implements OnInit {
     // Global variable
+    public categoryForm: FormGroup;
+    public subCategoryForm: FormGroup;
     public reportComplaintForm: FormGroup;
     public category;
     public categoryImages = [];
     public subCategory;
     public subImages = [];
     public tenantID;
-    public property;
     public img = '';
     public categoryName = 'Please select a category.';
     public subName = 'Please select a sub category.';
@@ -44,11 +45,6 @@ export class ReportComplaintComponent implements OnInit {
         // Tenant ID load up
         this.tenantID = this.LService.GetUserID();
 
-        // Property load up
-        this.service.GetProperty(this.tenantID)
-            .subscribe(data => this.property = data,
-                error => this.snackBar.handleError(error));
-
         // Category load up
         this.service.GetCategory()
             .subscribe(next => this.category = next,
@@ -64,13 +60,13 @@ export class ReportComplaintComponent implements OnInit {
 
     // Sub Category load up
     SubCategory(catID, catName) {
+        this.categoryForm.controls.cat.setValue(catID);
         this.categoryName = catName;
         this.subImages = [];
         this.service.GetSubCategory(catID)
             .subscribe(next => {
                     this.subCategory = next;
                     // Sub Category image load up
-                    // tslint:disable-next-line:max-line-length
                     for (let counter = this.subCategory[0].SubID; counter <= this.subCategory[this.subCategory.length - 1].SubID; counter++) {
                         this.service.GetSubImage(counter)
                             .then(data => this.subImages.push(this.IService.selectPhoto(data)),
@@ -84,17 +80,16 @@ export class ReportComplaintComponent implements OnInit {
     // Set Sub Category
     SetSubCategory(subID, subName) {
         this.subName = subName;
-        this.reportComplaintForm.controls.subCat.setValue(subID);
+        this.subCategoryForm.controls.subCat.setValue(subID);
     }
 
     // Report Complaint
     ReportComplaint(e) {
         if (e.valid) {
             const param: IAddComplaint = {
-                propertyID: e.value.property,
                 tenantID: this.tenantID,
                 desc: e.value.description,
-                subCat: e.value.subCat
+                subCat: this.subCategoryForm.controls.subCat.value
             };
             this.service.AddComplaint(param)
                 .subscribe(data => {
@@ -112,7 +107,9 @@ export class ReportComplaintComponent implements OnInit {
                                 const frmData = new FormData();
                                 frmData.append('file', imageFile);
                                 this.service.UploadImage(frmData)
-                                    .subscribe(data1 => e.reset());
+                                    .subscribe(data1 => {
+                                        e.reset();
+                                    });
                             }
                         } catch {
                         }
@@ -124,11 +121,16 @@ export class ReportComplaintComponent implements OnInit {
     // Form Builder
     buildForm(): void {
         this.reportComplaintForm = this.formBuilder.group({
-            property: ['', Validators.required],
             description: ['', Validators.compose([Validators.required, Validators.maxLength(200)])],
-            photo: [''],
-            subCat: ['']
+            photo: ['']
         });
 
+        this.subCategoryForm = this.formBuilder.group({
+            subCat: ['', Validators.required]
+        });
+
+        this.categoryForm = this.formBuilder.group({
+            cat: ['', Validators.required]
+        });
     }
 }

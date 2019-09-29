@@ -9,6 +9,7 @@
 namespace Data;
 
 require_once '../Data/DbHelper.php';
+require_once '../Data/EmailHelper.php';
 
 class DbHandler
 {
@@ -291,17 +292,10 @@ class DbHandler
         return DBHelper::BlobParamRetrieve($sp, $subID);
     }
 
-    public static function ReportComplaint_Property($tenantID)
+    public static function ReportComplaint_Add($tenantID, $desc, $subCate)
     {
-        $sp = 'CALL uspReportComplaint_Property(?)';
-        $param = array(&$tenantID);
-        return DBHelper::SelectParam($sp, $param);
-    }
-
-    public static function ReportComplaint_Add($propertyID, $tenantID, $desc, $subCate)
-    {
-        $sp = 'CALL uspReportComplaint_Add(?,?,?,?)';
-        $param = array(&$propertyID, &$tenantID, &$desc, &$subCate);
+        $sp = 'CALL uspReportComplaint_Add(?,?,?)';
+        $param = array(&$tenantID, &$desc, &$subCate);
         return DBHelper::SelectParam($sp, $param);
     }
 
@@ -309,5 +303,94 @@ class DbHandler
     {
         $sp = 'CALL uspReportComplaint_Image(?)';
         return DBHelper::BlobUpload($sp, $image);
+    }
+
+    // Create supplier component methods
+    public static function CreateSupplier_Type()
+    {
+        $sp = 'CALL uspCreateSupplier_Type';
+        return DBHelper::Select($sp);
+    }
+
+    public static function CreateSupplier_Create($name, $email, $contact, $type, $address1, $address2, $suburb)
+    {
+        $sp = 'CALL uspCreateSupplier_Create(?,?,?,?,?,?,?)';
+        $param = array(&$name, &$type, &$contact, &$email, &$address1, &$address2, &$suburb);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    // Manage supplier component methods
+    public static function ManageSupplier_Suppliers()
+    {
+        $sp = 'CALL uspManageSupplier_Suppliers';
+        return DBHelper::Select($sp);
+    }
+
+    public static function ManageSupplier_Status($supplierID, $status)
+    {
+        $sp = 'CALL uspManageSupplier_Status(?,?)';
+        $param = array(&$supplierID, &$status);
+        return DBHelper::ExecuteNonQuery($sp, $param);
+    }
+
+    // Update supplier info component methods
+    public static function UpdateSupplierInfo_SpecificSupplier($supplierID)
+    {
+        $sp = 'CALL uspUpdateSupplierInfo_SpecificSupplier(?)';
+        $param = array(&$supplierID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function UpdateSupplierInfo_UpdateInfo($supplierID, $name, $email, $contact, $type, $address1, $address2, $suburb)
+    {
+        $sp = 'CALL uspUpdateSupplierInfo_UpdateInfo(?,?,?,?,?,?,?,?)';
+        $param = array(&$supplierID, &$name, &$type, &$contact, &$email, &$address1, &$address2, &$suburb);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    // Assign complaint component methods
+    public static function AssignComplaint_Supplier()
+    {
+        $sp = 'CALL uspAssignComplaint_Supplier';
+        return DBHelper::Select($sp);
+    }
+
+    public static function AssignComplaint_Complaint()
+    {
+        $sp = 'CALL uspAssignComplaint_Complaint';
+        return DBHelper::Select($sp);
+    }
+
+    public static function AssignComplaint_ComplaintImages($compID)
+    {
+        $sp = 'CALL uspAssignComplaint_ComplaintImages(?)';
+        return DBHelper::BlobParamRetrieve($sp, $compID);
+    }
+
+    public static function AssignComplaint_Assign($compID, $suppID)
+    {
+        $sp = 'CALL uspAssignComplaint_Assign(?,?)';
+        $param = array(&$compID, &$suppID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function SendEmail($address, $subject, $body)
+    {
+        return EmailHelper::SendMail($address, $subject, $body);
+    }
+
+    // Check complaint status component methods
+    public static function CheckComplaintStatus_Complaint($tenantID)
+    {
+        $sp = 'CALL uspCheckComplaintStatus_Complaint(?)';
+        $param = array(&$tenantID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function CheckComplaintStatus_ComplaintDetails($complaintID)
+    {
+        $sp = 'CALL uspCheckComplaintStatus_ComplaintDetails(?)';
+        $param = array(&$complaintID);
+        return DBHelper::SelectParam($sp, $param);
     }
 }

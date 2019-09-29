@@ -1,0 +1,6 @@
+/*Accessing colors of theme CSS*/
+@import "../../../../my-styles.scss";
+
+.primaryBackground {
+  background-color: $primary;
+}

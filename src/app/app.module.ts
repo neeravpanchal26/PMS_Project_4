@@ -11,7 +11,6 @@ import {MaterialModule} from './material';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {NgImageSliderModule} from 'ng-image-slider';
 
-
 @NgModule({
     declarations: [
         AppComponent,

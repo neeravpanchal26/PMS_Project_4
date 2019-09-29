@@ -56,6 +56,11 @@
                     <mat-icon>report_problem</mat-icon>
                     Report Complaint
                 </a>
+
+                <a mat-list-item routerLink="/Complaint_Status_Track">
+                    <mat-icon>view_list</mat-icon>
+                    Check Complaint Status
+                </a>
             </div>
             <!--Tenant Routes ends here-->
 
@@ -103,6 +108,32 @@
                         <a mat-menu-item routerLink="/Assign_Property" class="noStyle">
                             <mat-icon matPrefix>how_to_reg</mat-icon>
                             <span>Assign Property</span>
+                        </a>
+                    </mat-menu>
+                </a>
+
+                <a mat-list-item [mat-menu-trigger-for]="menu5">
+                    <mat-icon matPrefix>people</mat-icon>
+                    <span>Supplier</span>
+                    <mat-menu #menu5="matMenu" [xPosition]="(isHandset$ | async) ? 'after' : 'before'">
+                        <a mat-menu-item routerLink="/Create_Supplier" class="noStyle">
+                            <mat-icon matPrefix>person_add</mat-icon>
+                            <span>Create supplier</span>
+                        </a>
+                        <a mat-menu-item routerLink="/Manage_Supplier" class="noStyle">
+                            <mat-icon matPrefix>people</mat-icon>
+                            <span>Suppliers</span>
+                        </a>
+                    </mat-menu>
+                </a>
+
+                <a mat-list-item [mat-menu-trigger-for]="menu6">
+                    <mat-icon matPrefix>report</mat-icon>
+                    <span>Complaints</span>
+                    <mat-menu #menu6="matMenu" [xPosition]="(isHandset$ | async) ? 'after' : 'before'">
+                        <a mat-menu-item routerLink="/Assign_Complaint" class="noStyle">
+                            <mat-icon matPrefix>next_week</mat-icon>
+                            <span>Assign complaints</span>
                         </a>
                     </mat-menu>
                 </a>

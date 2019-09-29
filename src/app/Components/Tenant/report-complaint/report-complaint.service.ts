@@ -40,11 +40,6 @@ export class ReportComplaintService {
         return await this.httpClient.get(this.fullPath + this.action + 'subImage&subID=' + subID, {responseType: 'blob'}).toPromise();
     }
 
-    // Get Property
-    GetProperty(tID): Observable<any> {
-        return this.httpClient.get(this.fullPath + this.action + 'property&tID=' + tID) as Observable<any>;
-    }
-
     // Add complaint
     AddComplaint(param: IAddComplaint): Observable<any> {
         return this.httpClient.post(this.fullPath + this.action + 'add', param) as Observable<any>;
@@ -58,7 +53,6 @@ export class ReportComplaintService {
 
 // Wrapper interface
 export interface IAddComplaint {
-    propertyID: any;
     tenantID: any;
     desc: any;
     subCat: any;

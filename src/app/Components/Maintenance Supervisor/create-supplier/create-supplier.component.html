@@ -1,33 +1,34 @@
 <!--Header-->
 <app-header>
-    <!--Create user form-->
+    <!--    Create Supplier Form-->
     <mat-card class="mat-elevation-z8 m-3">
         <mat-card-header>
             <mat-icon mat-card-avatar>person_add</mat-icon>
-            <mat-card-title>Add new owner</mat-card-title>
+            <mat-card-title>Add new supplier</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <form (ngSubmit)="createOwner(createOwnerForm)" [formGroup]="createOwnerForm">
-
+            <form (ngSubmit)="CreateSupplier(createSupplierForm)" [formGroup]="createSupplierForm">
                 <div class="form-row">
                     <mat-form-field class="col-lg-6">
-                        <input matInput placeholder="First name" type="text" formControlName="name">
-                        <!--Form Validation-->
-                        <mat-error *ngIf="createOwnerForm.controls['name'].hasError('required')">First name is required.
+                        <input matInput placeholder="Supplier Name" type="text" formControlName="name">
+                        <!--                        Form Validation-->
+                        <mat-error *ngIf="createSupplierForm.controls['name'].hasError('required')">Supplier name is
+                            required.
                         </mat-error>
-                        <mat-error *ngIf="createOwnerForm.controls['name'].hasError('maxlength')">First name may only
+                        <mat-error *ngIf="createSupplierForm.controls['name'].hasError('maxlength')">Supplier name may
+                            only
                             contain 45 characters.
                         </mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="col-lg-6">
-                        <input matInput placeholder="Last name" type="text" formControlName="surname">
+                        <mat-label>Supplier Type</mat-label>
+                        <mat-select formControlName="type">
+                            <mat-option *ngFor="let p of type" [value]="p.SupplierTypeID">{{p.Desc}}</mat-option>
+                        </mat-select>
                         <!--Form Validation-->
-                        <mat-error *ngIf="createOwnerForm.controls['surname'].hasError('required')">Last name is
-                            required.
-                        </mat-error>
-                        <mat-error *ngIf="createOwnerForm.controls['surname'].hasError('maxlength')">Last name may only
-                            contain 45 characters.
+                        <mat-error *ngIf="createSupplierForm.controls['type'].hasError('required')">A supplier type must be
+                            selected.
                         </mat-error>
                     </mat-form-field>
                 </div>
@@ -37,11 +38,11 @@
                         <input matInput placeholder="Contact Number" formControlName="contact" type="tel"
                                pattern="[0-9]{3}[0-9]{3}[0-9]{4}" max="10">
                         <!--Form Validation-->
-                        <mat-error *ngIf="createOwnerForm.controls['contact'].hasError('required')">Contact number is
+                        <mat-error *ngIf="createSupplierForm.controls['contact'].hasError('required')">Contact number is
                             required.
                         </mat-error>
                         <mat-error
-                                *ngIf="createOwnerForm.controls['contact'].hasError('maxlength') || createOwnerForm.controls['contact'].hasError('minlength')">
+                                *ngIf="createSupplierForm.controls['contact'].hasError('maxlength') || createSupplierForm.controls['contact'].hasError('minlength')">
                             Contact number may only be 10 characters.
                         </mat-error>
                     </mat-form-field>
@@ -49,24 +50,26 @@
                     <mat-form-field class="col-lg-6">
                         <input matInput placeholder="Email address" formControlName="email" type="email">
                         <!--Form Validation-->
-                        <mat-error *ngIf="createOwnerForm.controls['email'].hasError('required')">Email is required.
+                        <mat-error *ngIf="createSupplierForm.controls['email'].hasError('required')">Email is required.
                         </mat-error>
-                        <mat-error *ngIf="createOwnerForm.controls['email'].hasError('maxlength')">Email may only be 200
+                        <mat-error *ngIf="createSupplierForm.controls['email'].hasError('maxlength')">Email may only be 200
                             characters.
                         </mat-error>
-                        <mat-error *ngIf="createOwnerForm.controls['email'].hasError('pattern')">Check your email format.
+                        <mat-error *ngIf="createSupplierForm.controls['email'].hasError('pattern')">Check your email
+                            format.
                         </mat-error>
                     </mat-form-field>
                 </div>
-
 
                 <div class="form-row">
                     <mat-form-field class="col-lg-12">
                         <input matInput placeholder="1234 Main St" formControlName="address1">
                         <!--Form Validation-->
-                        <mat-error *ngIf="createOwnerForm.controls['address1'].hasError('required')">Address is required.
+                        <mat-error *ngIf="createSupplierForm.controls['address1'].hasError('required')">Address is
+                            required.
                         </mat-error>
-                        <mat-error *ngIf="createOwnerForm.controls['address1'].hasError('maxlength')">Address should not
+                        <mat-error *ngIf="createSupplierForm.controls['address1'].hasError('maxlength')">Address should
+                            not
                             exceed 100 characters.
                         </mat-error>
                     </mat-form-field>
@@ -76,10 +79,11 @@
                     <mat-form-field class="col-lg-12">
                         <input matInput placeholder="Apartment, studio, or floor" formControlName="address2">
                         <!--Form Validation-->
-                        <mat-error *ngIf="createOwnerForm.controls['address2'].hasError('required')">Address 2 is
+                        <mat-error *ngIf="createSupplierForm.controls['address2'].hasError('required')">Address 2 is
                             required.
                         </mat-error>
-                        <mat-error *ngIf="createOwnerForm.controls['address2'].hasError('maxlength')">Address 2 should
+                        <mat-error *ngIf="createSupplierForm.controls['address2'].hasError('maxlength')">Address 2
+                            should
                             not
                             exceed 100 characters.
                         </mat-error>
@@ -93,17 +97,18 @@
                             <mat-option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</mat-option>
                         </mat-select>
                         <!--Form Validation-->
-                        <mat-error *ngIf="createOwnerForm.controls['city'].hasError('required')">A city must be selected.
+                        <mat-error *ngIf="createSupplierForm.controls['city'].hasError('required')">A city must be
+                            selected.
                         </mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="col-lg-6">
                         <mat-label>Suburb</mat-label>
-                        <mat-select formControlName="suburb" [disabled]="createOwnerForm.value['city'] === null">
+                        <mat-select formControlName="suburb" [disabled]="createSupplierForm.value['city'] === null">
                             <mat-option *ngFor="let s of suburbs" [value]="s.SuburbID">{{s.SuburbName}}</mat-option>
                         </mat-select>
                         <!--Form Validation-->
-                        <mat-error *ngIf="createOwnerForm.controls['suburb'].hasError('required')">A suburb must be
+                        <mat-error *ngIf="createSupplierForm.controls['suburb'].hasError('required')">A suburb must be
                             selected.
                         </mat-error>
                     </mat-form-field>
@@ -114,7 +119,6 @@
                     <button mat-stroked-button type="button" data-toggle="modal" data-target="#exampleModalCenter1" class="mr-1">Clear</button>
                     <button mat-flat-button color="primary" type="button" data-toggle="modal" data-target="#exampleModalCenter" class="ml-1">Save</button>
                 </div>
-
             </form>
         </mat-card-content>
     </mat-card>
@@ -131,7 +135,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Are you sure you want to add the new owner?
+                Are you sure you want to add the new supplier?
             </div>
             <div class="modal-footer">
                 <button type="button" mat-flat-button color="primary" data-dismiss="modal" (click)="submit.click()">Yes</button>
@@ -155,7 +159,7 @@
                 Are you sure you want to clear all the fields?
             </div>
             <div class="modal-footer">
-                <button type="button" mat-flat-button color="primary" (click)="createOwnerForm.reset()" data-dismiss="modal">Yes</button>
+                <button type="button" mat-flat-button color="primary" (click)="createSupplierForm.reset()" data-dismiss="modal">Yes</button>
                 <button type="button" mat-stroked-button data-dismiss="modal">No</button>
             </div>
         </div>

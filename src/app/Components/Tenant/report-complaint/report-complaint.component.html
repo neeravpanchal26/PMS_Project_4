@@ -6,32 +6,35 @@
             <mat-card-title>Report your complaint</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <mat-vertical-stepper [linear]="false" #stepper>
-                <mat-step>
+            <mat-vertical-stepper [linear]="true" #stepper>
+                <mat-step [stepControl]="categoryForm">
                     <ng-template matStepLabel>{{categoryName}}</ng-template>
                     <button matStepperNext hidden #next></button>
-                    <div class="row">
-                        <div class="col-lg-4 align-content-center" *ngFor="let c of categoryImages; let i = index">
-                            <mat-card class="m-2 mat-elevation-z5 text-center"
-                                      (click)="next.click();SubCategory(category[i].CategoryID,category[i].Name);"
-                                      matRipple>
-                                <img style="width: 50px" [src]="categoryImages[i]">
-                                <mat-card-title>{{category[i].Name|uppercase}}</mat-card-title>
-                                <mat-card-content>
-                                    <p>
-                                        {{category[i].Description}}
-                                    </p>
-                                </mat-card-content>
-                            </mat-card>
+                    <form [formGroup]="categoryForm">
+                        <div class="row">
+                            <div class="col-lg-4 align-content-center" *ngFor="let c of categoryImages; let i = index">
+                                <mat-card class="m-2 mat-elevation-z5 text-center"
+                                          (click)="SubCategory(category[i].CategoryID,category[i].Name);next.click();"
+                                          matRipple>
+                                    <img style="width: 50px" [src]="categoryImages[i]">
+                                    <mat-card-title>{{category[i].Name|uppercase}}</mat-card-title>
+                                    <mat-card-content>
+                                        <p>
+                                            {{category[i].Description}}
+                                        </p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </mat-step>
-                <mat-step>
+
+                <mat-step [stepControl]="subCategoryForm">
                     <ng-template matStepLabel>{{subName}}</ng-template>
                     <div class="row">
                         <div class="col-lg-3 align-content-center" *ngFor="let sc of subImages; let i = index">
                             <mat-card class="m-2 mat-elevation-z5 text-center"
-                                      (click)="next.click();SetSubCategory(subCategory[i].SubID,subCategory[i].Name);"
+                                      (click)="SetSubCategory(subCategory[i].SubID,subCategory[i].Name);next.click();"
                                       matRipple>
                                 <img style="width: 50px" [src]="subImages[i]">
                                 <mat-card-title>{{subCategory[i].Name}}</mat-card-title>
@@ -39,22 +42,13 @@
                         </div>
                     </div>
                 </mat-step>
+
                 <mat-step>
                     <ng-template matStepLabel matStepperIcon="done">Please fill out the form.</ng-template>
                     <form (ngSubmit)="ReportComplaint(reportComplaintForm)" [formGroup]="reportComplaintForm"
                           class="form-row">
-                        <mat-form-field class="col-lg-6">
-                            <mat-label>Property</mat-label>
-                            <mat-select formControlName="property">
-                                <mat-option *ngFor="let p of property" [value]="p.PropertyID">{{p.Name}}</mat-option>
-                            </mat-select>
-                            <!--Form Validation-->
-                            <mat-error *ngIf="reportComplaintForm.controls['property'].hasError('required')">A property
-                                must be selected.
-                            </mat-error>
-                        </mat-form-field>
 
-                        <mat-form-field class="col-lg-6">
+                        <mat-form-field class="col-lg-12">
                             <mat-label>Complaint Photo</mat-label>
                             <input placeholder="" matInput type="text" [value]="img" disabled>
                             <button matSuffix mat-button mat-icon-button type="button" (click)="CompPhoto.click()">
@@ -78,16 +72,16 @@
                             </mat-error>
                         </mat-form-field>
 
-                        <div class="float-right mt-1">
-                            <button type="submit" hidden #submit></button>
-                            <button mat-stroked-button type="button"
-                                    (click)="stepper.reset();reportComplaintForm.reset();" class="mr-1">Reset
-                            </button>
-                            <button mat-flat-button color="primary" type="button" data-toggle="modal"
-                                    data-target="#exampleModalCenter" class="ml-1">Save
-                            </button>
-                        </div>
+                        <button type="submit" hidden #submit></button>
                     </form>
+                    <div class="float-right mt-1">
+                        <button mat-stroked-button type="button"
+                                (click)="stepper.reset();reportComplaintForm.reset();" class="mr-1">Reset
+                        </button>
+                        <button mat-flat-button color="primary" type="button" data-toggle="modal"
+                                data-target="#exampleModalCenter" class="ml-1">Save
+                        </button>
+                    </div>
                 </mat-step>
             </mat-vertical-stepper>
         </mat-card-content>

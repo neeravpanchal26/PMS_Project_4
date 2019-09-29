@@ -17,8 +17,6 @@ export class CreateOwnerComponent implements OnInit {
     public createOwnerForm: FormGroup;
     public cities: any;
     public suburbs: any;
-    public emailCheck = false;
-    public phoneCheck = false;
 
     // Default constructor
     constructor(private CService: CreateUserService,
@@ -62,14 +60,6 @@ export class CreateOwnerComponent implements OnInit {
                             if (r.TRUE === 1) {
                                 this.snackBar.CreateOwnerSuccess(param.firstName, param.lastName);
                                 e.reset();
-                            }
-                            if (r.emailExists === 1) {
-                                this.emailCheck = true;
-                            } else if (r.phoneExists === 1) {
-                                this.phoneCheck = true;
-                            } else if (r.bothExists === 1) {
-                                this.phoneCheck = true;
-                                this.emailCheck = true;
                             }
                         },
                         error => this.snackBar.handleError(error));
