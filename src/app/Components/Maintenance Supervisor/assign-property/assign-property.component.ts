@@ -21,6 +21,7 @@ export class AssignPropertyComponent implements OnInit {
     public property: any;
     public tenant: any;
     public apiUrl = environment.api;
+    public minID;
 
     // Default constructor
     constructor(private IService: ImageRetrieveService,
@@ -58,6 +59,7 @@ export class AssignPropertyComponent implements OnInit {
         this.service.GetPropertyImageID(propertyID)
             .then(
                 data => {
+                    this.minID = data[0].minID;
                     if (data[0].minID != null) {
                         for (let counter = data[0].minID; counter <= data[0].maxID; counter++) {
                             this.service.GetPropertyImages(counter)
@@ -104,7 +106,6 @@ export class AssignPropertyComponent implements OnInit {
                 startDate: this.datePipe.transform(e.value.startDate, 'yyyy-MM-dd'),
                 endDate: this.datePipe.transform(e.value.endDate, 'yyyy-MM-dd')
             };
-            console.log(param);
             this.service.AssignProperty(param)
                 .subscribe(
                     data => {

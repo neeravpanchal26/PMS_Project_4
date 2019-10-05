@@ -10,21 +10,19 @@
                 <mat-step [stepControl]="categoryForm">
                     <ng-template matStepLabel>{{categoryName}}</ng-template>
                     <button matStepperNext hidden #next></button>
-                    <form [formGroup]="categoryForm">
-                        <div class="row">
-                            <div class="col-lg-4 align-content-center" *ngFor="let c of categoryImages; let i = index">
-                                <mat-card class="m-2 mat-elevation-z5 text-center"
-                                          (click)="SubCategory(category[i].CategoryID,category[i].Name);next.click();"
-                                          matRipple>
-                                    <img style="width: 50px" [src]="categoryImages[i]">
-                                    <mat-card-title>{{category[i].Name|uppercase}}</mat-card-title>
-                                    <mat-card-content>
-                                        <p>
-                                            {{category[i].Description}}
-                                        </p>
-                                    </mat-card-content>
-                                </mat-card>
-                            </div>
+                    <form [formGroup]="categoryForm" class="form-row">
+                        <div class="col-lg-4 align-content-center" *ngFor="let c of categoryImages; let i = index">
+                            <mat-card class="m-2 mat-elevation-z5 text-center"
+                                      (click)="SubCategory(category[i].CategoryID,category[i].Name);next.click();"
+                                      matRipple>
+                                <img style="width: 50px" [src]="categoryImages[i]">
+                                <mat-card-title>{{category[i].Name|uppercase}}</mat-card-title>
+                                <mat-card-content>
+                                    <p>
+                                        {{category[i].Description}}
+                                    </p>
+                                </mat-card-content>
+                            </mat-card>
                         </div>
                     </form>
                 </mat-step>
@@ -59,9 +57,8 @@
                         </mat-form-field>
 
                         <mat-form-field class="col-12">
-                            <mat-label>Complaint details</mat-label>
-                            <textarea matInput placeholder="Provide details about your complaint."
-                                      formControlName="description" #desc></textarea>
+                            <mat-label>Complaint description</mat-label>
+                            <textarea matInput formControlName="description" #desc></textarea>
                             <mat-hint align="end">{{desc.value?.length || 0}}/200</mat-hint>
                             <!--Form Validation-->
                             <mat-error *ngIf="reportComplaintForm.controls['description'].hasError('required')">

@@ -39,5 +39,5 @@ if ($action == 'supplier') {
 
     $body .= "</table><p>Kind Regards<br/>$businessInfo->BusinessName<br>$businessInfo->CityName<br>$businessInfo->BusinessContact<br>$businessInfo->BusinessWebsite</p></body></html>";
 
-    echo json_encode(DbHandler::SendEmail($json->suppEmail, "PMS assigned complaints.", $body));
+    echo json_encode(DbHandler::AssignComplaint_Email($json->suppEmail, "PMS assigned complaints.", $body));
 }

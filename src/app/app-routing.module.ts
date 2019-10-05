@@ -35,6 +35,7 @@ import {DashboardMaintenanceSupervisorComponent} from './Components/Maintenance 
 import {ManageOwnerComponent} from './Components/Maintenance Supervisor/manage-owner/manage-owner.component';
 import {ManagePropertyComponent} from './Components/Maintenance Supervisor/manage-property/manage-property.component';
 import {ManageSupplierComponent} from './Components/Maintenance Supervisor/manage-supplier/manage-supplier.component';
+import {UpdateComplaintComponent} from './Components/Maintenance Supervisor/update-complaint/update-complaint.component';
 import {UpdateOwnerInfoComponent} from './Components/Maintenance Supervisor/update-owner-info/update-owner-info.component';
 import {UpdatePropertyComponent} from './Components/Maintenance Supervisor/update-property/update-property.component';
 import {UpdateSupplierInfoComponent} from './Components/Maintenance Supervisor/update-supplier-info/update-supplier-info.component';
@@ -70,6 +71,7 @@ const routes: Routes = [
     {path: 'Manage_Owners', canActivate: [LoginGuard], component: ManageOwnerComponent},
     {path: 'Manage_Property', canActivate: [LoginGuard], component: ManagePropertyComponent},
     {path: 'Manage_Supplier', canActivate: [LoginGuard], component: ManageSupplierComponent},
+    {path: 'Update_Complaint', canActivate: [LoginGuard], component: UpdateComplaintComponent},
     {path: 'Update_Owner_Information/:ownerID', canActivate: [LoginGuard], component: UpdateOwnerInfoComponent},
     {path: 'Update_Property_Information/:propertyID', canActivate: [LoginGuard], component: UpdatePropertyComponent},
     {path: 'Update_Supplier_Information/:supID', canActivate: [LoginGuard], component: UpdateSupplierInfoComponent},
@@ -120,6 +122,7 @@ export const routingComponents = [
     ManageOwnerComponent,
     ManagePropertyComponent,
     ManageSupplierComponent,
+    UpdateComplaintComponent,
     UpdateOwnerInfoComponent,
     UpdatePropertyComponent,
     UpdateSupplierInfoComponent,

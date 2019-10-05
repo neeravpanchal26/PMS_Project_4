@@ -28,6 +28,7 @@ export class AssignComplaintComponent implements OnInit {
     public supplierForm: FormGroup;
     public selection = new SelectionModel<any>(true, []);
     public businessInfo = [];
+    public display: boolean = false;
 
     // Pagination stuff
     public dataSource: MatTableDataSource<any>;
@@ -62,6 +63,10 @@ export class AssignComplaintComponent implements OnInit {
                     this.dataSource = new MatTableDataSource<any>(next);
                     this.dataSource.paginator = this.paginator;
                     this.complaints = this.dataSource.connect();
+
+                    if (next != null) {
+                        this.display = true;
+                    }
 
                     // Complaint image load up
                     const compID = next.map((value, index) => Number(value.ComplaintID));

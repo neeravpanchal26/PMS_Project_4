@@ -1,0 +1,100 @@
+<!--Header-->
+<app-header>
+    <div class="row">
+        <div class="col-lg-4">
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-icon mat-card-avatar>photo</mat-icon>
+                    <mat-card-title>Complaint photo</mat-card-title>
+                </mat-card-header>
+                <img class="d-block w-100" [src]="complaintImage">
+            </mat-card>
+        </div>
+
+        <div class="col-lg-8">
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-icon mat-card-avatar>update</mat-icon>
+                    <mat-card-title>Update Complaint</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form (ngSubmit)="UpdateComplaint(updateComplaintForm)" [formGroup]="updateComplaintForm"
+                          class="form-row">
+                        <mat-form-field>
+                            <mat-label>Complaint</mat-label>
+                            <mat-select formControlName="complaint" (selectionChange)="GetComplaintImage($event.value)">
+                                <mat-option *ngFor="let c of complaints" [value]="c.ComplaintID">{{c.propertyName}} -
+                                    ({{c.Name}} - {{c.Date}})
+                                </mat-option>
+                            </mat-select>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="updateComplaintForm.controls['complaint'].hasError('required')">A
+                                complaint must be selected.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Complaint description</mat-label>
+                            <textarea matInput formControlName="description" #desc></textarea>
+                            <mat-hint align="end">{{desc.value?.length || 0}}/200</mat-hint>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="updateComplaintForm.controls['description'].hasError('required')">
+                                Complaint details is required.
+                            </mat-error>
+                            <mat-error *ngIf="updateComplaintForm.controls['description'].hasError('maxlength')">
+                                Complaint details should not exceed 200 characters.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Complaint</mat-label>
+                            <mat-select formControlName="status">
+                                <mat-option *ngFor="let s of status"
+                                            [value]="s.ComplaintStatusID">{{s.Desc}}</mat-option>
+                            </mat-select>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="updateComplaintForm.controls['status'].hasError('required')">A
+                                complaint must be selected.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <div class="col-lg-12">
+                            <div class="float-right mt-1">
+                                <button type="submit" hidden #submit></button>
+                                <button mat-stroked-button type="button" (click)="location.back()" class="mr-1">Back
+                                </button>
+                                <button mat-flat-button color="primary" type="button" data-toggle="modal"
+                                        data-target="#exampleModalCenter" class="ml-1">Update
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</app-header>
+
+<!-- Confirmation Dialog-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to update this complaint?
+            </div>
+            <div class="modal-footer">
+                <button mat-flat-button color="primary" type="button" (click)="submit.click()" data-dismiss="modal">
+                    Yes
+                </button>
+                <button mat-stroked-button type="button" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

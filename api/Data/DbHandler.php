@@ -374,7 +374,7 @@ class DbHandler
         return DBHelper::SelectParam($sp, $param);
     }
 
-    public static function SendEmail($address, $subject, $body)
+    public static function AssignComplaint_Email($address, $subject, $body)
     {
         return EmailHelper::SendMail($address, $subject, $body);
     }
@@ -391,6 +391,26 @@ class DbHandler
     {
         $sp = 'CALL uspCheckComplaintStatus_ComplaintDetails(?)';
         $param = array(&$complaintID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    // Update complaint component methods
+    public static function UpdateComplaint_Complaint()
+    {
+        $sp = 'CALL uspUpdateComplaint_Complaint';
+        return DBHelper::Select($sp);
+    }
+
+    public static function UpdateComplaint_Status()
+    {
+        $sp = 'CALL uspUpdateComplaint_Status';
+        return DBHelper::Select($sp);
+    }
+
+    public static function UpdateComplaint_Update($compID, $desc, $status)
+    {
+        $sp = 'CALL uspUpdateComplaint_Update(?,?,?)';
+        $param = array(&$compID, &$desc, &$status);
         return DBHelper::SelectParam($sp, $param);
     }
 }

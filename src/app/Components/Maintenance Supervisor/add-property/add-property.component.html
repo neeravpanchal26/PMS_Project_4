@@ -6,52 +6,41 @@
             <mat-card-title>Add new property</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <!--Add property form-->
-            <form (ngSubmit)="addProperty(addPropertyForm)" [formGroup]="addPropertyForm">
-                <mat-accordion>
-                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-                        <mat-expansion-panel-header [class.primaryBackground]="step === 0">
-                            <mat-panel-title>
-                                Owner Information
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
 
-                        <div class="form-row">
-                            <mat-form-field class="col-lg-12">
-                                <mat-label>Owner</mat-label>
-                                <mat-select formControlName="owner" (selectionChange)="suburbLoad($event.value)">
-                                    <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.fullName}} -
-                                        ({{o.ContactNumber}})
-                                    </mat-option>
-                                </mat-select>
-                                <!--Form Validation-->
-                                <mat-error *ngIf="addPropertyForm.controls['owner'].hasError('required')">A owner must
-                                    be
-                                    selected.
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
 
-                        <mat-action-row>
-                            <button mat-flat-button color="primary" (click)="nextStep()" type="button">Next</button>
-                        </mat-action-row>
-                    </mat-expansion-panel>
+            <mat-vertical-stepper [linear]="true" #stepper>
+                <mat-step [stepControl]="ownerForm">
+                    <ng-template matStepLabel>Please select a owner.</ng-template>
+                    <button matStepperNext hidden #next></button>
+                    <form [formGroup]="ownerForm" class="form-row">
+                        <mat-form-field class="col-lg-12">
+                            <mat-label>Owner</mat-label>
+                            <mat-select formControlName="owner" (selectionChange)="next.click();">
+                                <mat-option *ngFor="let o of owners" [value]="o.OwnerID">{{o.fullName}} -
+                                    ({{o.ContactNumber}})
+                                </mat-option>
+                            </mat-select>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="ownerForm.controls['owner'].hasError('required')">A owner must
+                                be
+                                selected.
+                            </mat-error>
+                        </mat-form-field>
+                    </form>
+                </mat-step>
 
-                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-                        <mat-expansion-panel-header [class.primaryBackground]="step === 1">
-                            <mat-panel-title>
-                                General Information
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
+                <mat-step [stepControl]="generalForm">
+                    <ng-template matStepLabel>Please fill in the general information.</ng-template>
+                    <form [formGroup]="generalForm">
                         <div class="form-row">
                             <mat-form-field class="col-lg-6">
                                 <input matInput placeholder="Property Name" type="text" formControlName="name">
                                 <!--Form Validation-->
-                                <mat-error *ngIf="addPropertyForm.controls['name'].hasError('required')">Property name
+                                <mat-error *ngIf="generalForm.controls['name'].hasError('required')">Property name
                                     is
                                     required.
                                 </mat-error>
-                                <mat-error *ngIf="addPropertyForm.controls['name'].hasError('maxlength')">Property name
+                                <mat-error *ngIf="generalForm.controls['name'].hasError('maxlength')">Property name
                                     may only
                                     contain 45 characters.
                                 </mat-error>
@@ -72,10 +61,10 @@
                             <mat-form-field class="col-lg-6">
                                 <input matInput placeholder="1234 Main St" formControlName="address1">
                                 <!--Form Validation-->
-                                <mat-error *ngIf="addPropertyForm.controls['address1'].hasError('required')">Address is
+                                <mat-error *ngIf="generalForm.controls['address1'].hasError('required')">Address is
                                     required.
                                 </mat-error>
-                                <mat-error *ngIf="addPropertyForm.controls['address1'].hasError('maxlength')">Address
+                                <mat-error *ngIf="generalForm.controls['address1'].hasError('maxlength')">Address
                                     should not
                                     exceed 100 characters.
                                 </mat-error>
@@ -84,11 +73,11 @@
                             <mat-form-field class="col-lg-6">
                                 <input matInput placeholder="Apartment, studio, or floor" formControlName="address2">
                                 <!--Form Validation-->
-                                <mat-error *ngIf="addPropertyForm.controls['address2'].hasError('required')">Address 2
+                                <mat-error *ngIf="generalForm.controls['address2'].hasError('required')">Address 2
                                     is
                                     required.
                                 </mat-error>
-                                <mat-error *ngIf="addPropertyForm.controls['address2'].hasError('maxlength')">Address 2
+                                <mat-error *ngIf="generalForm.controls['address2'].hasError('maxlength')">Address 2
                                     should
                                     not
                                     exceed 100 characters.
@@ -103,7 +92,7 @@
                                     <mat-option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</mat-option>
                                 </mat-select>
                                 <!--Form Validation-->
-                                <mat-error *ngIf="addPropertyForm.controls['city'].hasError('required')">A city must be
+                                <mat-error *ngIf="generalForm.controls['city'].hasError('required')">A city must be
                                     selected.
                                 </mat-error>
                             </mat-form-field>
@@ -116,28 +105,20 @@
                                                 [value]="s.SuburbID">{{s.SuburbName}}</mat-option>
                                 </mat-select>
                                 <!--Form Validation-->
-                                <mat-error *ngIf="addPropertyForm.controls['suburb'].hasError('required')">A suburb must
+                                <mat-error *ngIf="generalForm.controls['suburb'].hasError('required')">A suburb must
                                     be
                                     selected.
                                 </mat-error>
                             </mat-form-field>
                         </div>
-                        <mat-action-row>
-                            <button mat-stroked-button color="primary" (click)="prevStep()" type="button" class="mr-1">
-                                Previous
-                            </button>
-                            <button mat-flat-button color="primary" (click)="nextStep()" type="button" class="ml-1">
-                                Next
-                            </button>
-                        </mat-action-row>
-                    </mat-expansion-panel>
+                    </form>
+                    <button mat-flat-button matStepperNext color="primary" class="float-right">Next</button>
+                </mat-step>
 
-                    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-                        <mat-expansion-panel-header [class.primaryBackground]="step === 2">
-                            <mat-panel-title>
-                                Additional information
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
+                <mat-step [stepControl]="addPropertyForm">
+                    <ng-template matStepLabel>Please fill in additional information.</ng-template>
+
+                    <form (ngSubmit)="addProperty(addPropertyForm)" [formGroup]="addPropertyForm">
                         <div class="form-row">
                             <mat-form-field class="col-lg-6">
                                 <mat-label>Status</mat-label>
@@ -210,26 +191,16 @@
                             </mat-form-field>
                         </div>
 
-
-                        <mat-action-row>
-                            <button mat-stroked-button color="primary" (click)="prevStep()" type="button" class="mr-1">
-                                Previous
+                        <div class="float-right mt-1">
+                            <button type="submit" hidden #submit></button>
+                            <button mat-stroked-button type="button" (click)="location.back()" class="mr-1">Back</button>
+                            <button mat-flat-button color="primary" type="button" data-toggle="modal"
+                                    data-target="#exampleModalCenter" class="ml-1">Save
                             </button>
-                            <button mat-flat-button color="primary" (click)="nextStep()" type="button" class="ml-1">
-                                End
-                            </button>
-                        </mat-action-row>
-                    </mat-expansion-panel>
-                </mat-accordion>
-
-                <div class="float-right mt-1">
-                    <button type="submit" hidden #submit></button>
-                    <button mat-stroked-button type="button" (click)="location.back()" class="mr-1">Back</button>
-                    <button mat-flat-button color="primary" type="button" data-toggle="modal"
-                            data-target="#exampleModalCenter" class="ml-1">Save
-                    </button>
-                </div>
-            </form>
+                        </div>
+                    </form>
+                </mat-step>
+            </mat-vertical-stepper>
         </mat-card-content>
     </mat-card>
 </app-header>

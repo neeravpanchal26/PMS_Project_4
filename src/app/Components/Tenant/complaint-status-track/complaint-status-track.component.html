@@ -9,7 +9,7 @@
             <mat-form-field>
                 <mat-label>Complaints</mat-label>
                 <mat-select (selectionChange)="LoadComplaintDetails($event.value)">
-                    <mat-option *ngFor="let c of complaints" [value]="c.ComplaintID">{{c.ComplaintID}} {{c.Name}} -
+                    <mat-option *ngFor="let c of complaints" [value]="c.ComplaintID">{{c.Name}} -
                         ({{c.Date}})
                     </mat-option>
                 </mat-select>

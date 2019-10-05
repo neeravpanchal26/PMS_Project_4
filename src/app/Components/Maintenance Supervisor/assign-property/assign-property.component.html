@@ -9,11 +9,11 @@
                 </mat-card-header>
                 <div class="carousel" id="slider" data-pause="true">
                     <ol class="carousel-indicators" [hidden]="imageObject[0].title == 'Error image'">
-                        <li data-target="#slider" *ngFor="let o of imageObject" [class.active]="o.title == 1"></li>
+                        <li data-target="#slider" *ngFor="let o of imageObject" [class.active]="o.title == minID"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item" *ngFor="let o of imageObject"
-                             [class.active]="o.title  == 1 || o.title == 'Error image'">
+                             [class.active]="o.title  == minID || o.title == 'Error image'">
                             <img class="d-block w-100" [src]="o.image" [alt]="o.title">
                         </div>
                     </div>
@@ -89,10 +89,10 @@
                         <div class="col-lg-12">
                             <div class="float-right mt-1">
                                 <button type="submit" hidden #submit></button>
-                                <button mat-stroked-button type="button" (click)="location.back()" class="ml-1">Back
+                                <button mat-stroked-button type="button" (click)="location.back()" class="mr-1">Back
                                 </button>
                                 <button mat-flat-button color="primary" type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter" class="mr-1">Save
+                                        data-target="#exampleModalCenter" class="ml-1">Save
                                 </button>
                             </div>
                         </div>

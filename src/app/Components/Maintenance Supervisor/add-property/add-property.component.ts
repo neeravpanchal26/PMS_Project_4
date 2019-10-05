@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 // Custom imports
 import {AddPropertyService, IAddProperty} from './add-property.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Form, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SnackbarNotificationService} from '../../../Global Services/snackbar-notification.service';
 import {CreateUserService} from '../../It Admin/create-user/create-user.service';
 import {Location} from '@angular/common';
@@ -14,6 +14,8 @@ import {Location} from '@angular/common';
 })
 export class AddPropertyComponent implements OnInit {
     // Global variable
+    public ownerForm: FormGroup;
+    public generalForm: FormGroup;
     public addPropertyForm: FormGroup;
     public img = '';
     public cities: any;
@@ -21,23 +23,9 @@ export class AddPropertyComponent implements OnInit {
     public owners: any;
     public status: any;
     public PropType: any;
-    public step = 0;
 
     // Native Html Elements
     @ViewChild('PropPhoto', {static: false}) PropPhoto;
-
-    // Expansion functions
-    setStep(index: number) {
-        this.step = index;
-    }
-
-    nextStep() {
-        this.step++;
-    }
-
-    prevStep() {
-        this.step--;
-    }
 
     // Default constructor
     constructor(private service: AddPropertyService,
@@ -85,13 +73,13 @@ export class AddPropertyComponent implements OnInit {
     addProperty(e) {
         if (e.valid) {
             const param: IAddProperty = {
-                Name: e.value.name,
-                Address1: e.value.address1,
-                Address2: e.value.address2,
-                Suburb: e.value.suburb,
+                Name: this.generalForm.controls.name.value,
+                Address1: this.generalForm.controls.address1.value,
+                Address2: this.generalForm.controls.address2.value,
+                Suburb: this.generalForm.controls.suburb.value,
                 YearBuilt: e.value.year,
                 Type: e.value.type,
-                Owner: e.value.owner,
+                Owner: this.ownerForm.controls.owner.value,
                 Bedrooms: e.value.bedroom,
                 Bathrooms: e.value.bathroom,
                 Size: e.value.size,
@@ -145,14 +133,21 @@ export class AddPropertyComponent implements OnInit {
 
     // Form builder
     buildForm(): void {
-        this.addPropertyForm = this.formBuilder.group({
+        this.ownerForm = this.formBuilder.group({
+            owner: ['', Validators.required]
+        });
+
+        this.generalForm = this.formBuilder.group({
             name: ['', Validators.compose([Validators.required, Validators.maxLength(45)])],
             address1: ['', Validators.compose([Validators.required, Validators.maxLength(45)])],
             address2: ['', Validators.compose([Validators.maxLength(45)])],
             city: ['', Validators.required],
             suburb: ['', Validators.required],
+        });
+
+
+        this.addPropertyForm = this.formBuilder.group({
             type: ['', Validators.required],
-            owner: ['', Validators.required],
             bedroom: ['', Validators.compose([Validators.required, Validators.min(1)])],
             bathroom: ['', Validators.compose([Validators.required, Validators.min(1)])],
             size: ['', Validators.required],
