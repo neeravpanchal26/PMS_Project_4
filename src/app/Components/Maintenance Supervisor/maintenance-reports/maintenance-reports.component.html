@@ -1,0 +1,34 @@
+<!--Header-->
+<app-header>
+    <mat-card class="mat-elevation-z8 m-3">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>assignment</mat-icon>
+            <mat-card-title>Generate Reports</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-vertical-stepper>
+                <mat-step>
+                    <ng-template matStepLabel>Please select a report type.</ng-template>
+                    <button matStepperNext hidden #next></button>
+                    <mat-form-field appearance="outline">
+                        <mat-select (selectionChange)="next.click();" [(value)]="selected" placeholder="Report types">
+                            <mat-option value="1">Property reports</mat-option>
+                            <mat-option value="2">Complaint reports</mat-option>
+                            <mat-option value="3">Complaint History reports</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-step>
+
+                <mat-step>
+                    <ng-template matStepLabel>Please select filters.</ng-template>
+                    <app-owner-reports *ngIf="selected==1"></app-owner-reports>
+                    <app-complaint-report *ngIf="selected==2"></app-complaint-report>
+                    <app-complaint-history-report *ngIf="selected==3"></app-complaint-history-report>
+                </mat-step>
+
+            </mat-vertical-stepper>
+        </mat-card-content>
+    </mat-card>
+</app-header>
+
+

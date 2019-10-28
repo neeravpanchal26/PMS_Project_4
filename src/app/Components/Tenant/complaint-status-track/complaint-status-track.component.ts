@@ -31,6 +31,19 @@ export class ComplaintStatusTrackComponent implements OnInit {
             .subscribe(data => this.complaints = data, error => this.snackBar.handleError(error));
     }
 
+    // Load all complaints
+    LoadUpComplaints(e) {
+        if (e === true) {
+            // Load complaints
+            this.service.GetComplaintAll(this.LService.GetUserID())
+                .subscribe(data => this.complaints = data, error => this.snackBar.handleError(error));
+        } else {
+            // Load complaints
+            this.service.GetComplaint(this.LService.GetUserID())
+                .subscribe(data => this.complaints = data, error => this.snackBar.handleError(error));
+        }
+    }
+
     // Load complaint details
     LoadComplaintDetails(e) {
         // Load complaint details

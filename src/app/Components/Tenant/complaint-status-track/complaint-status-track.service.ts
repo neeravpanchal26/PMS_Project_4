@@ -25,6 +25,11 @@ export class ComplaintStatusTrackService {
         return this.httpClient.get(this.fullPath + this.action + 'complaints&tenantID=' + tenantID) as Observable<any>;
     }
 
+    // Get complaints all
+    GetComplaintAll(tenantID): Observable<any> {
+        return this.httpClient.get(this.fullPath + this.action + 'complaintsAll&tenantID=' + tenantID) as Observable<any>;
+    }
+
     // Get Complaint Details
     GetComplaintDetails(complaintID): Observable<any> {
         return this.httpClient.get(this.fullPath + this.action + 'complaintDetails&complaintID=' + complaintID) as Observable<any>;

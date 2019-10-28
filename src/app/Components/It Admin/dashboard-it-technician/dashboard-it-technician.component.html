@@ -4,21 +4,26 @@
     <mat-card class="mat-elevation-z8 m-3">
         <mat-card-header>
             <mat-icon mat-card-avatar>show_chart</mat-icon>
-            <mat-card-title>
+            <mat-card-title *ngIf="yAxis != false">
                 {{title}}
             </mat-card-title>
             <span class="spacer"></span>
-                <button mat-stroked-button [mat-menu-trigger-for]="menu1" style="max-height: 40px">
-                    <mat-icon matPrefix>filter_list</mat-icon>
-                    <span>Filter</span>
-                    <mat-menu #menu1="matMenu" xPosition="before">
-                        <button mat-menu-item (click)="setDays(7)">7 Days</button>
-                        <button mat-menu-item (click)="setDays(14)">14 Days</button>
-                        <button mat-menu-item (click)="setDays(30)">30 Days</button>
-                    </mat-menu>
-                </button>
+            <button mat-stroked-button [mat-menu-trigger-for]="menu1" style="max-height: 40px">
+                <mat-icon matPrefix>filter_list</mat-icon>
+                <span>Filter</span>
+                <mat-menu #menu1="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="setDays(7)">7 Days</button>
+                    <button mat-menu-item (click)="setDays(14)">14 Days</button>
+                    <button mat-menu-item (click)="setDays(30)">30 Days</button>
+                </mat-menu>
+            </button>
         </mat-card-header>
         <mat-card-content>
+            <div class="text-center align-middle xlg-48" *ngIf="yAxis==false">
+                <mat-icon class="xlg-48">sentiment_very_dissatisfied</mat-icon>
+                <br/>
+                Oops! nothing to show here.
+            </div>
             <canvas id="itTechnicianCanvas" *ngIf="yAxis != false">{{chart}}</canvas>
         </mat-card-content>
     </mat-card>

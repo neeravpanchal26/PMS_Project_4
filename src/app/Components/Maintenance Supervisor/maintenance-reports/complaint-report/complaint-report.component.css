@@ -1,0 +1,12 @@
+table{
+    width: 100%;
+}
+
+.mat-column-Date{
+    max-width: 20%;
+}
+@media screen and (max-width: 937px) {
+    .mat-column-Date{
+        max-width: 100%;
+    }
+}

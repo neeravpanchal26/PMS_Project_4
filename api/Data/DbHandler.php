@@ -78,6 +78,12 @@ class DbHandler
         return DBHelper::ExecuteNonQuery($sp, $param);
     }
 
+    public static function ManageUsers_UserType()
+    {
+        $sp = 'CALL uspManageUsers_UserType';
+        return DBHelper::Select($sp);
+    }
+
     // Change password component methods
     public static function ChangePassword_OldCheck($userID, $userPassword)
     {
@@ -387,6 +393,13 @@ class DbHandler
         return DBHelper::SelectParam($sp, $param);
     }
 
+    public static function CheckComplaintStatus_ComplaintAll($tenantID)
+    {
+        $sp = 'CALL uspCheckComplaintStatus_ComplaintAll(?)';
+        $param = array(&$tenantID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
     public static function CheckComplaintStatus_ComplaintDetails($complaintID)
     {
         $sp = 'CALL uspCheckComplaintStatus_ComplaintDetails(?)';
@@ -411,6 +424,97 @@ class DbHandler
     {
         $sp = 'CALL uspUpdateComplaint_Update(?,?,?)';
         $param = array(&$compID, &$desc, &$status);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    // Create Tenant component methods
+    public static function CreateTenant_Create($fN, $lN, $dob, $cN, $eA, $pW)
+    {
+        $sp = 'CALL uspCreateTenant_Create (?,?,?,?,?,?)';
+        $param = array(&$fN, &$lN, &$dob, &$cN, &$eA, &$pW);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    // Dashboard maintenance supervisor component methods
+    public static function DashboardMaintenanceSupervisor_Complaints($days)
+    {
+        $sp = 'CALL uspDashboardMaintenanceSupervisor_Complaints (?)';
+        $param = array(&$days);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function DashboardMaintenanceSupervisor_Properties()
+    {
+        $sp = 'CALL uspDashboardMaintenanceSupervisor_Properties';
+        return DBHelper::Select($sp);
+    }
+
+    public static function DashboardMaintenanceSupervisor_Owners()
+    {
+        $sp = 'CALL uspDashboardMaintenanceSupervisor_Owners';
+        return DBHelper::Select($sp);
+    }
+
+    public static function DashboardMaintenanceSupervisor_Suppliers()
+    {
+        $sp = 'CALL uspDashboardMaintenanceSupervisor_Suppliers';
+        return DBHelper::Select($sp);
+    }
+
+    // Dashboard tenant component methods
+    public static function DashboardTenant_Complaints($tenantID, $days)
+    {
+        $sp = 'CALL uspDashboardTenant_Complaints(?,?)';
+        $param = array(&$tenantID, &$days);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function DashboardTenant_OpenComplaints($tenantID)
+    {
+        $sp = 'CALL uspDashboardTenant_OpenComplaints(?)';
+        $param = array(&$tenantID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function DashboardTenant_CloseComplaints($tenantID)
+    {
+        $sp = 'CALL uspDashboardTenant_CloseComplaints(?)';
+        $param = array(&$tenantID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    // Maintenance report component methods
+    public static function MaintenanceReport_Property($ownerName, $suburbName, $cityName, $startDate, $endDate)
+    {
+        $sp = 'CALL uspMaintenanceReport_Property(?,?,?,?,?)';
+        $param = array(&$ownerName, &$suburbName, &$cityName, &$startDate, &$endDate);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function MaintenanceReport_ComplaintStatus()
+    {
+        $sp = 'CALL uspMaintenanceReport_ComplaintStatus';
+        return DBHelper::Select($sp);
+    }
+
+    public static function MaintenanceReport_Complaint($propName, $tenantName, $subCat, $cat, $ownerName, $complaintStatus, $startDate, $endDate)
+    {
+        $sp = 'CALL uspMaintenanceReport_Complaint(?,?,?,?,?,?,?,?)';
+        $param = array(&$propName, &$tenantName, &$subCat, &$cat, &$ownerName, &$complaintStatus, &$startDate, &$endDate);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function MaintenanceReport_ComplaintByProperty($propertyID)
+    {
+        $sp = 'CALL uspMaintenanceReport_ComplaintByProperty(?)';
+        $param = array(&$propertyID);
+        return DBHelper::SelectParam($sp, $param);
+    }
+
+    public static function MaintenanceReport_ComplaintHistory($propName, $complaint, $cat, $subCat, $supplier, $status, $startDate, $endDate)
+    {
+        $sp = 'CALL uspMaintenanceReport_ComplaintHistory(?,?,?,?,?,?,?,?)';
+        $param = array(&$propName, &$complaint, &$subCat, &$cat, &$supplier, &$status, &$startDate, &$endDate);
         return DBHelper::SelectParam($sp, $param);
     }
 }

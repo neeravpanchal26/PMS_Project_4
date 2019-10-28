@@ -64,11 +64,6 @@ export class DashboardItTechnicianComponent implements OnInit {
 
     // Dynamic chart function
     lineChart(xAxis, yAxis, title, xTitle, yTitle, chart) {
-        // Display
-        if (yAxis.length < 1) {
-            this.yAxis = false;
-        }
-
         // Chart Title assign
         this.title = title;
 
@@ -91,7 +86,12 @@ export class DashboardItTechnicianComponent implements OnInit {
                             labelString: yTitle
                         },
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            callback: function(value) {
+                                if (value % 1 === 0) {
+                                    return value;
+                                }
+                            }
                         }
                     }],
                     xAxes: [{
@@ -112,6 +112,10 @@ export class DashboardItTechnicianComponent implements OnInit {
                 responsive: true
             }
         });
+        // Display
+        if (this.chart.canvas == null) {
+            this.yAxis = false;
+        }
     }
 
     // Search filter

@@ -54,7 +54,6 @@ export class ReportComplaintComponent implements OnInit {
         for (let counter = 1; counter <= 6; counter++) {
             this.service.GetCategoryImage(counter)
                 .then(data => {
-                        console.log(JSON.stringify(data));
                         this.categoryImages.push(this.IService.selectPhoto(data));
                     },
                     error1 => this.snackBar.handleError(error1));

@@ -2,24 +2,130 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed02ffb1-ac65-4ea4-9b77-012b178c499c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/Business/Update Complaint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Business/Create Tenant.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Business/Dashboard Maintenance Supervisor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Business/Dashboard Tenant.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Business/Maintenance Report.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39/storage_v2/_src_/schema/pms_schema.6hu9Fg.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/410f318a-f35c-41dc-994d-e5e567f6eb39/storage_v2/_src_/schema/pms_schema.6hu9Fg.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Business/Assign Complaint.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Business/Assign Complaint.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Business/Check Complaint Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Business/Check Complaint Status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Business/Manage Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Business/Manage Users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/Data/DbHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/Data/DbHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/inspector.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/inspector.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cfb/cfb.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cfb/cfb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cfb/dist/cfb.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cfb/dist/cfb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cfb/dist/cfb.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cfb/dist/cfb.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cfb/dist/cfb.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cfb/dist/cfb.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cfb/dist/xlscfb.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cfb/dist/xlscfb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cfb/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cfb/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cfb/xlscfb.flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cfb/xlscfb.flow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/javascript-compiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/javascript-compiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/whitespace-control.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/whitespace-control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/helpers/each.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/helpers/each.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/whitespace-control.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/whitespace-control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/helpers/each.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/helpers/each.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.amd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.amd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.amd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.amd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.amd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.amd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.amd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.amd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/javascript-compiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/javascript-compiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/whitespace-control.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/whitespace-control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/helpers/each.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/helpers/each.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/release-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/release-notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/types/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/compress.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/compress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/output.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/output.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/tools/domprops.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/domprops.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/tools/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.core.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.core.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.core.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.core.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.extendscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.extendscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.full.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.full.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.full.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/dist/xlsx.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xlsx/xlsx.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/xlsx/xlsx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/change-password/change-password.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/error/error.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/footer/footer.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Default/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Default/update-personal-info/update-personal-info.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/business-settings/business-settings.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/dashboard-it-technician/dashboard-it-technician.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/It Admin/manage-users/manage-users.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/reset-password/reset-password.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/It Admin/user-reports/user-reports.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/add-property/add-property.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-complaint/assign-complaint.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-complaint/assign-complaint.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-complaint/assign-complaint.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-complaint/assign-complaint.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.component.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/assign-property/assign-property.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-owner/create-owner.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/create-supplier/create-supplier.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/dashboard-maintenance-supervisor/dashboard-maintenance-supervisor.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/dashboard-maintenance-supervisor/dashboard-maintenance-supervisor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/dashboard-maintenance-supervisor/dashboard-maintenance-supervisor.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/dashboard-maintenance-supervisor/dashboard-maintenance-supervisor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/dashboard-maintenance-supervisor/dashboard-maintenance-supervisor.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-owner/manage-owner.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-property/manage-property.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/manage-supplier/manage-supplier.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-complaint/update-complaint.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-owner-info/update-owner-info.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-property/update-property.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Maintenance Supervisor/update-supplier-info/update-supplier-info.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/complaint-status-track/complaint-status-track.component.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/complaint-status-track/complaint-status-track.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Tenant/complaint-status-track/complaint-status-track.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/report-complaint/report-complaint.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Tenant/report-complaint/report-complaint.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/complaint-status-track/complaint-status-track.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Tenant/complaint-status-track/complaint-status-track.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/complaint-status-track/complaint-status-track.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Tenant/complaint-status-track/complaint-status-track.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/dashboard-tenant/dashboard-tenant.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/dashboard-tenant/dashboard-tenant.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Tenant/dashboard-tenant/dashboard-tenant.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/dashboard-tenant/dashboard-tenant.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Tenant/dashboard-tenant/dashboard-tenant.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/report-complaint/report-complaint.component.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Components/Tenant/report-complaint/report-complaint.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Components/Tenant/report-complaint/report-complaint.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Global Services/snackbar-notification.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +188,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1" />
   <component name="ProjectId" id="1QB9G9B3dNGtONPvM4ZOxqNQXWz" />
   <component name="ProjectLevelVcsManager">
@@ -103,15 +210,16 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/api/Data" />
       <recent name="$PROJECT_DIR$/src/app/Global Services" />
       <recent name="$PROJECT_DIR$/src/app/Components/Default components" />
-      <recent name="$PROJECT_DIR$/src/app/Components/It Technician" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api" />
@@ -129,7 +237,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular Development Server">
+  <component name="RunManager" selected="PHP Built-in Web Server.Api">
     <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -165,16 +273,22 @@
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
+        <option name="contentProportion" value="0.08879068" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c16deb89" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@91b231ce" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c16deb89" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2e15af32" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@91b231ce" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5fec7d0c" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@91b231ce" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@288e734c" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -356,6 +470,58 @@
       <workItem from="1570249807837" duration="7907000" />
       <workItem from="1570264090465" duration="2758000" />
       <workItem from="1570270354522" duration="9338000" />
+      <workItem from="1570545515350" duration="146000" />
+      <workItem from="1570717990505" duration="11231000" />
+      <workItem from="1570774994377" duration="8158000" />
+      <workItem from="1570787112633" duration="3655000" />
+      <workItem from="1570794199029" duration="16000" />
+      <workItem from="1570794426956" duration="2859000" />
+      <workItem from="1570798779151" duration="182000" />
+      <workItem from="1570805292868" duration="3500000" />
+      <workItem from="1570856396556" duration="8302000" />
+      <workItem from="1570867969812" duration="9607000" />
+      <workItem from="1570892575929" duration="3282000" />
+      <workItem from="1570903796686" duration="340000" />
+      <workItem from="1571031499689" duration="9382000" />
+      <workItem from="1571064519477" duration="11823000" />
+      <workItem from="1571079585216" duration="799000" />
+      <workItem from="1571112313732" duration="9000" />
+      <workItem from="1571115524095" duration="3117000" />
+      <workItem from="1571135341776" duration="70000" />
+      <workItem from="1571149914873" duration="1434000" />
+      <workItem from="1571151459238" duration="1150000" />
+      <workItem from="1571299542812" duration="977000" />
+      <workItem from="1571301177159" duration="938000" />
+      <workItem from="1571310866029" duration="158000" />
+      <workItem from="1571312498729" duration="10059000" />
+      <workItem from="1571325057899" duration="3253000" />
+      <workItem from="1571335941251" duration="385000" />
+      <workItem from="1571381731972" duration="1301000" />
+      <workItem from="1571383284924" duration="227000" />
+      <workItem from="1571385243983" duration="487000" />
+      <workItem from="1571385884728" duration="85000" />
+      <workItem from="1571458290249" duration="673000" />
+      <workItem from="1571634877005" duration="546000" />
+      <workItem from="1571644833967" duration="114000" />
+      <workItem from="1571659678422" duration="9080000" />
+      <workItem from="1571848256503" duration="4966000" />
+      <workItem from="1571937632505" duration="1818000" />
+      <workItem from="1571940742562" duration="333000" />
+      <workItem from="1571941294254" duration="153000" />
+      <workItem from="1571993534129" duration="1353000" />
+      <workItem from="1571995254826" duration="1932000" />
+      <workItem from="1571999016639" duration="2190000" />
+      <workItem from="1572008612528" duration="10717000" />
+      <workItem from="1572023094122" duration="2137000" />
+      <workItem from="1572069360403" duration="3200000" />
+      <workItem from="1572077630980" duration="2452000" />
+      <workItem from="1572085989284" duration="6000" />
+      <workItem from="1572173940442" duration="662000" />
+      <workItem from="1572181796244" duration="307000" />
+      <workItem from="1572244467332" duration="2528000" />
+      <workItem from="1572252371359" duration="5136000" />
+      <workItem from="1572269548724" duration="731000" />
+      <workItem from="1572279280541" duration="917000" />
     </task>
     <servers />
   </component>
@@ -391,6 +557,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/node_modules/ng-image-slider/lib/ng-image-slider.component.d.ts</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/app-routing.module.ts</url>
+          <line>21</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/app-routing.module.ts</url>
+          <line>28</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

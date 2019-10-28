@@ -1,4 +1,68 @@
 <!--Header-->
 <app-header>
-    <p>dashboard-maintenance-supervisor works!</p>
+    <mat-card class="mat-elevation-z8 m-3">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>show_chart</mat-icon>
+            <mat-card-title>
+                {{title}}
+            </mat-card-title>
+            <span class="spacer"></span>
+            <button mat-stroked-button [mat-menu-trigger-for]="menu1" style="max-height: 40px">
+                <mat-icon matPrefix>filter_list</mat-icon>
+                <span>Filter</span>
+                <mat-menu #menu1="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="setDays(7)">7 Days</button>
+                    <button mat-menu-item (click)="setDays(14)">14 Days</button>
+                    <button mat-menu-item (click)="setDays(30)">30 Days</button>
+                    <button mat-menu-item (click)="setDays(60)">60 Days</button>
+                    <button mat-menu-item (click)="setDays(90)">90 Days</button>
+                </mat-menu>
+            </button>
+        </mat-card-header>
+        <mat-card-content>
+            <canvas id="chart">{{chart}}</canvas>
+        </mat-card-content>
+    </mat-card>
+    <div class=row>
+        <div class="col-lg-4">
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-card-title>
+                        Properties
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-icon class="xlg-48 material-icon">emoji_transportation</mat-icon>
+                    <div class="xlg-48 float-right">{{properties}}</div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-lg-4">
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-card-title>
+                        Owners
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-icon class="xlg-48 material-icon">people_outline</mat-icon>
+                    <div class="xlg-48 float-right">{{owners}}</div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-lg-4">
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-card-title>
+                        Suppliers
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-icon class="xlg-48 material-icon">people_outline</mat-icon>
+                    <div class="xlg-48 float-right pb-2">{{suppliers}}</div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
 </app-header>

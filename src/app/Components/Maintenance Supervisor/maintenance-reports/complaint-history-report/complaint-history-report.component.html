@@ -1,0 +1,92 @@
+<div class="form-row">
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Property</mat-label>
+        <mat-select
+                (selectionChange)="ComplaintByProperty($event.value);FilterComplaintHistory($event,null,null,null,null,null,null,null)">
+            <mat-option *ngFor="let p of properties" [value]="p.PropertyID">{{p.Name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Complaints</mat-label>
+        <mat-select (selectionChange)="FilterComplaintHistory(null,$event,null,null,null,null,null,null)">
+            <mat-option *ngFor="let c of complaints" [value]="c.ComplaintID">{{c.Name}} - ({{c.Date}})</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select
+                (selectionChange)="SubCategory($event.value);FilterComplaintHistory(null,null,$event,null,null,null,null,null);">
+            <mat-option *ngFor="let c of categories" [value]="c.CategoryID">{{c.Name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Sub Category</mat-label>
+        <mat-select (selectionChange)="FilterComplaintHistory(null,null,null,$event.value,null,null,null,null)">
+            <mat-option *ngFor="let sc of subCategories" [value]="sc.Name">{{sc.Name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Supplier</mat-label>
+        <mat-select (selectionChange)="FilterComplaintHistory(null,null,null,null,$event,null,null,null)">
+            <mat-option *ngFor="let s of suppliers" [value]="s.SupplierID">{{s.Name}} - ({{s.Desc}})</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select (selectionChange)="FilterComplaintHistory(null,null,null,null,null,$event.value,null,null)">
+            <mat-option *ngFor="let s of complaintStatus" [value]="s.Desc">{{s.Desc}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="picker1" data-date-format="yyyy-MM-dd"
+               (dateChange)="FilterComplaintHistory(null,null,null,null,null,null,$event.value,null)">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="picker2" data-date-format="yyyy-MM-dd"
+               (dateChange)="FilterComplaintHistory(null,null,null,null,null,null,null,$event.value)">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+</div>
+
+<!--Complaints Table-->
+<mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="Date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Complaint Date</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.Date}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Desc">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Complaint Description</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.Desc}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<!--Paginantion-->
+<mat-paginator [pageSizeOptions]="[10, 25, 100, 200]"></mat-paginator>
+<div class="float-right">
+    <button mat-stroked-button type="button" class="mr-1">
+        <mat-icon matPrefix>rotate_right</mat-icon>
+        Reset
+    </button>
+    <button mat-stroked-button type="button" class="ml-1" (click)="ExportToExcel(dataSource.data)">
+        <mat-icon matPrefix>description_icon</mat-icon>
+        Export to Excel
+    </button>
+</div>
+

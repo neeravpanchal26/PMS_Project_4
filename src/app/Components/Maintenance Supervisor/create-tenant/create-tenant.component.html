@@ -1,0 +1,166 @@
+<!--Header-->
+<app-header>
+    <!--Create Tenant Form-->
+    <mat-card class="mat-elevation-z8 m-3">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>person_add</mat-icon>
+            <mat-card-title>Add new tenant</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form (ngSubmit)="createUser(createTenantForm)" [formGroup]="createTenantForm">
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="First name" type="text" formControlName="name">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="createTenantForm.controls['name'].hasError('required')">First name is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="createTenantForm.controls['name'].hasError('maxlength')">First name may only
+                            contain 45 characters.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Last name" type="text" formControlName="surname">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="createTenantForm.controls['surname'].hasError('required')">Last name is
+                            required.
+                        </mat-error>
+                        <mat-error *ngIf="createTenantForm.controls['surname'].hasError('maxlength')">Last name may only
+                            contain 45 characters.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"
+                               data-date-format="yyyy-MM-dd"
+                               min="1940-01-01" max="{{maxDate | date:'yyyy-MM-dd'}}">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <!--Form Validation-->
+                        <mat-error *ngIf="createTenantForm.controls['dob'].hasError('required')">Date of birth is
+                            required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Contact Number" formControlName="contact" type="tel"
+                               pattern="[0-9]{3}[0-9]{3}[0-9]{4}" max="10">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="createTenantForm.controls['contact'].hasError('required')">Contact number is
+                            required.
+                        </mat-error>
+                        <mat-error
+                                *ngIf="createTenantForm.controls['contact'].hasError('maxlength') || createTenantForm.controls['contact'].hasError('minlength')">
+                            Contact number may only be 10 characters.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                    <mat-form-field class="col-lg-6">
+                        <input matInput placeholder="Email address" formControlName="email" type="email">
+                        <!--Form Validation-->
+                        <mat-error *ngIf="emailCheck">It seems this email exists on our system.</mat-error>
+                        <mat-error *ngIf="createTenantForm.controls['email'].hasError('required')">Email is required.
+                        </mat-error>
+                        <mat-error *ngIf="createTenantForm.controls['email'].hasError('maxlength')">Email may only be
+                            200
+                            characters.
+                        </mat-error>
+                        <mat-error *ngIf="createTenantForm.controls['email'].hasError('pattern')">Check your email
+                            format.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="col-lg-6">
+                        <mat-form-field class="width">
+                            <input matInput type="password" #password placeholder="Password" formControlName="password">
+                            <mat-hint align="end" aria-live="polite">
+                                {{password.value.length}} / 20
+                            </mat-hint>
+                            <!--Form Validation-->
+                            <mat-error *ngIf="createTenantForm.controls['password'].hasError('required')">Password is
+                                required.
+                            </mat-error>
+                            <mat-error *ngIf="createTenantForm.controls['password'].hasError('minlength')">Password
+                                should
+                                contain
+                                8 characters.
+                            </mat-error>
+                            <mat-error *ngIf="createTenantForm.controls['password'].hasError('maxlength')">Password
+                                should
+                                not be
+                                more than 20 characters.
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-password-strength #passwordComponent [password]="password.value"></mat-password-strength>
+                        <mat-password-strength-info [passwordComponent]="passwordComponent"
+                                                    *ngIf="createTenantForm.controls['password'].invalid && (createTenantForm.controls['password'].dirty || createTenantForm.controls['password'].touched)"></mat-password-strength-info>
+                    </div>
+
+                </div>
+                <div class="float-right mt-1">
+                    <button type="submit" hidden #submit></button>
+                    <button mat-stroked-button type="button" data-toggle="modal" data-target="#exampleModalCenter1"
+                            class="mr-1">Clear
+                    </button>
+                    <button mat-flat-button color="primary" type="button" data-toggle="modal"
+                            data-target="#exampleModalCenter" class="ml-1">Save
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</app-header>
+
+<!-- Confirmation Dialog-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to add the new user?
+            </div>
+            <div class="modal-footer">
+                <button type="button" mat-flat-button color="primary" data-dismiss="modal" (click)="submit.click()">
+                    Yes
+                </button>
+                <button type="button" mat-stroked-button data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Clear Modal-->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle1">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to clear all the fields?
+            </div>
+            <div class="modal-footer">
+                <button type="button" mat-flat-button color="primary" (click)="createTenantForm.reset()"
+                        data-dismiss="modal">Yes
+                </button>
+                <button type="button" mat-stroked-button data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

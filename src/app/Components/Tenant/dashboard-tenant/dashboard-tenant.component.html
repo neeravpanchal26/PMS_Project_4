@@ -1,6 +1,56 @@
 <!--Header-->
 <app-header>
-    <p>dashboard-tenant works!</p>
+    <mat-card class="mat-elevation-z8 m-3">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>show_chart</mat-icon>
+            <mat-card-title>
+                {{title}}
+            </mat-card-title>
+            <span class="spacer"></span>
+            <button mat-stroked-button [mat-menu-trigger-for]="menu1" style="max-height: 40px">
+                <mat-icon matPrefix>filter_list</mat-icon>
+                <span>Filter</span>
+                <mat-menu #menu1="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="setDays(7)">7 Days</button>
+                    <button mat-menu-item (click)="setDays(14)">14 Days</button>
+                    <button mat-menu-item (click)="setDays(30)">30 Days</button>
+                    <button mat-menu-item (click)="setDays(60)">60 Days</button>
+                    <button mat-menu-item (click)="setDays(90)">90 Days</button>
+                </mat-menu>
+            </button>
+        </mat-card-header>
+        <mat-card-content>
+            <canvas id="tenantCanvas">{{chart}}</canvas>
+        </mat-card-content>
+    </mat-card>
+    <div class=row>
+        <div class="col-lg-6">
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-card-title>
+                        Resolved complaints
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-icon class="xlg-48 material-icon">check_circle_outline</mat-icon>
+                    <div class="xlg-48 float-right">{{closeComplaints}}</div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-lg-6">
+            <mat-card class="mat-elevation-z8 m-3">
+                <mat-card-header>
+                    <mat-card-title>
+                        Unresolved complaints
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-icon class="xlg-48 material-icon">highlight_off</mat-icon>
+                    <div class="xlg-48 float-right">{{openComplaints}}</div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
 </app-header>
 
 

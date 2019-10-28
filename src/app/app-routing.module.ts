@@ -7,6 +7,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginGuard} from './Global Services/login.guard';
 import {LoginService} from './Global Services/login.service';
 import {SnackbarNotificationService} from './Global Services/snackbar-notification.service';
+import {ExcelExporterService} from './Global Services/excel-exporter.service';
 
 // Custom component imports
 // Default
@@ -23,7 +24,6 @@ import {CreateUserComponent} from './Components/It Admin/create-user/create-user
 import {DashboardItTechnicianComponent} from './Components/It Admin/dashboard-it-technician/dashboard-it-technician.component';
 import {ManageUsersComponent} from './Components/It Admin/manage-users/manage-users.component';
 import {ResetPasswordComponent} from './Components/It Admin/reset-password/reset-password.component';
-import {UserReportsComponent} from './Components/It Admin/user-reports/user-reports.component';
 
 // Maintenance supervisor component
 import {AddPropertyComponent} from './Components/Maintenance Supervisor/add-property/add-property.component';
@@ -31,7 +31,9 @@ import {AssignComplaintComponent} from './Components/Maintenance Supervisor/assi
 import {AssignPropertyComponent} from './Components/Maintenance Supervisor/assign-property/assign-property.component';
 import {CreateOwnerComponent} from './Components/Maintenance Supervisor/create-owner/create-owner.component';
 import {CreateSupplierComponent} from './Components/Maintenance Supervisor/create-supplier/create-supplier.component';
+import {CreateTenantComponent} from './Components/Maintenance Supervisor/create-tenant/create-tenant.component';
 import {DashboardMaintenanceSupervisorComponent} from './Components/Maintenance Supervisor/dashboard-maintenance-supervisor/dashboard-maintenance-supervisor.component';
+import {MaintenanceReportsComponent} from './Components/Maintenance Supervisor/maintenance-reports/maintenance-reports.component';
 import {ManageOwnerComponent} from './Components/Maintenance Supervisor/manage-owner/manage-owner.component';
 import {ManagePropertyComponent} from './Components/Maintenance Supervisor/manage-property/manage-property.component';
 import {ManageSupplierComponent} from './Components/Maintenance Supervisor/manage-supplier/manage-supplier.component';
@@ -44,7 +46,6 @@ import {UpdateSupplierInfoComponent} from './Components/Maintenance Supervisor/u
 import {ComplaintStatusTrackComponent} from './Components/Tenant/complaint-status-track/complaint-status-track.component';
 import {DashboardTenantComponent} from './Components/Tenant/dashboard-tenant/dashboard-tenant.component';
 import {ReportComplaintComponent} from './Components/Tenant/report-complaint/report-complaint.component';
-import {componentFactoryName} from '@angular/compiler';
 
 // Routing Array
 const routes: Routes = [
@@ -59,7 +60,6 @@ const routes: Routes = [
     {path: 'Dashboard_It_Admin', canActivate: [LoginGuard], component: DashboardItTechnicianComponent},
     {path: 'Manage_Users', canActivate: [LoginGuard], component: ManageUsersComponent},
     {path: 'Reset_Password/:userID', canActivate: [LoginGuard], component: ResetPasswordComponent},
-    {path: 'User_Reports', canActivate: [LoginGuard], component: UserReportsComponent},
 
     // Maintenance supervisor component
     {path: 'Add_Property', canActivate: [LoginGuard], component: AddPropertyComponent},
@@ -67,7 +67,9 @@ const routes: Routes = [
     {path: 'Assign_Property', canActivate: [LoginGuard], component: AssignPropertyComponent},
     {path: 'Create_Owner', canActivate: [LoginGuard], component: CreateOwnerComponent},
     {path: 'Create_Supplier', canActivate: [LoginGuard], component: CreateSupplierComponent},
+    {path: 'Create_Tenant', canActivate: [LoginGuard], component: CreateTenantComponent},
     {path: 'Dashboard_Supervisor', canActivate: [LoginGuard], component: DashboardMaintenanceSupervisorComponent},
+    {path: 'Maintenance_Reports', canActivate: [LoginGuard], component: MaintenanceReportsComponent},
     {path: 'Manage_Owners', canActivate: [LoginGuard], component: ManageOwnerComponent},
     {path: 'Manage_Property', canActivate: [LoginGuard], component: ManagePropertyComponent},
     {path: 'Manage_Supplier', canActivate: [LoginGuard], component: ManageSupplierComponent},
@@ -88,6 +90,7 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
     providers: [SnackbarNotificationService,
+        ExcelExporterService,
         LoginGuard,
         LoginService
     ]
@@ -110,7 +113,6 @@ export const routingComponents = [
     DashboardItTechnicianComponent,
     ManageUsersComponent,
     ResetPasswordComponent,
-    UserReportsComponent,
 
     // Maintenance supervisor
     AddPropertyComponent,
@@ -118,7 +120,9 @@ export const routingComponents = [
     AssignPropertyComponent,
     CreateOwnerComponent,
     CreateSupplierComponent,
+    CreateTenantComponent,
     DashboardMaintenanceSupervisorComponent,
+    MaintenanceReportsComponent,
     ManageOwnerComponent,
     ManagePropertyComponent,
     ManageSupplierComponent,

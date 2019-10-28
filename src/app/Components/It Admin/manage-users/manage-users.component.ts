@@ -43,7 +43,7 @@ export class ManageUsersComponent implements OnInit {
             );
 
         // Load user types
-        this.CService.GetUserType()
+        this.service.GetUserType()
             .subscribe(
                 data => this.userType = data,
                 error => this.snackBar.handleError(error)

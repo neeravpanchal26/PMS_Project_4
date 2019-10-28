@@ -4,6 +4,9 @@
         <mat-card-header>
             <mat-icon mat-card-avatar>view_list</mat-icon>
             <mat-card-title>Check Complaint Status</mat-card-title>
+            <span class="spacer"></span>
+            <mat-checkbox color="primary" (change)="LoadUpComplaints($event.checked)">Include resolved complaints.
+            </mat-checkbox>
         </mat-card-header>
         <mat-card-content>
             <mat-form-field>

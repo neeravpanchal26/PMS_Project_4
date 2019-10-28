@@ -109,7 +109,7 @@ export class AssignPropertyComponent implements OnInit {
             this.service.AssignProperty(param)
                 .subscribe(
                     data => {
-                        if (data[0] === true) {
+                        if (data[0].TRUE === 1) {
                             this.snackBar.AssignPropertySuccess();
                             e.reset();
                         }

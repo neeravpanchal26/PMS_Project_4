@@ -1,20 +1,22 @@
-@media screen and (max-width: 789px){
-    .columnFlex {
-        flex-direction: column;
-    }
-    .flex1 {
-        flex: 1;
-    }
-    .spacer {
-        display: none;
-    }
-}
-
 mat-toolbar span {
     padding: .5rem;
 }
 
-mat-toolbar{
+mat-toolbar {
     height: auto;
     min-height: 64px;
+}
+
+@media screen and (max-width: 789px) {
+    .columnFlex {
+        flex-direction: column;
+    }
+
+    .flex1 {
+        flex: 1;
+    }
+
+    .spacer {
+        display: none;
+    }
 }

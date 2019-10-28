@@ -103,13 +103,14 @@ export class AddPropertyComponent implements OnInit {
                                         const frmData = new FormData();
                                         frmData.append('file', i);
                                         this.service.uploadImage(frmData)
-                                            .subscribe(data1 =>
-                                                e.reset()
+                                            .subscribe(data1 => {
+                                                }
                                             );
                                     }
                                 }
                             } catch {
                             }
+                            e.reset();
                         }
                     },
                     error => this.snackBar.handleError(error));

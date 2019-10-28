@@ -1,0 +1,101 @@
+<div class="form-row">
+    <mat-form-field class="col-4" appearance="outline">
+        <mat-label>Owner</mat-label>
+        <mat-select (selectionChange)="FilterPropertyReport($event.value,null,null,null,null)">
+            <mat-option *ngFor="let o of owners" [value]="o.fullName">{{o.fullName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-4" appearance="outline">
+        <mat-label>City</mat-label>
+        <mat-select
+                (selectionChange)="suburbLoad($event.value);FilterPropertyReport(null,null,$event,null,null)">
+            <mat-option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-4" appearance="outline">
+        <mat-label>Suburb</mat-label>
+        <mat-select (selectionChange)="FilterPropertyReport(null,$event.value,null,null,null)">
+            <mat-option *ngFor="let s of suburbs"
+                        [value]="s.SuburbName">{{s.SuburbName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="picker1" data-date-format="yyyy-MM-dd"
+               (dateChange)="FilterPropertyReport(null,null,null,$event.value,null)">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="col-6" appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="picker2" data-date-format="yyyy-MM-dd"
+               (dateChange)="FilterPropertyReport(null,null,null,null,$event.value)">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+</div>
+
+<!--Property Table-->
+<mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Property Name</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.Name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Address1">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Address 1</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.Address1}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Address2">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Address 2</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.Address2}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SuburbName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Suburb</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.SuburbName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="CityName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.CityName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ownerFullName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Owner</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.ownerFullName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="totalComplaint">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Complaints Reported</mat-header-cell>
+        <mat-cell *matCellDef="let row" class="text-right">{{row.totalComplaint}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="unresolvedComplaint">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Unresolved Complaints</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.unresolvedComplaint}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="resolvedComplaint">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Resolved Complaint</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.resolvedComplaint}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<!--Paginantion-->
+<mat-paginator [pageSizeOptions]="[10, 25, 100, 200]"></mat-paginator>
+<div class="float-right">
+    <button mat-stroked-button type="button" class="mr-1" (click)="Reset()"><mat-icon matPrefix>rotate_right</mat-icon>Reset</button>
+    <button mat-stroked-button type="button" class="ml-1" (click)="ExportToExcel(dataSource.data)"><mat-icon matPrefix>description_icon</mat-icon>Export to Excel</button>
+</div>
+

@@ -22,4 +22,6 @@ if ($action == 'users') {
 } elseif ($action == 'status') {
     $json = json_decode(file_get_contents('php://input'));
     echo json_encode(DbHandler::ManageUsers_Status($json->userID, $json->status));
+} elseif ($action == 'userTypes'){
+    echo json_encode(DbHandler::ManageUsers_UserType());
 }

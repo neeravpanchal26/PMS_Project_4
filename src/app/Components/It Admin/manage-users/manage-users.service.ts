@@ -34,6 +34,11 @@ export class ManageUsersService {
     ChangeUserStatus(param: IUser): Observable<any> {
         return this.httpClient.post(this.fullPath + this.action + 'status', param) as Observable<any>;
     }
+
+    // Get user type
+    GetUserType(): Observable<any> {
+        return this.httpClient.get(this.fullPath + this.action + 'userTypes') as Observable<any>;
+    }
 }
 
 // Wrapper interface
