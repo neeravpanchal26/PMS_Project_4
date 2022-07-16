@@ -12,6 +12,7 @@ import {AddPropertyService} from '../../add-property/add-property.service';
 import {MaintenanceReportsService} from '../maintenance-reports.service';
 import {Images} from '../../assign-property/assign-property.component';
 import {AssignComplaintService} from '../../assign-complaint/assign-complaint.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
     selector: 'app-complaint-history-report',
@@ -26,6 +27,7 @@ export class ComplaintHistoryReportComponent implements OnInit {
     public subCategories;
     public suppliers;
     public complaintStatus;
+    public filterForm: FormGroup;
 
     // Sorting variables
     public property = '';
@@ -52,11 +54,42 @@ export class ComplaintHistoryReportComponent implements OnInit {
                 private RService: ReportComplaintService,
                 private APService: AddPropertyService,
                 private ACService: AssignComplaintService,
+                private formBuilder: FormBuilder,
                 private MService: MaintenanceReportsService) {
     }
 
     // Form load
     ngOnInit() {
+        // Filter Validation
+        this.filterForm = this.formBuilder.group({
+            property: [],
+            complaints: [],
+            category: [],
+            subCategory: [],
+            supplier: [],
+            status: [],
+            startDate: [],
+            endDate: []
+        });
+
+        this.Reset();
+    }
+
+    // Reset
+    Reset() {
+        // Reset variables
+        this.property = '';
+        this.complaint = '';
+        this.category = '';
+        this.subCategory = '';
+        this.supplier = '';
+        this.status = '';
+        this.startDate = '';
+        this.endDate = new Date(new Date().setDate(new Date().getDate() + 1));
+
+        // Reset Form
+        this.filterForm.reset();
+
         // Property Load up
         this.AService.GetProperty()
             .subscribe(data => this.properties = data, error => this.snackBar.handleError(error));

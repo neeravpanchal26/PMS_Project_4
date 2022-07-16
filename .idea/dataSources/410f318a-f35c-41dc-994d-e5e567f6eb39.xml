@@ -967,7 +967,7 @@
       <RoutineKind>procedure</RoutineKind>
     </routine>
     <routine id="254" parent="3" name="uspAssignProperty_Add">
-      <SourceTextLength>1141</SourceTextLength>
+      <SourceTextLength>1155</SourceTextLength>
       <Definer>pms@%</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
@@ -1082,7 +1082,7 @@
       <RoutineKind>procedure</RoutineKind>
     </routine>
     <routine id="277" parent="3" name="uspDashboardMaintenanceSupervisor_Complaints">
-      <SourceTextLength>215</SourceTextLength>
+      <SourceTextLength>1243</SourceTextLength>
       <Definer>pms@%</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
@@ -1107,7 +1107,7 @@
       <RoutineKind>procedure</RoutineKind>
     </routine>
     <routine id="282" parent="3" name="uspDashboardTenant_Complaints">
-      <SourceTextLength>253</SourceTextLength>
+      <SourceTextLength>1520</SourceTextLength>
       <Definer>pms@%</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
@@ -1132,7 +1132,7 @@
       <RoutineKind>procedure</RoutineKind>
     </routine>
     <routine id="287" parent="3" name="uspMaintenanceReport_ComplaintHistory">
-      <SourceTextLength>936</SourceTextLength>
+      <SourceTextLength>942</SourceTextLength>
       <Definer>pms@%</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
@@ -2454,7 +2454,7 @@ imageID</ColNames>
     </argument>
     <argument id="564" parent="287" name="complaint">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
     </argument>
     <argument id="565" parent="287" name="subCat">
       <Position>3</Position>

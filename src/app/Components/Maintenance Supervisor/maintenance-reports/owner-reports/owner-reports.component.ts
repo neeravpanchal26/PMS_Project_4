@@ -12,6 +12,7 @@ import {ExcelExporterService} from '../../../../Global Services/excel-exporter.s
 import {BusinessSettingsService} from '../../../It Admin/business-settings/business-settings.service';
 import {ImageRetrieveService} from '../../../../Global Services/image-retrieve.service';
 import {Images} from '../../assign-property/assign-property.component';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
     selector: 'app-owner-reports',
@@ -23,6 +24,7 @@ export class OwnerReportsComponent implements OnInit {
     public owners;
     public cities;
     public suburbs;
+    public filterForm: FormGroup;
 
     // Sorting variables
     public ownerName = '';
@@ -33,7 +35,7 @@ export class OwnerReportsComponent implements OnInit {
 
     // Data Table
     dataSource: MatTableDataSource<any>;
-    displayedColumns: string[] = ['Name', 'Address1', 'Address2', 'SuburbName', 'CityName', 'ownerFullName', 'totalComplaint', 'unresolvedComplaint', 'resolvedComplaint'];
+    displayedColumns: string[] = ['Name', 'Address1', 'Address2', 'SuburbName', 'CityName', 'ownerFullName', 'totalComplaint'];
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -43,10 +45,32 @@ export class OwnerReportsComponent implements OnInit {
                 private APService: AddPropertyService,
                 private IService: ImageRetrieveService,
                 private service: MaintenanceReportsService,
+                private formBuilder: FormBuilder,
                 private snackBar: SnackbarNotificationService) {
     }
 
     ngOnInit() {
+        // Filter Validation
+        this.filterForm = this.formBuilder.group({
+            owner: [],
+            city: [],
+            suburb: [],
+            startDate: [],
+            endDate: []
+        });
+
+        this.Reset();
+    }
+
+    // Reset Form
+    Reset() {
+        // Reset Variables
+        this.ownerName='';
+        this.suburbName='';
+        this.cityName='';
+        this.startDate='';
+        this.endDate = new Date(new Date().setDate(new Date().getDate() + 1));
+
         // Owner Load up
         this.APService.getOwner()
             .subscribe(data => this.owners = data, error => this.snackBar.handleError(error));
@@ -98,7 +122,7 @@ export class OwnerReportsComponent implements OnInit {
 
     ExportToExcel(DataToExport) {
         // Headers
-        const headers = ['Property Name', 'Address 1', 'Address 2', 'Suburb', 'City', 'Owner', 'Complaints Reported', 'Unresolved complaints', 'Resolved Complaints'];
+        const headers = ['Property Name', 'Address 1', 'Address 2', 'Suburb', 'City', 'Owner', 'Complaints Reported'];
 
         // Sub Headers
         let subHeader = '';
@@ -125,9 +149,7 @@ export class OwnerReportsComponent implements OnInit {
                 'Suburb': x.SuburbName,
                 'City': x.CityName,
                 'Owner': x.ownerFullName,
-                'Complaints Reported': x.totalComplaint,
-                'Unresolved complaints': x.unresolvedComplaint,
-                'Resolved Complaints': x.resolvedComplaint
+                'Complaints Reported': x.totalComplaint
             });
         });
 
@@ -147,10 +169,5 @@ export class OwnerReportsComponent implements OnInit {
                     };
                 });
             });
-    }
-
-    // Reset Form
-    Reset() {
-        this.ngOnInit();
     }
 }

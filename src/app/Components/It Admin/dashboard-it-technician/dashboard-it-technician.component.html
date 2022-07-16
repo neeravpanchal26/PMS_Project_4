@@ -1,79 +1,107 @@
 <!--Header-->
 <app-header>
-    <!--Graph-->
-    <mat-card class="mat-elevation-z8 m-3">
-        <mat-card-header>
-            <mat-icon mat-card-avatar>show_chart</mat-icon>
-            <mat-card-title *ngIf="yAxis != false">
-                {{title}}
-            </mat-card-title>
-            <span class="spacer"></span>
-            <button mat-stroked-button [mat-menu-trigger-for]="menu1" style="max-height: 40px">
-                <mat-icon matPrefix>filter_list</mat-icon>
-                <span>Filter</span>
-                <mat-menu #menu1="matMenu" xPosition="before">
-                    <button mat-menu-item (click)="setDays(7)">7 Days</button>
-                    <button mat-menu-item (click)="setDays(14)">14 Days</button>
-                    <button mat-menu-item (click)="setDays(30)">30 Days</button>
-                </mat-menu>
-            </button>
-        </mat-card-header>
-        <mat-card-content>
-            <div class="text-center align-middle xlg-48" *ngIf="yAxis==false">
-                <mat-icon class="xlg-48">sentiment_very_dissatisfied</mat-icon>
-                <br/>
-                Oops! nothing to show here.
-            </div>
-            <canvas id="itTechnicianCanvas" *ngIf="yAxis != false">{{chart}}</canvas>
-        </mat-card-content>
-    </mat-card>
+  <!--Graph-->
+  <mat-card class="mat-elevation-z8 m-3">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>show_chart</mat-icon>
+      <mat-card-title *ngIf="yAxis != false">
+        {{ title }}
+      </mat-card-title>
+      <span class="spacer"></span>
+      <button
+        mat-stroked-button
+        [mat-menu-trigger-for]="menu1"
+        style="max-height: 40px"
+      >
+        <mat-icon matPrefix>filter_list</mat-icon>
+        <span>Filter</span>
+        <mat-menu #menu1="matMenu" xPosition="before">
+          <button mat-menu-item (click)="setDays(7)">7 Days</button>
+          <button mat-menu-item (click)="setDays(14)">14 Days</button>
+          <button mat-menu-item (click)="setDays(30)">30 Days</button>
+        </mat-menu>
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="text-center align-middle xlg-48" *ngIf="yAxis == false">
+        <mat-icon class="xlg-48">sentiment_very_dissatisfied</mat-icon>
+        <br />
+        Oops! nothing to show here.
+      </div>
+      <canvas id="itTechnicianCanvas" *ngIf="yAxis != false">{{
+        chart
+      }}</canvas>
+    </mat-card-content>
+  </mat-card>
 
-    <mat-card class="mat-elevation-z8 m-3">
-        <mat-card-header>
-            <mat-icon mat-card-avatar>people</mat-icon>
-            <mat-card-title>List of users</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <!--Search-->
-            <mat-form-field>
-                <mat-icon matPrefix>search</mat-icon>
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-            </mat-form-field>
+  <mat-card class="mat-elevation-z8 m-3">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>people</mat-icon>
+      <mat-card-title>List of users</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!--Search-->
+      <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <input
+          matInput
+          (keyup)="applyFilter($event.target.value)"
+          placeholder="Search"
+        />
+      </mat-form-field>
 
-            <!--Table-->
-            <mat-table [dataSource]="dataSource" matSort>
-                <ng-container matColumnDef="UserID">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
-                    <mat-cell *matCellDef="let row" data-label="User ID">{{row.UserID}}</mat-cell>
-                </ng-container>
+      <!--Table-->
+      <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="UserID">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >User ID</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row" data-label="User ID">{{
+            row.UserID
+          }}</mat-cell>
+        </ng-container>
 
-                <ng-container matColumnDef="FirstName">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
-                    <mat-cell *matCellDef="let row" data-label="Username">{{row.FirstName}} {{row.Surname}}</mat-cell>
-                </ng-container>
+        <ng-container matColumnDef="FirstName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Username</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row" data-label="Username"
+            >{{ row.FirstName }} {{ row.Surname }}</mat-cell
+          >
+        </ng-container>
 
-                <ng-container matColumnDef="Surname">
-                    <mat-header-cell *matHeaderCellDef style="display: none;"></mat-header-cell>
-                    <mat-cell *matCellDef="let row" style="display: none;"></mat-cell>
-                </ng-container>
+        <ng-container matColumnDef="Surname">
+          <mat-header-cell
+            *matHeaderCellDef
+            style="display: none"
+          ></mat-header-cell>
+          <mat-cell *matCellDef="let row" style="display: none"></mat-cell>
+        </ng-container>
 
-                <ng-container matColumnDef="count">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header># of Login's</mat-header-cell>
-                    <mat-cell *matCellDef="let row" data-label="# of Login's">{{row.count}}</mat-cell>
-                </ng-container>
+        <ng-container matColumnDef="count">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            ># of Login's</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row" data-label="# of Login's">{{
+            row.count
+          }}</mat-cell>
+        </ng-container>
 
-                <ng-container matColumnDef="lastAccess">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Latest Access</mat-header-cell>
-                    <mat-cell *matCellDef="let row" data-label="Latest Access">{{row.lastAccess}}</mat-cell>
-                </ng-container>
+        <ng-container matColumnDef="lastAccess">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Latest Access</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row" data-label="Latest Access">{{
+            row.lastAccess
+          }}</mat-cell>
+        </ng-container>
 
-                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-            </mat-table>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      </mat-table>
 
-            <!--Pagination-->
-            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-        </mat-card-content>
-    </mat-card>
+      <!--Pagination-->
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
 </app-header>
-

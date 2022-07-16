@@ -65,41 +65,41 @@ export class HeaderComponent {
 
         // IT Admin help array
         this.ItHelp = [
-            {imagePath: '../../../../assets/ItHelp/1.png', count: 1},
-            {imagePath: '../../../../assets/ItHelp/2.png', count: 2},
-            {imagePath: '../../../../assets/ItHelp/3.png', count: 3},
-            {imagePath: '../../../../assets/ItHelp/4.png', count: 4},
-            {imagePath: '../../../../assets/ItHelp/5.png', count: 5},
-            {imagePath: '../../../../assets/ItHelp/6.png', count: 6},
-            {imagePath: '../../../../assets/ItHelp/7.png', count: 7}
+            {imagePath: './assets/ItHelp/1.png', count: 1},
+            {imagePath: './assets/ItHelp/2.png', count: 2},
+            {imagePath: './assets/ItHelp/3.png', count: 3},
+            {imagePath: './assets/ItHelp/4.png', count: 4},
+            {imagePath: './assets/ItHelp/5.png', count: 5},
+            {imagePath: './assets/ItHelp/6.png', count: 6},
+            {imagePath: './assets/ItHelp/7.png', count: 7}
         ];
 
         // Tenant Help array
         this.TenantHelp = [
-            {imagePath: '../../../../assets/TenantHelp/1.png', count: 1},
-            {imagePath: '../../../../assets/TenantHelp/2.png', count: 2},
-            {imagePath: '../../../../assets/TenantHelp/3.png', count: 3},
-            {imagePath: '../../../../assets/TenantHelp/4.png', count: 4},
-            {imagePath: '../../../../assets/TenantHelp/5.png', count: 5}
+            {imagePath: './assets/TenantHelp/1.png', count: 1},
+            {imagePath: './assets/TenantHelp/2.png', count: 2},
+            {imagePath: './assets/TenantHelp/3.png', count: 3},
+            {imagePath: './assets/TenantHelp/4.png', count: 4},
+            {imagePath: './assets/TenantHelp/5.png', count: 5}
         ];
 
         // Supervisor Help array
         this.SupervisorHelp = [
-            {imagePath: '../../../../assets/SupervisorHelp/1.png', count: 1},
-            {imagePath: '../../../../assets/SupervisorHelp/2.png', count: 2},
-            {imagePath: '../../../../assets/SupervisorHelp/3.png', count: 3},
-            {imagePath: '../../../../assets/SupervisorHelp/4.png', count: 4},
-            {imagePath: '../../../../assets/SupervisorHelp/5.png', count: 5},
-            {imagePath: '../../../../assets/SupervisorHelp/6.png', count: 6},
-            {imagePath: '../../../../assets/SupervisorHelp/7.png', count: 7},
-            {imagePath: '../../../../assets/SupervisorHelp/8.png', count: 8},
-            {imagePath: '../../../../assets/SupervisorHelp/9.png', count: 9},
-            {imagePath: '../../../../assets/SupervisorHelp/10.png', count: 10},
-            {imagePath: '../../../../assets/SupervisorHelp/11.png', count: 11},
-            {imagePath: '../../../../assets/SupervisorHelp/12.png', count: 12},
-            {imagePath: '../../../../assets/SupervisorHelp/13.png', count: 13},
-            {imagePath: '../../../../assets/SupervisorHelp/14.png', count: 14},
-            {imagePath: '../../../../assets/SupervisorHelp/15.png', count: 15},
+            {imagePath: './assets/SupervisorHelp/1.png', count: 1},
+            {imagePath: './assets/SupervisorHelp/2.png', count: 2},
+            {imagePath: './assets/SupervisorHelp/3.png', count: 3},
+            {imagePath: './assets/SupervisorHelp/4.png', count: 4},
+            {imagePath: './assets/SupervisorHelp/5.png', count: 5},
+            {imagePath: './assets/SupervisorHelp/6.png', count: 6},
+            {imagePath: './assets/SupervisorHelp/7.png', count: 7},
+            {imagePath: './assets/SupervisorHelp/8.png', count: 8},
+            {imagePath: './assets/SupervisorHelp/9.png', count: 9},
+            {imagePath: './assets/SupervisorHelp/10.png', count: 10},
+            {imagePath: './assets/SupervisorHelp/11.png', count: 11},
+            {imagePath: './assets/SupervisorHelp/12.png', count: 12},
+            {imagePath: './assets/SupervisorHelp/13.png', count: 13},
+            {imagePath: './assets/SupervisorHelp/14.png', count: 14},
+            {imagePath: './assets/SupervisorHelp/15.png', count: 15},
         ];
     }
 }

@@ -1,14 +1,14 @@
-<div class="form-row">
+<form [formGroup]="filterForm" class="form-row">
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>Property</mat-label>
-        <mat-select (selectionChange)="FilterComplaint($event.value,null,null,null,null,null,null,null)">
+        <mat-select (selectionChange)="FilterComplaint($event.value,null,null,null,null,null,null,null)" formControlName="property">
             <mat-option *ngFor="let p of properties" [value]="p.Name">{{p.Name}}</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>Tenant</mat-label>
-        <mat-select (selectionChange)="FilterComplaint(null,$event.value,null,null,null,null,null,null)">
+        <mat-select (selectionChange)="FilterComplaint(null,$event.value,null,null,null,null,null,null)" formControlName="tenant">
             <mat-option *ngFor="let t of tenants" [value]="t.fullName">{{t.fullName}}</mat-option>
         </mat-select>
     </mat-form-field>
@@ -16,21 +16,21 @@
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>Category</mat-label>
         <mat-select
-                (selectionChange)="SubCategory($event.value);FilterComplaint(null,null,null,$event,null,null,null,null);">
+                (selectionChange)="SubCategory($event.value);FilterComplaint(null,null,null,$event,null,null,null,null);" formControlName="category">
             <mat-option *ngFor="let c of categories" [value]="c.CategoryID">{{c.Name}}</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>Sub Category</mat-label>
-        <mat-select (selectionChange)="FilterComplaint(null,null,$event.value,null,null,null,null,null)">
+        <mat-select (selectionChange)="FilterComplaint(null,null,$event.value,null,null,null,null,null)" formControlName="tenant">
             <mat-option *ngFor="let sc of subCategories" [value]="sc.Name">{{sc.Name}}</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>Owner</mat-label>
-        <mat-select (selectionChange)="FilterComplaint(null,null,null,null,$event.value,null,null,null)">
+        <mat-select (selectionChange)="FilterComplaint(null,null,null,null,$event.value,null,null,null)" formControlName="owner">
             <mat-option *ngFor="let o of owners" [value]="o.fullName">{{o.fullName}} -
                 ({{o.ContactNumber}})
             </mat-option>
@@ -39,7 +39,7 @@
 
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>Status</mat-label>
-        <mat-select (selectionChange)="FilterComplaint(null,null,null,null,null,$event.value,null,null)">
+        <mat-select (selectionChange)="FilterComplaint(null,null,null,null,null,$event.value,null,null)" formControlName="status">
             <mat-option *ngFor="let s of complaintStatus" [value]="s.Desc">{{s.Desc}}</mat-option>
         </mat-select>
     </mat-form-field>
@@ -47,7 +47,7 @@
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>Start Date</mat-label>
         <input matInput [matDatepicker]="picker1" data-date-format="yyyy-MM-dd"
-               (dateChange)="FilterComplaint(null,null,null,null,null,null,$event.value,null)">
+               (dateChange)="FilterComplaint(null,null,null,null,null,null,$event.value,null)" formControlName="startDate">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
@@ -55,11 +55,11 @@
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>End Date</mat-label>
         <input matInput [matDatepicker]="picker2" data-date-format="yyyy-MM-dd"
-               (dateChange)="FilterComplaint(null,null,null,null,null,null,null,$event.value)">
+               (dateChange)="FilterComplaint(null,null,null,null,null,null,null,$event.value)" formControlName="endDate">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
-</div>
+</form>
 
 <!--Complaints Table-->
 <mat-table [dataSource]="dataSource" matSort>
@@ -81,7 +81,7 @@
 <!--Paginantion-->
 <mat-paginator [pageSizeOptions]="[10, 25, 100, 200]"></mat-paginator>
 <div class="float-right">
-    <button mat-stroked-button type="button" class="mr-1" (click)="GetComplaint()"><mat-icon matPrefix>rotate_right</mat-icon>Reset</button>
+    <button mat-stroked-button type="button" class="mr-1" (click)="Reset()"><mat-icon matPrefix>rotate_right</mat-icon>Reset</button>
     <button mat-stroked-button type="button" class="ml-1" (click)="ExportToExcel(dataSource.data)"><mat-icon matPrefix>description_icon</mat-icon>Export to Excel</button>
 </div>
 

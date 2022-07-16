@@ -1,7 +1,7 @@
-<div class="form-row">
+<form [formGroup]="filterForm" class="form-row">
     <mat-form-field class="col-4" appearance="outline">
         <mat-label>Owner</mat-label>
-        <mat-select (selectionChange)="FilterPropertyReport($event.value,null,null,null,null)">
+        <mat-select (selectionChange)="FilterPropertyReport($event.value,null,null,null,null)" formControlName="owner">
             <mat-option *ngFor="let o of owners" [value]="o.fullName">{{o.fullName}}
             </mat-option>
         </mat-select>
@@ -10,14 +10,14 @@
     <mat-form-field class="col-4" appearance="outline">
         <mat-label>City</mat-label>
         <mat-select
-                (selectionChange)="suburbLoad($event.value);FilterPropertyReport(null,null,$event,null,null)">
+                (selectionChange)="suburbLoad($event.value);FilterPropertyReport(null,null,$event,null,null)" formControlName="city">
             <mat-option *ngFor="let c of cities" [value]="c.CityID">{{c.CityName}}</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field class="col-4" appearance="outline">
         <mat-label>Suburb</mat-label>
-        <mat-select (selectionChange)="FilterPropertyReport(null,$event.value,null,null,null)">
+        <mat-select (selectionChange)="FilterPropertyReport(null,$event.value,null,null,null)" formControlName="suburb">
             <mat-option *ngFor="let s of suburbs"
                         [value]="s.SuburbName">{{s.SuburbName}}</mat-option>
         </mat-select>
@@ -26,7 +26,7 @@
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>Start Date</mat-label>
         <input matInput [matDatepicker]="picker1" data-date-format="yyyy-MM-dd"
-               (dateChange)="FilterPropertyReport(null,null,null,$event.value,null)">
+               (dateChange)="FilterPropertyReport(null,null,null,$event.value,null)" formControlName="startDate">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
@@ -34,11 +34,11 @@
     <mat-form-field class="col-6" appearance="outline">
         <mat-label>End Date</mat-label>
         <input matInput [matDatepicker]="picker2" data-date-format="yyyy-MM-dd"
-               (dateChange)="FilterPropertyReport(null,null,null,null,$event.value)">
+               (dateChange)="FilterPropertyReport(null,null,null,null,$event.value)" formControlName="endDate">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
-</div>
+</form>
 
 <!--Property Table-->
 <mat-table [dataSource]="dataSource" matSort>
@@ -76,16 +76,6 @@
     <ng-container matColumnDef="totalComplaint">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Complaints Reported</mat-header-cell>
         <mat-cell *matCellDef="let row" class="text-right">{{row.totalComplaint}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="unresolvedComplaint">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Unresolved Complaints</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{row.unresolvedComplaint}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="resolvedComplaint">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Resolved Complaint</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{row.resolvedComplaint}}</mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

@@ -11,10 +11,10 @@ namespace Data;
 class Db
 {
     // Local Machine Setup
-    private static $dbHost = '127.0.0.1';
-    private static $dbUser = 'pms';
-    private static $dbPass = 'Password2';
-    private static $dbName = 'pms_schema';
+    private static $dbHost = 'fdb29.awardspace.net';
+    private static $dbUser = '3707572_pms';
+    private static $dbPass = 'password1';
+    private static $dbName = '3707572_pms';
 
     // NMU Setup
 //    private static $dbHost = 'sict-mysql.nmmu.ac.za';

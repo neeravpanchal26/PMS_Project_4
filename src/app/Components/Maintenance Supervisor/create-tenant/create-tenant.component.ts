@@ -16,7 +16,7 @@ import {CreateTenantService} from './create-tenant.service';
 })
 export class CreateTenantComponent implements OnInit {
     // Global Variables
-    private createTenantForm: FormGroup;
+    public createTenantForm: FormGroup;
     public maxDate: Date;
     public emailCheck = false;
     public phoneCheck = false;

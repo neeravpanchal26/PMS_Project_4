@@ -13,6 +13,7 @@ import {Images} from '../../assign-property/assign-property.component';
 import {BusinessSettingsService} from '../../../It Admin/business-settings/business-settings.service';
 import {ExcelExporterService} from '../../../../Global Services/excel-exporter.service';
 import {ImageRetrieveService} from '../../../../Global Services/image-retrieve.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
     selector: 'app-complaint-report',
@@ -27,6 +28,7 @@ export class ComplaintReportComponent implements OnInit {
     public subCategories;
     public owners;
     public complaintStatus;
+    public filterForm: FormGroup;
 
     // Sorting variables
     public propName = '';
@@ -52,11 +54,42 @@ export class ComplaintReportComponent implements OnInit {
                 private IService: ImageRetrieveService,
                 private RService: ReportComplaintService,
                 private APService: AddPropertyService,
+                private formBuilder: FormBuilder,
                 private MService: MaintenanceReportsService) {
     }
 
     // Form load
     ngOnInit() {
+        // Filter Validation
+        this.filterForm = this.formBuilder.group({
+            property: [],
+            tenant: [],
+            category: [],
+            subCategory: [],
+            owner: [],
+            status: [],
+            startDate: [],
+            endDate: []
+        });
+
+        this.Reset();
+    }
+
+    // Reset
+    Reset() {
+        // Reset variables
+        this.propName = '';
+        this.tenantName = '';
+        this.subCat = '';
+        this.cat = '';
+        this.ownerName = '';
+        this.statusName = '';
+        this.startDate = '';
+        this.endDate = new Date(new Date().setDate(new Date().getDate() + 1));
+
+        // Reset Form
+        this.filterForm.reset();
+
         // Property Load up
         this.AService.GetProperty()
             .subscribe(data => this.properties = data, error => this.snackBar.handleError(error));
